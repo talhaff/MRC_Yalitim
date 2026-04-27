@@ -163,13 +163,13 @@ export function Footer() {
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-brand-gold/20 transition-colors">
                   <MapPin size={18} className="text-brand-gold" />
                 </div>
-                <span className="text-sm leading-relaxed">Organize Sanayi Bölgesi, <br /> 4. Cadde, İstanbul</span>
+                <span className="text-sm leading-relaxed">Organize Sanayi Bölgesi, <br />Malatya</span>
               </li>
               <li className="flex gap-4 group">
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-brand-gold/20 transition-colors">
                   <Phone size={18} className="text-brand-gold" />
                 </div>
-                <span className="text-sm">+90 212 555 00 00</span>
+                <span className="text-sm">+90 532 258 52 44</span>
               </li>
               <li className="flex gap-4 group">
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-brand-gold/20 transition-colors">
