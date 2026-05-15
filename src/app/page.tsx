@@ -66,10 +66,10 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-5 pt-6">
               <Link 
-                href="/products" 
+                href="/contact" 
                 className="group relative bg-brand-gold text-brand-navy px-10 py-5 rounded-2xl font-bold transition-all flex items-center justify-center gap-3 text-lg overflow-hidden"
               >
-                <span className="relative z-10">Kataloğu Keşfet</span>
+                <span className="relative z-10">İletişime Geçin</span>
                 <ArrowRight size={22} className="relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </Link>
@@ -173,7 +173,7 @@ export default function HomePage() {
               { name: 'EPS Yalıtım Levhaları', desc: 'Yüksek yoğunluklu enerji tasarrufu.', img: '/images/cat-eps.jpg' },
               { name: 'Dekoratif Kaplamalar', desc: 'Doğal taş ve ahşap görünümlü paneller.', img: '/images/cat-deco.jpg' },
             ].map((cat, idx) => (
-              <Link href="/products" key={idx} className="group relative aspect-[4/5] rounded-[48px] overflow-hidden">
+              <Link href="/contact" key={idx} className="group relative aspect-[4/5] rounded-[48px] overflow-hidden">
                 <Image 
                   src={cat.img} 
                   alt={cat.name} 
@@ -185,7 +185,7 @@ export default function HomePage() {
                   <h3 className="text-3xl font-bold mb-2 group-hover:text-brand-gold transition-colors">{cat.name}</h3>
                   <p className="text-slate-400 group-hover:text-white transition-colors">{cat.desc}</p>
                   <div className="mt-6 flex items-center gap-2 text-brand-gold font-bold opacity-0 group-hover:opacity-100 transition-opacity">
-                    İncele <ArrowRight size={18} />
+                    Bilgi Al <ArrowRight size={18} />
                   </div>
                 </div>
               </Link>
@@ -202,7 +202,7 @@ export default function HomePage() {
             <p className="text-brand-navy/70 text-lg">Özel ölçü ve toptan alımlar için uzman ekibimiz sizi bekliyor.</p>
           </div>
           <Link 
-            href="/quote" 
+            href="/contact" 
             className="bg-brand-navy text-white px-12 py-6 rounded-2xl font-bold text-xl hover:scale-105 transition-transform shadow-2xl shadow-brand-navy/20"
           >
             Hemen Teklif İste

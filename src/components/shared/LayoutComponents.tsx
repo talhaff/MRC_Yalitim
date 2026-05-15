@@ -2,9 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShoppingBag, Menu, X, MapPin, Mail, Phone, ChevronRight } from 'lucide-react';
+import { Menu, X, MapPin, Mail, Phone, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { useQuoteStore } from '@/store/useQuoteStore';
 
 // 1. NAVBAR COMPONENT
 export function Navbar() {
@@ -12,7 +11,6 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
-  const totalItems = useQuoteStore((state) => state.items.length);
 
   // Home page has a dark hero, other pages are light
   const isHomePage = pathname === '/';
@@ -26,7 +24,6 @@ export function Navbar() {
 
   const navLinks = [
     { name: 'Ana Sayfa', href: '/' },
-    { name: 'Ürünler', href: '/products' },
     { name: 'Kurumsal', href: '/about' },
     { name: 'İletişim', href: '/contact' },
   ];
@@ -66,16 +63,12 @@ export function Navbar() {
             </Link>
           ))}
           
+          
           <Link 
-            href="/quote"
-            className="relative p-2.5 bg-brand-gold rounded-xl text-brand-navy hover:bg-brand-navy hover:text-white transition-all shadow-md"
+            href="/contact"
+            className="px-6 py-2.5 bg-brand-gold rounded-xl text-brand-navy font-bold text-xs uppercase tracking-wider hover:bg-brand-navy hover:text-white transition-all shadow-md"
           >
-            <ShoppingBag size={20} />
-            {mounted && totalItems > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-white font-bold animate-in zoom-in duration-300">
-                {totalItems}
-              </span>
-            )}
+            Teklif Al
           </Link>
         </div>
 
@@ -100,11 +93,11 @@ export function Navbar() {
           </Link>
         ))}
         <Link 
-          href="/quote" 
+          href="/contact" 
           onClick={() => setIsOpen(false)}
           className="bg-brand-gold text-brand-navy px-10 py-4 rounded-xl font-bold flex items-center gap-2"
         >
-          Teklif Listem ({mounted ? totalItems : 0})
+          Teklif Alın
         </Link>
       </div>
     </nav>
@@ -139,20 +132,19 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-sm uppercase tracking-widest mb-10 text-brand-gold">Hızlı Menü</h4>
             <ul className="space-y-4 text-slate-400">
-              <li><Link href="/products" className="hover:text-brand-gold hover:translate-x-1 transition-all inline-block">Üretim Kataloğu</Link></li>
               <li><Link href="/about" className="hover:text-brand-gold hover:translate-x-1 transition-all inline-block">Fabrikamız</Link></li>
               <li><Link href="/contact" className="hover:text-brand-gold hover:translate-x-1 transition-all inline-block">İletişim Kanalları</Link></li>
-              <li><Link href="/quote" className="hover:text-brand-gold hover:translate-x-1 transition-all inline-block">Teklif Sistemi</Link></li>
+              <li><Link href="/contact" className="hover:text-brand-gold hover:translate-x-1 transition-all inline-block">Teklif Al</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold text-sm uppercase tracking-widest mb-10 text-brand-gold">Kategoriler</h4>
             <ul className="space-y-4 text-slate-400">
-              <li><Link href="/products" className="hover:text-brand-gold transition-all">Dış Cephe Söveleri</Link></li>
-              <li><Link href="/products" className="hover:text-brand-gold transition-all">EPS Yalıtım Levhaları</Link></li>
-              <li><Link href="/products" className="hover:text-brand-gold transition-all">Kat Silmeleri</Link></li>
-              <li><Link href="/products" className="hover:text-brand-gold transition-all">Dekoratif Paneller</Link></li>
+              <li>Dış Cephe Söveleri</li>
+              <li>EPS Yalıtım Levhaları</li>
+              <li>Kat Silmeleri</li>
+              <li>Dekoratif Paneller</li>
             </ul>
           </div>
 
