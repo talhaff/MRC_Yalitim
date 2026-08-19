@@ -73,9 +73,14 @@ export default function HomePage() {
                 <ArrowRight size={22} className="relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </Link>
-              <button className="flex items-center justify-center gap-3 text-white font-bold hover:text-brand-gold transition-colors px-10">
-                <PlayCircle size={32} strokeWidth={1.5} /> Üretim Videosu
-              </button>
+              <Link 
+                href="/MRC_2026_Katalog.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 text-white font-bold hover:text-brand-gold transition-colors px-10 border border-white/10 hover:border-brand-gold/30 rounded-2xl bg-white/5 hover:bg-white/10"
+              >
+                <Award size={24} strokeWidth={1.5} /> 2026 Kataloğu İndir
+              </Link>
             </div>
           </motion.div>
 
@@ -162,9 +167,18 @@ export default function HomePage() {
       {/* 3. SHOWCASE SECTION */}
       <section className="py-32 bg-[#0A192F] text-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-            <p className="text-brand-gold font-bold uppercase tracking-widest text-sm">Üretim Kataloğu</p>
-            <h2 className="text-4xl lg:text-5xl font-bold font-display">Öne Çıkan Ürün Grupları</h2>
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4 flex flex-col items-center">
+            <p className="text-brand-gold font-bold uppercase tracking-widest text-sm">Katalog & Ürünler</p>
+            <h2 className="text-4xl lg:text-5xl font-bold font-display">Tüm Ürün Gruplarımız</h2>
+            <Link 
+              href="/MRC_2026_Katalog.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-gold hover:bg-brand-gold/10 transition-all font-bold text-lg group shadow-xl"
+            >
+              <Award className="text-brand-gold group-hover:rotate-12 transition-transform" size={24} />
+              2026 Ürün Kataloğunu İndir
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

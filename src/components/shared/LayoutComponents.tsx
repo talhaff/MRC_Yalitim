@@ -25,6 +25,7 @@ export function Navbar() {
   const navLinks = [
     { name: 'Ana Sayfa', href: '/' },
     { name: 'Kurumsal', href: '/about' },
+    { name: 'Katalog', href: '/MRC_2026_Katalog.pdf', external: true },
     { name: 'İletişim', href: '/contact' },
   ];
 
@@ -53,8 +54,10 @@ export function Navbar() {
         <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link 
-              key={link.href} 
+              key={link.name} 
               href={link.href}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
               className={`font-bold text-xs uppercase tracking-[0.2em] transition-all hover:translate-y-[-1px] ${
                 pathname === link.href ? 'text-brand-gold' : linkColor
               }`}
@@ -84,9 +87,11 @@ export function Navbar() {
       }`}>
         {navLinks.map((link) => (
           <Link 
-            key={link.href} 
+            key={link.name} 
             href={link.href} 
             onClick={() => setIsOpen(false)}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noopener noreferrer" : undefined}
             className="text-3xl font-bold text-white hover:text-brand-gold transition-colors"
           >
             {link.name}
@@ -133,6 +138,7 @@ export function Footer() {
             <h4 className="font-bold text-sm uppercase tracking-widest mb-10 text-brand-gold">Hızlı Menü</h4>
             <ul className="space-y-4 text-slate-400">
               <li><Link href="/about" className="hover:text-brand-gold hover:translate-x-1 transition-all inline-block">Fabrikamız</Link></li>
+              <li><Link href="/MRC_2026_Katalog.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold hover:translate-x-1 transition-all inline-block">2026 Ürün Kataloğu</Link></li>
               <li><Link href="/contact" className="hover:text-brand-gold hover:translate-x-1 transition-all inline-block">İletişim Kanalları</Link></li>
               <li><Link href="/contact" className="hover:text-brand-gold hover:translate-x-1 transition-all inline-block">Teklif Al</Link></li>
             </ul>
