@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
   ArrowRight, 
   ShieldCheck, 
@@ -29,6 +29,11 @@ export default function HomePage() {
     visible: { opacity: 1, y: 0 }
   };
 
+  const { scrollY } = useScroll();
+  const yHeroText = useTransform(scrollY, [0, 1000], [0, 300]);
+  const yHeroImg = useTransform(scrollY, [0, 1000], [0, -100]);
+  const opacityHero = useTransform(scrollY, [0, 500], [1, 0]);
+
   return (
     <div className="flex flex-col w-full overflow-x-hidden">
       {/* 1. HERO SECTION */}
@@ -42,6 +47,7 @@ export default function HomePage() {
 
         <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-20 items-center">
           <motion.div 
+            style={{ y: yHeroText, opacity: opacityHero }}
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -85,18 +91,25 @@ export default function HomePage() {
           </motion.div>
 
           <motion.div 
+            style={{ y: yHeroImg }}
             initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
             className="relative hidden lg:block"
           >
             <div className="relative z-10 w-full aspect-[4/5] rounded-[60px] overflow-hidden border-[16px] border-white/5 shadow-2xl">
-              <Image 
-                src="/images/hero-factory.jpg" 
-                alt="MRC Yalıtım Fabrika" 
-                fill 
-                className="object-cover scale-110"
-              />
+              <motion.div
+                animate={{ scale: [1, 1.1] }}
+                transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
+                className="w-full h-full relative"
+              >
+                <Image 
+                  src="/images/hero-factory.jpg" 
+                  alt="MRC Yalıtım Fabrika" 
+                  fill 
+                  className="object-cover"
+                />
+              </motion.div>
             </div>
             {/* Stats Badge */}
             <motion.div 
@@ -149,8 +162,9 @@ export default function HomePage() {
               ].map((item, idx) => (
                 <motion.div 
                   key={idx}
-                  whileHover={{ y: -10 }}
-                  className="p-8 rounded-[32px] bg-slate-50 border border-slate-100 hover:border-brand-gold/20 hover:bg-white hover:shadow-xl transition-all group"
+                  whileHover={{ y: -15, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="p-8 rounded-[32px] bg-slate-50 border border-slate-100 hover:border-brand-gold/40 hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.2)] transition-colors group cursor-default"
                 >
                   <div className="w-14 h-14 rounded-2xl bg-white text-brand-gold flex items-center justify-center mb-6 shadow-sm group-hover:bg-brand-gold group-hover:text-white transition-colors">
                     {item.icon}
@@ -187,22 +201,28 @@ export default function HomePage() {
               { name: 'EPS Yalıtım Levhaları', desc: 'Yüksek yoğunluklu enerji tasarrufu.', img: '/images/cat-eps.jpg' },
               { name: 'Dekoratif Kaplamalar', desc: 'Doğal taş ve ahşap görünümlü paneller.', img: '/images/cat-deco.jpg' },
             ].map((cat, idx) => (
-              <Link href="/contact" key={idx} className="group relative aspect-[4/5] rounded-[48px] overflow-hidden">
-                <Image 
-                  src={cat.img} 
-                  alt={cat.name} 
-                  fill 
-                  className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent opacity-80" />
-                <div className="absolute bottom-0 left-0 p-12 w-full translate-y-4 group-hover:translate-y-0 transition-transform">
-                  <h3 className="text-3xl font-bold mb-2 group-hover:text-brand-gold transition-colors">{cat.name}</h3>
-                  <p className="text-slate-400 group-hover:text-white transition-colors">{cat.desc}</p>
-                  <div className="mt-6 flex items-center gap-2 text-brand-gold font-bold opacity-0 group-hover:opacity-100 transition-opacity">
-                    Bilgi Al <ArrowRight size={18} />
+              <motion.div 
+                key={idx}
+                whileHover={{ y: -10 }}
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+              >
+                <Link href="/contact" className="group relative aspect-[4/5] rounded-[48px] overflow-hidden block">
+                  <Image 
+                    src={cat.img} 
+                    alt={cat.name} 
+                    fill 
+                    className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 p-12 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    <h3 className="text-3xl font-bold mb-2 group-hover:text-brand-gold transition-colors duration-500">{cat.name}</h3>
+                    <p className="text-slate-400 group-hover:text-white transition-colors duration-500">{cat.desc}</p>
+                    <div className="mt-6 flex items-center gap-2 text-brand-gold font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      Bilgi Al <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-500" />
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>

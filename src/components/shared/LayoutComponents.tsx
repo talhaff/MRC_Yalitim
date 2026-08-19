@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, MapPin, Mail, Phone, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 // 1. NAVBAR COMPONENT
 export function Navbar() {
@@ -31,13 +32,13 @@ export function Navbar() {
 
   // Dynamic Styles
   const navBg = scrolled 
-    ? 'bg-white/90 backdrop-blur-md shadow-lg py-4' 
-    : (isHomePage ? 'bg-transparent py-6' : 'bg-white border-b border-slate-100 py-4');
+    ? 'bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] py-4' 
+    : (isHomePage ? 'bg-[#050B15]/30 backdrop-blur-md border-b border-white/10 py-6 shadow-[0_4px_30px_rgba(0,0,0,0.1)]' : 'bg-white/90 backdrop-blur-sm border-b border-slate-100 py-4');
 
   const textColor = scrolled || !isHomePage ? 'text-brand-navy' : 'text-white';
   const linkColor = scrolled || !isHomePage 
     ? 'text-slate-600 hover:text-brand-navy' 
-    : 'text-white/80 hover:text-white';
+    : 'text-white hover:text-brand-gold drop-shadow-md';
 
   return (
     <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${navBg}`}>
@@ -58,11 +59,14 @@ export function Navbar() {
               href={link.href}
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
-              className={`font-bold text-xs uppercase tracking-[0.2em] transition-all hover:translate-y-[-1px] ${
+              className={`relative font-bold text-xs uppercase tracking-[0.2em] transition-all py-2 group ${
                 pathname === link.href ? 'text-brand-gold' : linkColor
               }`}
             >
               {link.name}
+              <span className={`absolute left-0 bottom-0 w-full h-[2px] bg-brand-gold transform origin-left transition-transform duration-300 ease-out ${
+                pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+              }`} />
             </Link>
           ))}
           
@@ -127,9 +131,14 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               {['Facebook', 'Instagram', 'LinkedIn'].map((social) => (
-                <div key={social} className="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold transition-all cursor-pointer group">
-                   <div className="w-1.5 h-1.5 bg-white group-hover:scale-150 transition-transform rounded-full" />
-                </div>
+                <motion.div 
+                  key={social} 
+                  whileHover={{ y: -5, scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-colors cursor-pointer group"
+                >
+                   <div className="w-1.5 h-1.5 bg-white group-hover:bg-white transition-colors rounded-full" />
+                </motion.div>
               ))}
             </div>
           </div>

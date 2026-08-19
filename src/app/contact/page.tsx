@@ -171,8 +171,8 @@ export default function ContactPage() {
                         <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Ad Soyad</label>
                         <input 
                           {...register('name')}
-                          className={`w-full bg-slate-50 px-6 py-4 rounded-2xl border-2 transition-all outline-none text-brand-navy font-medium ${
-                            errors.name ? 'border-red-100 bg-red-50/30' : 'border-transparent focus:border-brand-gold focus:bg-white'
+                          className={`w-full bg-slate-50 px-6 py-4 rounded-2xl border-2 transition-all duration-300 outline-none text-brand-navy font-medium ${
+                            errors.name ? 'border-red-100 bg-red-50/30' : 'border-transparent focus:border-brand-gold focus:bg-white focus:shadow-[0_0_20px_rgba(212,175,55,0.2)]'
                           }`}
                           placeholder="Ahmet Yılmaz"
                         />
@@ -182,8 +182,8 @@ export default function ContactPage() {
                         <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">E-Posta</label>
                         <input 
                           {...register('email')}
-                          className={`w-full bg-slate-50 px-6 py-4 rounded-2xl border-2 transition-all outline-none text-brand-navy font-medium ${
-                            errors.email ? 'border-red-100 bg-red-50/30' : 'border-transparent focus:border-brand-gold focus:bg-white'
+                          className={`w-full bg-slate-50 px-6 py-4 rounded-2xl border-2 transition-all duration-300 outline-none text-brand-navy font-medium ${
+                            errors.email ? 'border-red-100 bg-red-50/30' : 'border-transparent focus:border-brand-gold focus:bg-white focus:shadow-[0_0_20px_rgba(212,175,55,0.2)]'
                           }`}
                           placeholder="ahmet@example.com"
                         />
@@ -195,8 +195,8 @@ export default function ContactPage() {
                       <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Konu Başlığı</label>
                       <input 
                         {...register('subject')}
-                        className={`w-full bg-slate-50 px-6 py-4 rounded-2xl border-2 transition-all outline-none text-brand-navy font-medium ${
-                          errors.subject ? 'border-red-100 bg-red-50/30' : 'border-transparent focus:border-brand-gold focus:bg-white'
+                        className={`w-full bg-slate-50 px-6 py-4 rounded-2xl border-2 transition-all duration-300 outline-none text-brand-navy font-medium ${
+                          errors.subject ? 'border-red-100 bg-red-50/30' : 'border-transparent focus:border-brand-gold focus:bg-white focus:shadow-[0_0_20px_rgba(212,175,55,0.2)]'
                         }`}
                         placeholder="Teklif Talebi, Ürün Bilgisi vb."
                       />
@@ -208,8 +208,8 @@ export default function ContactPage() {
                       <textarea 
                         {...register('message')}
                         rows={5}
-                        className={`w-full bg-slate-50 px-6 py-4 rounded-2xl border-2 transition-all outline-none text-brand-navy font-medium resize-none ${
-                          errors.message ? 'border-red-100 bg-red-50/30' : 'border-transparent focus:border-brand-gold focus:bg-white'
+                        className={`w-full bg-slate-50 px-6 py-4 rounded-2xl border-2 transition-all duration-300 outline-none text-brand-navy font-medium resize-none ${
+                          errors.message ? 'border-red-100 bg-red-50/30' : 'border-transparent focus:border-brand-gold focus:bg-white focus:shadow-[0_0_20px_rgba(212,175,55,0.2)]'
                         }`}
                         placeholder="Mesajınızı buraya yazınız..."
                       />

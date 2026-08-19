@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { History, Target, Eye, ShieldCheck, Factory, Award, Building2, Globe2, ChevronRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function AboutPage() {
   const containerVariants = {
@@ -19,6 +19,11 @@ export default function AboutPage() {
     visible: { opacity: 1, y: 0 }
   };
 
+  const { scrollYProgress, scrollY } = useScroll();
+  const yImage = useTransform(scrollY, [0, 1000], [0, -100]);
+  const yHeader = useTransform(scrollY, [0, 600], [0, 200]);
+  const opacityHeader = useTransform(scrollY, [0, 300], [1, 0]);
+
   return (
     <main className="w-full bg-white">
       {/* 1. PREMIUM HEADER */}
@@ -29,6 +34,7 @@ export default function AboutPage() {
         
         <div className="container mx-auto px-4 relative z-10 text-center lg:text-left">
           <motion.div 
+            style={{ y: yHeader, opacity: opacityHeader }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -60,11 +66,20 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              <div className="inline-flex items-center gap-3 text-brand-gold font-bold text-sm uppercase tracking-[0.2em]">
-                <div className="w-12 h-0.5 bg-brand-gold" />
+              <div className="inline-flex items-center gap-3 text-brand-gold font-bold text-sm uppercase tracking-[0.2em] relative">
+                <motion.div 
+                  initial={{ width: 0 }} 
+                  whileInView={{ width: 48 }} 
+                  transition={{ duration: 1, delay: 0.5 }}
+                  className="h-0.5 bg-brand-gold" 
+                />
                 Hikayemiz
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-brand-navy leading-tight font-display">
+              <h2 className="text-4xl lg:text-5xl font-bold text-brand-navy leading-tight font-display relative pl-6">
+                <motion.div 
+                  style={{ scaleY: scrollYProgress }}
+                  className="absolute left-0 top-0 w-1 h-full bg-brand-gold origin-top rounded-full"
+                />
                 Üretimin Gücü, <br /> Uzmanlığın İmzası.
               </h2>
               <div className="space-y-6 text-slate-500 text-lg leading-relaxed">
@@ -90,6 +105,7 @@ export default function AboutPage() {
             </motion.div>
 
             <motion.div 
+              style={{ y: yImage }}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
