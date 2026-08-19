@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, MapPin, Mail, Phone, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -32,8 +33,8 @@ export function Navbar() {
 
   // Dynamic Styles
   const navBg = scrolled 
-    ? 'bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] py-4' 
-    : (isHomePage ? 'bg-[#050B15]/30 backdrop-blur-md border-b border-white/10 py-6 shadow-[0_4px_30px_rgba(0,0,0,0.1)]' : 'bg-white/90 backdrop-blur-sm border-b border-slate-100 py-4');
+    ? 'bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] py-2' 
+    : (isHomePage ? 'bg-[#050B15]/30 backdrop-blur-md border-b border-white/10 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)]' : 'bg-white/90 backdrop-blur-sm border-b border-slate-100 py-2');
 
   const textColor = scrolled || !isHomePage ? 'text-brand-navy' : 'text-white';
   const linkColor = scrolled || !isHomePage 
@@ -45,10 +46,16 @@ export function Navbar() {
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          
-          <div className={`font-display font-bold text-2xl tracking-tighter transition-colors ${textColor}`}>
-            MRC <span className="text-brand-gold">YALITIM</span>
-          </div>
+          <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+            <Image 
+              src="/logo_transparent.png" 
+              alt="MRC Yalıtım Logo" 
+              width={140} 
+              height={30} 
+              className="object-contain scale-[1.7] origin-left" 
+              priority 
+            />
+          </motion.div>
         </Link>
 
         {/* Desktop Links */}
@@ -123,9 +130,17 @@ export function Footer() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           <div className="space-y-8">
-            <div className="font-display font-bold text-3xl tracking-tighter">
-              MRC <span className="text-brand-gold font-light">YALITIM</span>
-            </div>
+            <Link href="/" className="inline-block">
+              <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+                <Image 
+                  src="/logo_transparent.png" 
+                  alt="MRC Yalıtım Logo" 
+                  width={220} 
+                  height={60} 
+                  className="object-contain" 
+                />
+              </motion.div>
+            </Link>
             <p className="text-slate-400 leading-relaxed font-light">
               Yüksek teknoloji üretim hatlarımızla, yapı sektörüne dayanıklı ve estetik çözümler sunuyoruz. Türkiye'nin yalıtım vizyonunu fabrikamızda şekillendiriyoruz.
             </p>
