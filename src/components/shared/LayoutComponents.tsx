@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, MapPin, Mail, Phone, ChevronRight } from 'lucide-react';
+import { Menu, X, MapPin, Mail, Phone, ChevronRight, MessageCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
@@ -52,7 +52,7 @@ export function Navbar() {
               alt="MRC Yalıtım Logo" 
               width={140} 
               height={30} 
-              className="object-contain scale-[1.7] origin-left" 
+              className="object-contain scale-[1.7] origin-left -ml-4 md:ml-0" 
               priority 
             />
           </motion.div>
@@ -212,5 +212,47 @@ export function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+// 3. FLOATING ACTION BUTTONS
+export function FloatingAction() {
+  return (
+    <div className="fixed bottom-8 right-8 z-[100] flex flex-col gap-4 items-end">
+      {/* Get a Quote Action */}
+      <Link href="/contact" className="group relative">
+        <motion.div 
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", delay: 0.8 }}
+          className="w-12 h-12 bg-brand-gold text-brand-navy rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:scale-110 active:scale-95 transition-all border border-transparent hover:border-white/50"
+        >
+          <Mail size={20} />
+          <span className="absolute right-full mr-4 bg-white text-brand-navy px-4 py-2.5 rounded-2xl text-xs font-bold shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap translate-x-2 group-hover:translate-x-0 flex items-center gap-2">
+            Hemen Teklif Al
+          </span>
+        </motion.div>
+      </Link>
+      
+      {/* Premium WhatsApp Action */}
+      <a href="https://wa.me/905322585244" target="_blank" rel="noreferrer" className="group relative">
+        <motion.div 
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", delay: 1 }}
+          className="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] hover:scale-110 active:scale-95 transition-all relative"
+        >
+          {/* Subtle Ripple */}
+          <div className="absolute inset-0 border-[3px] border-[#25D366] rounded-full animate-ping opacity-30" />
+          
+          <MessageCircle size={32} />
+          
+          <span className="absolute right-full mr-4 bg-[#25D366] text-white px-5 py-3.5 rounded-2xl text-sm font-bold shadow-2xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap translate-x-4 group-hover:translate-x-0 flex items-center gap-2">
+            WhatsApp Destek
+            <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+          </span>
+        </motion.div>
+      </a>
+    </div>
   );
 }

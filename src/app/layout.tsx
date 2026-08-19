@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
-import { Navbar, Footer } from "@/components/shared/LayoutComponents";
+import { Navbar, Footer, FloatingAction } from "@/components/shared/LayoutComponents";
 import { PageTransition, OrganizationSchema } from "@/components/shared/SEOAndTransitions";
 import { Toaster } from "sonner";
 
@@ -30,6 +30,7 @@ export default function RootLayout({
             {children}
           </div>
         </PageTransition>
+        <FloatingAction />
         <Footer />
         <Toaster position="top-center" richColors />
       </body>

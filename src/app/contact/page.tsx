@@ -243,26 +243,21 @@ export default function ContactPage() {
       </section>
 
       {/* 3. ELEGANT MAP SECTION */}
-      <section className="relative h-[600px] w-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
+      <section className="relative h-[600px] w-full overflow-hidden group">
         <div className="absolute inset-0 bg-slate-200 flex items-center justify-center">
-          {/* Fallback pattern while map loads or if no iframe */}
           <div className="absolute inset-0 opacity-10 bg-[url('/images/dots.svg')] bg-repeat" />
-          <div className="text-center relative z-10">
-            <div className="w-20 h-20 rounded-full bg-brand-navy/10 flex items-center justify-center mx-auto mb-6">
-              <MapPin size={32} className="text-brand-gold" />
-            </div>
-            <p className="text-brand-navy font-bold uppercase tracking-[0.3em] text-sm mb-2">Konumumuz</p>
-            <p className="text-slate-500">Google Maps Entegrasyonu Bekleniyor</p>
+          <div className="animate-pulse flex flex-col items-center gap-4">
+             <div className="w-12 h-12 border-4 border-brand-navy/20 border-t-brand-gold rounded-full animate-spin" />
+             <p className="text-brand-navy font-bold text-sm tracking-widest uppercase">Harita Yükleniyor...</p>
           </div>
         </div>
-        {/* Real iframe integration example:
         <iframe 
-          src="https://www.google.com/maps/embed?..." 
-          className="w-full h-full border-0" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99901.76673898144!2d38.1278144372138!3d38.30906233486395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x153282215f94ba05%3A0xea69a4892c902242!2zWWXFn2lseXVydC9NYWxhdHlh!5e0!3m2!1str!2str!4v1716503023245!5m2!1str!2str" 
+          className="w-full h-full border-0 absolute inset-0 z-10 grayscale hover:grayscale-0 transition-all duration-1000" 
           allowFullScreen 
-          loading="lazy"
-        ></iframe> 
-        */}
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </section>
 
       {/* 4. CALL TO ACTION - FAST CONTACT */}
@@ -284,21 +279,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* Floating WhatsApp for all sections */}
-      <motion.a 
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 1, type: 'spring' }}
-        href="https://wa.me/905322585244" 
-        target="_blank" 
-        className="fixed bottom-10 right-10 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-50 group"
-      >
-        <MessageCircle size={32} />
-        <span className="absolute right-24 bg-brand-navy text-white px-6 py-3 rounded-2xl text-sm font-bold shadow-2xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap translate-x-4 group-hover:translate-x-0">
-          WhatsApp'tan Yazın
-        </span>
-      </motion.a>
     </main>
   );
 }
