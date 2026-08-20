@@ -37,12 +37,12 @@ export default function HomePage() {
   return (
     <div className="flex flex-col w-full overflow-x-hidden">
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-screen flex items-center bg-[#050B15] overflow-hidden">
+      <section className="relative min-h-screen flex items-center bg-[#050B15] overflow-hidden pt-36 pb-20 md:pt-44 md:pb-28 lg:py-0">
         {/* Background Overlay / Decoration */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-brand-gold/10 rounded-full blur-[150px]" />
-          <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[120px]" />
-          <div className="absolute inset-0 bg-[url('/images/dots.svg')] opacity-20 bg-center" />
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-[10%] left-[5%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-brand-gold/15 rounded-full blur-[130px]" />
+          <div className="absolute bottom-[5%] right-[5%] w-[400px] h-[400px] bg-blue-900/25 rounded-full blur-[140px]" />
+          <div className="absolute inset-0 bg-[url('/images/dots.svg')] opacity-15 bg-center" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -51,29 +51,32 @@ export default function HomePage() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-white space-y-8"
+            className="text-white space-y-6 md:space-y-8"
           >
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-brand-gold font-bold text-xs uppercase tracking-[0.2em]">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-gold"></span>
+            {/* Luxury Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-brand-gold/20 via-brand-gold/10 to-transparent border border-brand-gold/30 text-brand-gold font-bold text-[11px] md:text-xs uppercase tracking-[0.2em] backdrop-blur-md shadow-[0_2px_15px_rgba(212,175,55,0.15)]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-80"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
               </span>
               Sektörün Öncü Üretim Gücü
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold leading-[1.1] md:leading-[1.05] font-display">
+            <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-8xl font-black leading-[1.08] tracking-tight font-display">
               Geleceği <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-white to-brand-gold bg-[length:200%_auto] animate-gradient">Yalıtıyoruz.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-200 to-brand-gold bg-[length:200%_auto] animate-gradient">
+                Yalıtıyoruz.
+              </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed font-light">
+            <p className="text-sm sm:text-base md:text-xl text-slate-300 max-w-xl leading-relaxed font-light">
               Yüksek yoğunluklu EPS yalıtım çözümleri ve estetik dış cephe söve profilleriyle, yapılarınıza değer katan mühendislik harikaları üretiyoruz.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-5 pt-6">
+            <div className="flex flex-col sm:flex-row gap-3.5 md:gap-5 pt-2 md:pt-4">
               <Link 
                 href="/contact" 
-                className="group relative bg-brand-gold text-brand-navy px-8 md:px-10 py-4 md:py-5 rounded-2xl font-bold transition-all flex items-center justify-center gap-3 text-base md:text-lg overflow-hidden shadow-[0_0_20px_rgba(212,175,55,0.2)]"
+                className="group relative bg-gradient-to-r from-brand-gold via-[#dfb94d] to-brand-gold text-brand-navy px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black transition-all flex items-center justify-center gap-3 text-base md:text-lg overflow-hidden shadow-[0_10px_25px_rgba(212,175,55,0.25)] active:scale-[0.98]"
               >
                 <span className="relative z-10">İletişime Geçin</span>
                 <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
@@ -83,20 +86,20 @@ export default function HomePage() {
                 href="/MRC_2026_Katalog.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 text-white font-bold hover:text-brand-gold transition-colors py-4 px-8 md:px-10 border border-white/10 hover:border-brand-gold/30 rounded-2xl bg-white/5 hover:bg-white/10"
+                className="flex items-center justify-center gap-3 text-white font-bold hover:text-brand-gold transition-colors py-4 px-8 md:px-10 border border-white/15 hover:border-brand-gold/40 rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] backdrop-blur-sm active:scale-[0.98]"
               >
-                <Award size={22} strokeWidth={1.5} /> 2026 Kataloğu İndir
+                <Award size={22} className="text-brand-gold" strokeWidth={1.75} /> 2026 Kataloğu İndir
               </Link>
             </div>
 
             {/* Mobile Stats Badge */}
-            <div className="flex lg:hidden justify-between items-center bg-white/5 border border-white/10 rounded-2xl p-6 mt-8 backdrop-blur-sm">
-              <div className="text-center w-1/2 border-r border-white/10">
-                <p className="text-3xl font-black text-white">25K<span className="text-brand-gold">+</span></p>
+            <div className="flex lg:hidden justify-between items-center bg-gradient-to-r from-white/[0.07] to-white/[0.03] border border-white/10 rounded-2xl p-5 mt-6 backdrop-blur-md shadow-xl">
+              <div className="text-center w-1/2 border-r border-white/10 pr-2">
+                <p className="text-2xl font-black text-white tracking-tight">25K<span className="text-brand-gold text-lg">+</span></p>
                 <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">m² Üretim/Ay</p>
               </div>
-              <div className="text-center w-1/2">
-                <p className="text-3xl font-black text-brand-gold">20</p>
+              <div className="text-center w-1/2 pl-2">
+                <p className="text-2xl font-black text-brand-gold tracking-tight">20+</p>
                 <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Yıllık Tecrübe</p>
               </div>
             </div>

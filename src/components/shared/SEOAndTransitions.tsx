@@ -5,30 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={pathname}
-        initial={{ opacity: 0, y: 15, scale: 0.98, filter: 'blur(8px)' }}
-        animate={{ 
-          opacity: mounted ? 1 : 0, 
-          y: mounted ? 0 : 15, 
-          scale: mounted ? 1 : 0.98,
-          filter: mounted ? 'blur(0px)' : 'blur(8px)' 
-        }}
-        exit={{ opacity: 0, y: -15, scale: 0.98, filter: 'blur(8px)' }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <div className="w-full">
+      {children}
+    </div>
   );
 }
 

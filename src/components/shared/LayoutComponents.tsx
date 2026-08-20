@@ -12,17 +12,31 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
 
-  // Home page has a dark hero, other pages are light
   const isHomePage = pathname === '/';
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  // Close menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   const navLinks = [
     { name: 'Ana Sayfa', href: '/' },
@@ -31,25 +45,23 @@ export function Navbar() {
     { name: 'İletişim', href: '/contact' },
   ];
 
-  // Dynamic Styles
-  const navBg = isOpen
-    ? 'bg-transparent py-3'
+  const headerBg = isOpen 
+    ? 'bg-[#050B15] py-3 border-b border-white/10' 
     : scrolled 
-      ? 'bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] py-2' 
-      : (isHomePage ? 'bg-[#050B15]/30 backdrop-blur-md border-b border-white/10 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)]' : 'bg-white/90 backdrop-blur-sm border-b border-slate-100 py-2');
+      ? 'bg-white/95 border-b border-slate-200/80 shadow-sm py-2.5' 
+      : 'bg-[#050B15]/90 border-b border-white/10 py-3.5';
 
-
-  const textColor = scrolled || !isHomePage ? 'text-brand-navy' : 'text-white';
-  const linkColor = scrolled || !isHomePage 
-    ? 'text-slate-600 hover:text-brand-navy' 
-    : 'text-white hover:text-brand-gold drop-shadow-md';
+  const textColor = scrolled && !isOpen ? 'text-brand-navy' : 'text-white';
+  const linkColor = scrolled && !isOpen
+    ? 'text-slate-700 hover:text-brand-navy' 
+    : 'text-white hover:text-brand-gold';
 
   return (
-    <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${navBg}`}>
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+    <>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${headerBg}`}>
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2">
             <Image 
               src="/logo_transparent.png" 
               alt="MRC Yalıtım Logo" 
@@ -58,109 +70,86 @@ export function Navbar() {
               className="object-contain scale-[1.7] origin-left -ml-4 md:ml-0" 
               priority 
             />
-          </motion.div>
-        </Link>
-
-        {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              href={link.href}
-              target={link.external ? "_blank" : undefined}
-              rel={link.external ? "noopener noreferrer" : undefined}
-              className={`relative font-bold text-xs uppercase tracking-[0.2em] transition-all py-2 group ${
-                pathname === link.href ? 'text-brand-gold' : linkColor
-              }`}
-            >
-              {link.name}
-              <span className={`absolute left-0 bottom-0 w-full h-[2px] bg-brand-gold transform origin-left transition-transform duration-300 ease-out ${
-                pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-              }`} />
-            </Link>
-          ))}
-          
-          
-          <Link 
-            href="/contact"
-            className="px-6 py-2.5 bg-brand-gold rounded-xl text-brand-navy font-bold text-xs uppercase tracking-wider hover:bg-brand-navy hover:text-white transition-all shadow-md"
-          >
-            Teklif Al
           </Link>
-        </div>
 
-        {/* Mobile Toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-brand-gold p-2">
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
-        </button>
-      </div>
+          {/* Desktop Links */}
+          <div className="hidden lg:flex items-center gap-10">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name} 
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                className={`relative font-bold text-xs uppercase tracking-[0.2em] transition-colors py-2 group ${
+                  pathname === link.href ? 'text-brand-gold' : linkColor
+                }`}
+              >
+                {link.name}
+                <span className={`absolute left-0 bottom-0 w-full h-[2px] bg-brand-gold transform origin-left transition-transform duration-200 ${
+                  pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`} />
+              </Link>
+            ))}
+            
+            <Link 
+              href="/contact"
+              className="px-6 py-2.5 bg-brand-gold rounded-xl text-brand-navy font-bold text-xs uppercase tracking-wider hover:bg-brand-navy hover:text-white transition-colors shadow-md"
+            >
+              Teklif Al
+            </Link>
+          </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
-            className="fixed inset-0 bg-[#050B15]/95 backdrop-blur-2xl z-[-1] flex flex-col justify-center px-8 pt-20"
+          {/* Mobile Toggle */}
+          <button 
+            onClick={() => setIsOpen(!isOpen)} 
+            className="lg:hidden text-brand-gold p-2 relative z-50 focus:outline-none"
+            aria-label="Menü"
           >
-            {/* Elegant Background Decoration */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-900/10 rounded-full blur-[100px] pointer-events-none" />
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </header>
 
-            <div className="flex flex-col gap-6 z-10">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -30 }}
-                  transition={{ delay: 0.1 + i * 0.1, duration: 0.4, ease: "easeOut" }}
-                >
-                  <Link 
-                    href={link.href} 
-                    onClick={() => setIsOpen(false)}
-                    target={link.external ? "_blank" : undefined}
-                    rel={link.external ? "noopener noreferrer" : undefined}
-                    className="text-3xl md:text-4xl font-black text-white hover:text-brand-gold transition-colors flex items-center gap-4 group"
-                  >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
+      {/* Mobile Menu Overlay - Clean & High Performance */}
+      {isOpen && (
+        <div className="fixed inset-0 z-40 bg-[#050B15] flex flex-col justify-between px-6 pt-24 pb-8 lg:hidden">
+          <div className="flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name}
+                href={link.href} 
+                onClick={() => setIsOpen(false)}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                className={`text-xl font-bold py-3 border-b border-white/5 transition-colors ${
+                  pathname === link.href ? 'text-brand-gold' : 'text-white active:text-brand-gold'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ delay: 0.1 + navLinks.length * 0.1, duration: 0.4 }}
-                className="mt-6 pt-6 border-t border-white/10"
-              >
-                <Link 
-                  href="/contact" 
-                  onClick={() => setIsOpen(false)}
-                  className="bg-brand-gold text-brand-navy w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 text-lg uppercase tracking-wider shadow-[0_0_20px_rgba(212,175,55,0.3)]"
-                >
-                  Hemen Teklif Alın
-                </Link>
-              </motion.div>
-              
-              {/* Mobile Contact Info */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ delay: 0.2 + navLinks.length * 0.1, duration: 0.4 }}
-                className="mt-6 flex flex-col gap-4 text-slate-400 text-sm font-medium"
-              >
-                <a href="tel:+905322585244" className="flex items-center gap-3 hover:text-brand-gold transition-colors"><Phone size={18} className="text-brand-gold"/> +90 532 258 52 44</a>
-                <a href="mailto:info@mrcyalitim.com" className="flex items-center gap-3 hover:text-brand-gold transition-colors"><Mail size={18} className="text-brand-gold"/> info@mrcyalitim.com</a>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+            <Link 
+              href="/contact" 
+              onClick={() => setIsOpen(false)}
+              className="bg-brand-gold text-brand-navy w-full py-3.5 rounded-xl font-bold text-center text-sm uppercase tracking-wider mt-4 shadow-lg active:scale-95 transition-transform"
+            >
+              Hemen Teklif Alın
+            </Link>
+          </div>
+          
+          {/* Mobile Contact Info */}
+          <div className="pt-6 border-t border-white/10 flex flex-col gap-3 text-slate-400 text-sm">
+            <a href="tel:+905322585244" className="flex items-center gap-3 active:text-brand-gold">
+              <Phone size={16} className="text-brand-gold shrink-0"/> +90 532 258 52 44
+            </a>
+            <a href="mailto:info@mrcyalitim.com" className="flex items-center gap-3 active:text-brand-gold">
+              <Mail size={16} className="text-brand-gold shrink-0"/> info@mrcyalitim.com
+            </a>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
@@ -262,16 +251,16 @@ export function Footer() {
 // 3. FLOATING ACTION BUTTONS
 export function FloatingAction() {
   return (
-    <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[100] flex flex-col gap-4 items-end">
+    <div className="fixed bottom-5 right-4 md:bottom-8 md:right-8 z-30 flex flex-col gap-3 md:gap-4 items-end">
       {/* Get a Quote Action */}
       <Link href="/contact" className="group relative">
         <motion.div 
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", delay: 0.8 }}
-          className="w-12 h-12 bg-brand-gold text-brand-navy rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:scale-110 active:scale-95 transition-all border border-transparent hover:border-white/50"
+          className="w-10 h-10 md:w-12 md:h-12 bg-brand-gold text-brand-navy rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:scale-110 active:scale-95 transition-all border border-transparent hover:border-white/50"
         >
-          <Mail size={20} />
+          <Mail size={18} className="md:w-5 md:h-5" />
           <span className="absolute right-full mr-4 bg-white text-brand-navy px-4 py-2.5 rounded-2xl text-xs font-bold shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap translate-x-2 group-hover:translate-x-0 flex items-center gap-2">
             Hemen Teklif Al
           </span>
@@ -284,12 +273,12 @@ export function FloatingAction() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", delay: 1 }}
-          className="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] hover:scale-110 active:scale-95 transition-all relative"
+          className="w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] hover:scale-110 active:scale-95 transition-all relative"
         >
           {/* Subtle Ripple */}
-          <div className="absolute inset-0 border-[3px] border-[#25D366] rounded-full animate-ping opacity-30" />
+          <div className="absolute inset-0 border-[2px] md:border-[3px] border-[#25D366] rounded-full animate-ping opacity-30" />
           
-          <MessageCircle size={32} />
+          <MessageCircle size={26} className="md:w-8 md:h-8" />
           
           <span className="absolute right-full mr-4 bg-[#25D366] text-white px-5 py-3.5 rounded-2xl text-sm font-bold shadow-2xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap translate-x-4 group-hover:translate-x-0 flex items-center gap-2">
             WhatsApp Destek

@@ -42,27 +42,34 @@ export default function ContactPage() {
   return (
     <main className="flex flex-col w-full bg-[#FAFAFB] overflow-x-hidden">
       {/* 1. PREMIUM HEADER */}
-      <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 bg-[#050B15] overflow-hidden">
+      <section className="relative pt-36 pb-16 md:pt-44 md:pb-28 lg:pt-40 lg:pb-32 bg-[#050B15] overflow-hidden">
         {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[120px] -mr-64 -mt-64" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px] -ml-32 -mb-32" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[120px] -mr-64 -mt-64 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px] -ml-32 -mb-32 pointer-events-none" />
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 text-center lg:text-left">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-brand-gold text-xs font-bold uppercase tracking-[0.2em] mb-8">
-              <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse" />
+            {/* Luxury Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-brand-gold/20 via-brand-gold/10 to-transparent border border-brand-gold/30 text-brand-gold font-bold text-[11px] md:text-xs uppercase tracking-[0.2em] backdrop-blur-md shadow-[0_2px_15px_rgba(212,175,55,0.15)] mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-80"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
+              </span>
               İletişim Kanallarımız
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 lg:mb-8 font-display leading-[1.1]">
+            
+            <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-5 lg:mb-8 font-display leading-[1.08] tracking-tight">
               Sorularınız İçin <br />
-              <span className="text-brand-gold">Buradayız.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-200 to-brand-gold bg-[length:200%_auto] animate-gradient">
+                Buradayız.
+              </span>
             </h1>
-            <p className="text-slate-400 text-lg md:text-xl leading-relaxed font-light max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
+            <p className="text-slate-300 text-sm sm:text-base md:text-xl leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
               Projeleriniz için teknik destek, toptan alım talepleri veya fabrikamız hakkında detaylı bilgi almak için ekibimizle doğrudan iletişime geçebilirsiniz.
             </p>
           </motion.div>
@@ -70,11 +77,11 @@ export default function ContactPage() {
       </section>
 
       {/* 2. CONTACT CARDS & FORM */}
-      <section className="pb-24 -mt-24 relative z-20">
+      <section className="pt-8 pb-16 md:pt-0 md:pb-24 md:-mt-16 lg:-mt-20 relative z-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-12 gap-8 items-start">
             
-            {/* LEFT COLUMN: CONTACT INFO */}
+            {/* LEFT COLUMN: CONTACT INFO CARDS */}
             <motion.div 
               variants={containerVariants}
               initial="hidden"
@@ -83,66 +90,72 @@ export default function ContactPage() {
             >
               {[
                 { 
-                  icon: <MapPin size={24} />, 
+                  icon: <MapPin size={22} />, 
                   title: 'Merkez Fabrika', 
                   content: 'Organize Sanayi Bölgesi, Malatya',
                   action: 'Yol Tarifi Al',
-                  color: 'bg-brand-navy'
+                  link: 'https://maps.google.com/?q=Organize+Sanayi+Bolgesi+Malatya'
                 },
                 { 
-                  icon: <Phone size={24} />, 
+                  icon: <Phone size={22} />, 
                   title: 'Doğrudan Hat', 
                   content: '+90 532 258 52 44',
                   action: 'Şimdi Ara',
-                  color: 'bg-brand-navy'
+                  link: 'tel:+905322585244'
                 },
                 { 
-                  icon: <Mail size={24} />, 
+                  icon: <Mail size={22} />, 
                   title: 'E-Posta Adresi', 
                   content: 'info@mrcyalitim.com',
                   action: 'Mail Gönder',
-                  color: 'bg-brand-navy'
+                  link: 'mailto:info@mrcyalitim.com'
                 },
               ].map((item, idx) => (
                 <motion.div 
                   key={idx}
                   variants={itemVariants}
-                  whileHover={{ y: -5 }}
-                  className="bg-white p-6 lg:p-8 rounded-[24px] lg:rounded-[32px] border border-slate-100 shadow-sm hover:shadow-xl transition-all group"
+                  whileHover={{ y: -4 }}
+                  className="bg-white p-5 md:p-6 lg:p-8 rounded-2xl md:rounded-[28px] border border-slate-100 shadow-sm hover:shadow-lg transition-all group"
                 >
-                  <div className={`w-12 h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl ${item.color} text-brand-gold flex items-center justify-center mb-4 lg:mb-6`}>
+                  <div className="w-11 h-11 md:w-13 md:h-13 rounded-xl bg-[#050B15] text-brand-gold flex items-center justify-center mb-3 md:mb-5 shadow-sm">
                     {item.icon}
                   </div>
-                  <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">{item.title}</h3>
-                  <p className="text-lg font-bold text-brand-navy mb-4">{item.content}</p>
-                  <button className="flex items-center gap-2 text-brand-gold font-bold text-sm group-hover:gap-3 transition-all">
-                    {item.action} <ChevronRight size={16} />
-                  </button>
+                  <h3 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">{item.title}</h3>
+                  <p className="text-base md:text-lg font-bold text-brand-navy mb-3">{item.content}</p>
+                  <a 
+                    href={item.link} 
+                    target={item.link.startsWith('http') ? '_blank' : undefined} 
+                    rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="inline-flex items-center gap-2 text-brand-gold font-bold text-xs md:text-sm group-hover:gap-2.5 transition-all"
+                  >
+                    {item.action} <ChevronRight size={15} />
+                  </a>
                 </motion.div>
               ))}
 
+              {/* Working Hours Card */}
               <motion.div 
                 variants={itemVariants}
-                className="bg-brand-gold p-6 lg:p-8 rounded-[24px] lg:rounded-[32px] text-brand-navy"
+                className="bg-gradient-to-br from-brand-gold to-[#cca232] p-5 md:p-6 lg:p-8 rounded-2xl md:rounded-[28px] text-brand-navy shadow-md"
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-brand-navy text-brand-gold flex items-center justify-center">
-                    <Clock size={20} />
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-9 h-9 rounded-xl bg-brand-navy text-brand-gold flex items-center justify-center shadow-sm">
+                    <Clock size={18} />
                   </div>
-                  <h4 className="font-bold">Çalışma Saatleri</h4>
+                  <h4 className="font-black text-sm md:text-base">Çalışma Saatleri</h4>
                 </div>
-                <div className="space-y-4 font-medium opacity-90">
-                  <div className="flex justify-between border-b border-brand-navy/10 pb-2">
+                <div className="space-y-3 text-xs md:text-sm font-semibold">
+                  <div className="flex justify-between border-b border-brand-navy/15 pb-2">
                     <span>Hafta İçi</span>
                     <span>08:30 - 18:30</span>
                   </div>
-                  <div className="flex justify-between border-b border-brand-navy/10 pb-2">
+                  <div className="flex justify-between border-b border-brand-navy/15 pb-2">
                     <span>Cumartesi</span>
                     <span>09:00 - 14:00</span>
                   </div>
-                  <div className="flex justify-between font-bold">
+                  <div className="flex justify-between pt-1">
                     <span>Pazar</span>
-                    <span>Kapalı</span>
+                    <span className="font-black text-red-950">Kapalı</span>
                   </div>
                 </div>
               </motion.div>
@@ -150,89 +163,85 @@ export default function ContactPage() {
 
             {/* RIGHT COLUMN: REFINED FORM */}
             <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.15 }}
               className="lg:col-span-8"
             >
-              <div className="bg-white p-6 md:p-10 lg:p-16 rounded-[32px] lg:rounded-[48px] border border-slate-100 shadow-2xl relative overflow-hidden">
-                {/* Subtle Form Accent */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-bl-[100px]" />
-                
+              <div className="bg-white p-6 sm:p-8 md:p-10 lg:p-14 rounded-2xl md:rounded-[36px] border border-slate-100 shadow-xl relative overflow-hidden">
                 <div className="relative z-10">
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-navy mb-4 font-display">Bize Mesaj Gönderin</h2>
-                  <p className="text-slate-500 mb-8 lg:mb-12 max-w-xl text-sm md:text-base">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-brand-navy mb-3 font-display">Bize Mesaj Gönderin</h2>
+                  <p className="text-slate-500 mb-6 md:mb-10 text-xs sm:text-sm md:text-base leading-relaxed">
                     Sizden haber almaktan memnuniyet duyarız. Formu doldurduğunuzda teknik ekibimiz 24 saat içinde size geri dönüş yapacaktır.
                   </p>
 
-                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 md:space-y-8">
-                    <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                      <div className="space-y-2">
-                        <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Ad Soyad</label>
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                      <div className="space-y-1.5">
+                        <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider ml-1">Ad Soyad</label>
                         <input 
                           {...register('name')}
-                          className={`w-full bg-slate-50 px-4 py-3 md:px-6 md:py-4 rounded-xl md:rounded-2xl border-2 transition-all duration-300 outline-none text-brand-navy font-medium text-sm md:text-base ${
-                            errors.name ? 'border-red-100 bg-red-50/30' : 'border-transparent focus:border-brand-gold focus:bg-white focus:shadow-[0_0_20px_rgba(212,175,55,0.2)]'
+                          className={`w-full bg-slate-50 px-4 py-3.5 md:px-5 md:py-4 rounded-xl md:rounded-2xl border transition-all outline-none text-brand-navy font-medium text-sm md:text-base ${
+                            errors.name ? 'border-red-300 bg-red-50/40' : 'border-slate-200 focus:border-brand-gold focus:bg-white focus:shadow-[0_0_15px_rgba(212,175,55,0.15)]'
                           }`}
                           placeholder="Ahmet Yılmaz"
                         />
-                        {errors.name && <p className="text-[10px] text-red-500 font-bold uppercase tracking-tighter ml-1">{errors.name.message as string}</p>}
+                        {errors.name && <p className="text-[10px] text-red-500 font-bold ml-1">{errors.name.message as string}</p>}
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">E-Posta</label>
+                      <div className="space-y-1.5">
+                        <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider ml-1">E-Posta</label>
                         <input 
                           {...register('email')}
-                          className={`w-full bg-slate-50 px-4 py-3 md:px-6 md:py-4 rounded-xl md:rounded-2xl border-2 transition-all duration-300 outline-none text-brand-navy font-medium text-sm md:text-base ${
-                            errors.email ? 'border-red-100 bg-red-50/30' : 'border-transparent focus:border-brand-gold focus:bg-white focus:shadow-[0_0_20px_rgba(212,175,55,0.2)]'
+                          className={`w-full bg-slate-50 px-4 py-3.5 md:px-5 md:py-4 rounded-xl md:rounded-2xl border transition-all outline-none text-brand-navy font-medium text-sm md:text-base ${
+                            errors.email ? 'border-red-300 bg-red-50/40' : 'border-slate-200 focus:border-brand-gold focus:bg-white focus:shadow-[0_0_15px_rgba(212,175,55,0.15)]'
                           }`}
                           placeholder="ahmet@example.com"
                         />
-                        {errors.email && <p className="text-[10px] text-red-500 font-bold uppercase tracking-tighter ml-1">{errors.email.message as string}</p>}
+                        {errors.email && <p className="text-[10px] text-red-500 font-bold ml-1">{errors.email.message as string}</p>}
                       </div>
                     </div>
                     
-                    <div className="space-y-2">
-                      <label className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Konu Başlığı</label>
+                    <div className="space-y-1.5">
+                      <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider ml-1">Konu Başlığı</label>
                       <input 
                         {...register('subject')}
-                        className={`w-full bg-slate-50 px-4 py-3 md:px-6 md:py-4 rounded-xl md:rounded-2xl border-2 transition-all duration-300 outline-none text-brand-navy font-medium text-sm md:text-base ${
-                          errors.subject ? 'border-red-100 bg-red-50/30' : 'border-transparent focus:border-brand-gold focus:bg-white focus:shadow-[0_0_20px_rgba(212,175,55,0.2)]'
+                        className={`w-full bg-slate-50 px-4 py-3.5 md:px-5 md:py-4 rounded-xl md:rounded-2xl border transition-all outline-none text-brand-navy font-medium text-sm md:text-base ${
+                          errors.subject ? 'border-red-300 bg-red-50/40' : 'border-slate-200 focus:border-brand-gold focus:bg-white focus:shadow-[0_0_15px_rgba(212,175,55,0.15)]'
                         }`}
                         placeholder="Teklif Talebi, Ürün Bilgisi vb."
                       />
-                      {errors.subject && <p className="text-[10px] text-red-500 font-bold uppercase tracking-tighter ml-1">{errors.subject.message as string}</p>}
+                      {errors.subject && <p className="text-[10px] text-red-500 font-bold ml-1">{errors.subject.message as string}</p>}
                     </div>
 
-                    <div className="space-y-2">
-                      <label className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Mesajınız</label>
+                    <div className="space-y-1.5">
+                      <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider ml-1">Mesajınız</label>
                       <textarea 
                         {...register('message')}
-                        rows={5}
-                        className={`w-full bg-slate-50 px-4 py-3 md:px-6 md:py-4 rounded-xl md:rounded-2xl border-2 transition-all duration-300 outline-none text-brand-navy font-medium text-sm md:text-base resize-none ${
-                          errors.message ? 'border-red-100 bg-red-50/30' : 'border-transparent focus:border-brand-gold focus:bg-white focus:shadow-[0_0_20px_rgba(212,175,55,0.2)]'
+                        rows={4}
+                        className={`w-full bg-slate-50 px-4 py-3.5 md:px-5 md:py-4 rounded-xl md:rounded-2xl border transition-all outline-none text-brand-navy font-medium text-sm md:text-base resize-none ${
+                          errors.message ? 'border-red-300 bg-red-50/40' : 'border-slate-200 focus:border-brand-gold focus:bg-white focus:shadow-[0_0_15px_rgba(212,175,55,0.15)]'
                         }`}
                         placeholder="Mesajınızı buraya yazınız..."
                       />
-                      {errors.message && <p className="text-[10px] text-red-500 font-bold uppercase tracking-tighter ml-1">{errors.message.message as string}</p>}
+                      {errors.message && <p className="text-[10px] text-red-500 font-bold ml-1">{errors.message.message as string}</p>}
                     </div>
 
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="group relative w-full lg:w-auto min-w-[240px] bg-brand-navy text-white h-16 rounded-2xl font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:shadow-[0_20px_40px_-15px_rgba(5,11,21,0.3)]"
+                      className="group relative w-full lg:w-auto min-w-[220px] bg-brand-navy text-white h-14 md:h-16 rounded-xl md:rounded-2xl font-bold flex items-center justify-center gap-3 overflow-hidden transition-all hover:shadow-[0_15px_30px_-10px_rgba(5,11,21,0.3)] active:scale-[0.98]"
                     >
-                      <span className="relative z-10 flex items-center gap-3">
+                      <span className="relative z-10 flex items-center gap-3 text-sm md:text-base">
                         {isSubmitting ? (
                           <div className="w-5 h-5 border-2 border-white/30 border-t-brand-gold rounded-full animate-spin" />
                         ) : (
                           <>
                             Mesajı Gönder
-                            <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                            <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                           </>
                         )}
                       </span>
                       <div className="absolute inset-0 bg-brand-gold translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                      <div className="absolute inset-0 bg-brand-gold opacity-0 group-hover:opacity-100 transition-opacity" />
                     </button>
                   </form>
                 </div>

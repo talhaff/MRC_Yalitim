@@ -26,7 +26,7 @@ export default function AboutPage() {
   return (
     <main className="flex flex-col w-full bg-white overflow-x-hidden">
       {/* 1. PREMIUM HEADER */}
-      <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 bg-[#050B15] overflow-hidden">
+      <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 lg:pt-40 lg:pb-28 bg-[#050B15] overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[120px] -mr-64 -mt-64" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px] -ml-32 -mb-32" />
@@ -39,15 +39,22 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-brand-gold text-xs font-bold uppercase tracking-[0.2em] mb-8">
-              <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse" />
+            {/* Luxury Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-brand-gold/20 via-brand-gold/10 to-transparent border border-brand-gold/30 text-brand-gold font-bold text-[11px] md:text-xs uppercase tracking-[0.2em] backdrop-blur-md shadow-[0_2px_15px_rgba(212,175,55,0.15)] mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-80"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
+              </span>
               Kurumsal Kimliğimiz
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 lg:mb-8 font-display leading-[1.1]">
+            
+            <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 lg:mb-8 font-display leading-[1.08] tracking-tight">
               Geleceği <br />
-              <span className="text-brand-gold">Şekillendiriyoruz.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-200 to-brand-gold bg-[length:200%_auto] animate-gradient">
+                Şekillendiriyoruz.
+              </span>
             </h1>
-            <p className="text-slate-400 text-xl leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
+            <p className="text-slate-300 text-base md:text-xl leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
               Yarım asra yaklaşan vizyonumuzla, yalıtım sektöründe kaliteyi ve estetiği en üst seviyede buluşturuyoruz.
             </p>
           </motion.div>
@@ -108,13 +115,18 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative mt-8 lg:mt-0"
+              className="relative mt-8 lg:mt-0 max-w-lg mx-auto lg:max-w-none"
             >
-              <div className="relative z-10 rounded-[40px] lg:rounded-[60px] overflow-hidden shadow-2xl border-[8px] lg:border-[12px] border-slate-50">
-                <Image src="/images/about-factory.jpg" alt="MRC Üretim" width={800} height={1000} className="w-full h-auto object-cover scale-105" />
+              <div className="relative z-10 rounded-[32px] lg:rounded-[48px] overflow-hidden shadow-2xl border-[6px] lg:border-[10px] border-slate-100/80 aspect-[3/4]">
+                <Image 
+                  src="/images/about-factory.jpg" 
+                  alt="MRC Yalıtım Üretim Tesisi" 
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700 ease-out" 
+                />
               </div>
-              <div className="absolute -top-4 -right-4 lg:-top-10 lg:-right-10 w-24 h-24 lg:w-40 lg:h-40 bg-brand-gold rounded-[24px] lg:rounded-[40px] -z-10 rotate-12" />
-              <div className="absolute -bottom-4 -left-4 lg:-bottom-10 lg:-left-10 w-24 h-24 lg:w-40 lg:h-40 bg-brand-navy rounded-[24px] lg:rounded-[40px] -z-10 -rotate-6" />
+              <div className="absolute -top-3 -right-3 lg:-top-6 lg:-right-6 w-24 h-24 lg:w-36 lg:h-36 bg-brand-gold/80 rounded-2xl lg:rounded-[36px] -z-10 rotate-12 shadow-lg" />
+              <div className="absolute -bottom-3 -left-3 lg:-bottom-6 lg:-left-6 w-24 h-24 lg:w-36 lg:h-36 bg-brand-navy rounded-2xl lg:rounded-[36px] -z-10 -rotate-6 shadow-xl" />
             </motion.div>
           </div>
         </div>
