@@ -20,10 +20,26 @@ export default function ContactPage() {
   });
 
   const onSubmit = async (data: any) => {
-    console.log('Sending message:', data);
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    toast.success('Mesajınız başarıyla iletildi. Teşekkür ederiz.');
-    reset();
+    try {
+      // 1. Send to Email API (mrcyalitim@gmail.com)
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      // 2. Format & Open WhatsApp
+      const waText = `*Yeni Web İletişim Mesajı (mrcyalitim.com)*\n\n👤 *Ad Soyad:* ${data.name}\n📧 *E-Posta:* ${data.email}\n🏷️ *Konu:* ${data.subject}\n\n📝 *Mesaj:*\n${data.message}`;
+      const waUrl = `https://wa.me/905322585244?text=${encodeURIComponent(waText)}`;
+      
+      toast.success('Mesajınız iletildi! WhatsApp hattımıza yönlendiriliyorsunuz...');
+      window.open(waUrl, '_blank');
+      
+      reset();
+    } catch (error) {
+      console.error(error);
+      toast.error('Mesaj iletilirken bir hata oluştu. Lütfen tekrar deneyiniz.');
+    }
   };
 
   const containerVariants = {
