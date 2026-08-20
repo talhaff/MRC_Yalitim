@@ -106,9 +106,9 @@ export default function ContactPage() {
                 { 
                   icon: <Mail size={22} />, 
                   title: 'E-Posta Adresi', 
-                  content: 'info@mrcyalitim.com',
+                  content: 'mrcyalitim@gmail.com',
                   action: 'Mail Gönder',
-                  link: 'mailto:info@mrcyalitim.com'
+                  link: 'mailto:mrcyalitim@gmail.com'
                 },
               ].map((item, idx) => (
                 <motion.div 

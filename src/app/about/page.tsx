@@ -115,9 +115,9 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative mt-8 lg:mt-0 max-w-lg mx-auto lg:max-w-none"
+              className="relative mt-8 lg:mt-0 w-full max-w-lg mx-auto lg:max-w-none"
             >
-              <div className="relative z-10 rounded-[32px] lg:rounded-[48px] overflow-hidden shadow-2xl border-[6px] lg:border-[10px] border-slate-100/80 aspect-[3/4]">
+              <div className="relative z-10 w-full aspect-[3/4] rounded-[32px] lg:rounded-[48px] overflow-hidden shadow-2xl border-[6px] lg:border-[10px] border-slate-100/80 bg-slate-900">
                 <Image 
                   src="/images/about-factory.jpg" 
                   alt="MRC Yalıtım Üretim Tesisi" 
@@ -205,20 +205,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. CTA - EXPERIENCE */}
-      <section className="py-12 md:py-16 bg-brand-gold">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-12 text-center lg:text-left">
-          <div className="text-brand-navy space-y-3">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black font-display">Tecrübemize Güvenin.</h2>
-            <p className="text-brand-navy/80 text-base md:text-xl font-medium">Büyük projeleriniz için özel üretim ve teknik danışmanlık sağlıyoruz.</p>
-          </div>
-          <div className="flex gap-4 w-full sm:w-auto">
-            <button className="bg-brand-navy text-white px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-transform shadow-2xl w-full sm:w-auto">
-              Projeleri İncele
-            </button>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

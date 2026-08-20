@@ -143,8 +143,8 @@ export function Navbar() {
             <a href="tel:+905322585244" className="flex items-center gap-3 active:text-brand-gold">
               <Phone size={16} className="text-brand-gold shrink-0"/> +90 532 258 52 44
             </a>
-            <a href="mailto:info@mrcyalitim.com" className="flex items-center gap-3 active:text-brand-gold">
-              <Mail size={16} className="text-brand-gold shrink-0"/> info@mrcyalitim.com
+            <a href="mailto:mrcyalitim@gmail.com" className="flex items-center gap-3 active:text-brand-gold">
+              <Mail size={16} className="text-brand-gold shrink-0"/> mrcyalitim@gmail.com
             </a>
           </div>
         </div>
@@ -230,7 +230,7 @@ export function Footer() {
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-brand-gold/20 transition-colors">
                   <Mail size={18} className="text-brand-gold" />
                 </div>
-                <span className="text-sm">info@mrcyalitim.com</span>
+                <span className="text-sm">mrcyalitim@gmail.com</span>
               </li>
             </ul>
           </div>
