@@ -45,7 +45,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-[url('/images/dots.svg')] opacity-20 bg-center" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-20 items-center">
+        <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div 
             style={{ y: yHeroText, opacity: opacityHero }}
             initial={{ opacity: 0, x: -50 }}
@@ -144,9 +144,9 @@ export default function HomePage() {
       </section>
 
       {/* 2. PRODUCTION STRENGTH */}
-      <section className="py-20 lg:py-32 bg-white relative">
+      <section className="py-16 lg:py-24 bg-white relative">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
+          <div className="grid lg:grid-cols-3 gap-10 lg:gap-12">
             <motion.div 
               whileInView="visible"
               initial="hidden"
@@ -191,9 +191,9 @@ export default function HomePage() {
       </section>
 
       {/* 3. SHOWCASE SECTION */}
-      <section className="py-20 lg:py-32 bg-[#0A192F] text-white">
+      <section className="py-16 lg:py-24 bg-[#0A192F] text-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20 space-y-4 flex flex-col items-center">
+          <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16 space-y-4 flex flex-col items-center">
             <p className="text-brand-gold font-bold uppercase tracking-widest text-xs md:text-sm">Katalog & Ürünler</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display">Tüm Ürün Gruplarımız</h2>
             <Link 
@@ -241,7 +241,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. CALL TO ACTION */}
-      <section className="py-16 md:py-20 bg-brand-gold">
+      <section className="py-12 md:py-16 bg-brand-gold">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-10 text-center lg:text-left">
           <div className="text-brand-navy space-y-3">
             <h2 className="text-3xl lg:text-4xl font-black font-display">Projeniz İçin Teklif Alın</h2>

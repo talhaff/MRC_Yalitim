@@ -26,7 +26,7 @@ export default function AboutPage() {
   return (
     <main className="flex flex-col w-full bg-white overflow-x-hidden">
       {/* 1. PREMIUM HEADER */}
-      <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-32 bg-[#050B15] overflow-hidden">
+      <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 bg-[#050B15] overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[120px] -mr-64 -mt-64" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px] -ml-32 -mb-32" />
@@ -55,9 +55,9 @@ export default function AboutPage() {
       </section>
 
       {/* 2. STORY SECTION */}
-      <section className="py-20 lg:py-32 relative z-10">
+      <section className="py-16 lg:py-24 relative z-10">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -121,11 +121,11 @@ export default function AboutPage() {
       </section>
 
       {/* 3. CORE VALUES - DARK GLASS */}
-      <section className="py-20 lg:py-32 bg-[#050B15] relative overflow-hidden">
+      <section className="py-16 lg:py-24 bg-[#050B15] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/images/dots.svg')] bg-repeat" />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+          <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
             <p className="text-brand-gold font-bold uppercase tracking-widest text-xs md:text-sm mb-4">Vizyon & Misyon</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-display">Geleceğin Yapılarını Bugün İnşa Ediyoruz</h2>
           </div>
@@ -160,9 +160,9 @@ export default function AboutPage() {
       </section>
 
       {/* 4. WHY US - QUALITY GRID */}
-      <section className="py-20 lg:py-32 bg-white">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 lg:mb-20">
+          <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy font-display mb-4">Neden MRC Yalıtım?</h2>
             <div className="w-20 h-1 bg-brand-gold mx-auto" />
           </div>
@@ -194,7 +194,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5. CTA - EXPERIENCE */}
-      <section className="py-16 md:py-20 bg-brand-gold">
+      <section className="py-12 md:py-16 bg-brand-gold">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-12 text-center lg:text-left">
           <div className="text-brand-navy space-y-3">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black font-display">Tecrübemize Güvenin.</h2>

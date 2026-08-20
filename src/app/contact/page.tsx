@@ -42,7 +42,7 @@ export default function ContactPage() {
   return (
     <main className="flex flex-col w-full bg-[#FAFAFB] overflow-x-hidden">
       {/* 1. PREMIUM HEADER */}
-      <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-32 bg-[#050B15] overflow-hidden">
+      <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 bg-[#050B15] overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[120px] -mr-64 -mt-64" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px] -ml-32 -mb-32" />
@@ -70,7 +70,7 @@ export default function ContactPage() {
       </section>
 
       {/* 2. CONTACT CARDS & FORM */}
-      <section className="pb-32 -mt-16 relative z-20">
+      <section className="pb-24 -mt-24 relative z-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-12 gap-8 items-start">
             
@@ -79,7 +79,7 @@ export default function ContactPage() {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="lg:col-span-4 space-y-6"
+              className="lg:col-span-4 space-y-4"
             >
               {[
                 { 
