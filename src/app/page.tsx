@@ -54,12 +54,12 @@ export default function HomePage() {
             className="text-white space-y-6 md:space-y-8"
           >
             {/* Luxury Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-brand-gold/20 via-brand-gold/10 to-transparent border border-brand-gold/30 text-brand-gold font-bold text-[11px] md:text-xs uppercase tracking-[0.2em] backdrop-blur-md shadow-[0_2px_15px_rgba(212,175,55,0.15)]">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-brand-gold/20 via-brand-gold/10 to-transparent border border-brand-gold/30 text-brand-gold font-bold text-[11px] md:text-xs uppercase tracking-[0.16em] backdrop-blur-md shadow-[0_2px_15px_rgba(212,175,55,0.15)]">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-80"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
               </span>
-              Sektörün Öncü Üretim Gücü
+              Yalıtımın ve Estetiğin Buluşma Noktası
             </div>
             
             <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-8xl font-black leading-[1.08] tracking-tight font-display">

@@ -92,9 +92,9 @@ export default function ContactPage() {
                 { 
                   icon: <MapPin size={22} />, 
                   title: 'Merkez Fabrika', 
-                  content: 'Organize Sanayi Bölgesi, Malatya',
+                  content: '1.OSB Mah. 5.Cd. No: 13/2 Yeşilyurt / Malatya',
                   action: 'Yol Tarifi Al',
-                  link: 'https://maps.google.com/?q=Organize+Sanayi+Bolgesi+Malatya'
+                  link: 'https://maps.google.com/?q=1.OSB+Mahallesi+5.Cd.+No:+13/2+Ye%C5%9Filyurt+Malatya'
                 },
                 { 
                   icon: <Phone size={22} />, 
@@ -252,17 +252,11 @@ export default function ContactPage() {
       </section>
 
       {/* 3. ELEGANT MAP SECTION */}
-      <section className="relative h-[400px] md:h-[600px] w-full overflow-hidden group">
-        <div className="absolute inset-0 bg-slate-200 flex items-center justify-center">
-          <div className="absolute inset-0 opacity-10 bg-[url('/images/dots.svg')] bg-repeat" />
-          <div className="animate-pulse flex flex-col items-center gap-4">
-             <div className="w-12 h-12 border-4 border-brand-navy/20 border-t-brand-gold rounded-full animate-spin" />
-             <p className="text-brand-navy font-bold text-sm tracking-widest uppercase">Harita Yükleniyor...</p>
-          </div>
-        </div>
+      <section className="relative h-[380px] md:h-[520px] w-full overflow-hidden border-t border-b border-slate-200">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99901.76673898144!2d38.1278144372138!3d38.30906233486395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x153282215f94ba05%3A0xea69a4892c902242!2zWWXFn2lseXVydC9NYWxhdHlh!5e0!3m2!1str!2str!4v1716503023245!5m2!1str!2str" 
-          className="w-full h-full border-0 absolute inset-0 z-10 grayscale hover:grayscale-0 transition-all duration-1000" 
+          title="MRC Yalıtım Fabrika Konumu"
+          src="https://maps.google.com/maps?q=1.+Organize+Sanayi+B%C3%B6lgesi+5.+Cadde+No:+13%2F2+Ye%C5%9Filyurt+Malatya&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+          className="w-full h-full border-0 absolute inset-0 z-10" 
           allowFullScreen 
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"

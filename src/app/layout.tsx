@@ -9,8 +9,8 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
-  title: "MRC Yalıtım ve Söve | Profesyonel Yalıtım Çözümleri",
-  description: "Türkiye'nin lider yalıtım ve söve üreticisi. EPS yalıtım levhaları, dış cephe söveleri ve dekoratif kaplamalar.",
+  title: "MRC Yalıtım ve Söve | Yalıtımın ve Estetiğin Buluşma Noktası",
+  description: "Türkiye'nin lider yalıtım ve söve üreticisi. EPS yalıtım levhaları, dış cephe söveleri ve dekoratif kaplamalar. Yalıtımın ve estetiğin buluşma noktası.",
 };
 
 export default function RootLayout({

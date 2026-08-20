@@ -218,7 +218,7 @@ export function Footer() {
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-brand-gold/20 transition-colors">
                   <MapPin size={18} className="text-brand-gold" />
                 </div>
-                <span className="text-sm leading-relaxed">Organize Sanayi Bölgesi, <br />Malatya</span>
+                <span className="text-sm leading-relaxed">1.OSB Mahallesi 5.Cd. No: 13/2 <br />Yeşilyurt / Malatya</span>
               </li>
               <li className="flex gap-4 group">
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-brand-gold/20 transition-colors">
@@ -237,7 +237,7 @@ export function Footer() {
         </div>
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left text-xs text-slate-500">
-          <p>© 2024 MRC Yalıtım ve Söve A.Ş. Geleceğin yapılarını bugünden yalıtıyoruz.</p>
+          <p>© 2026 MRC Yalıtım ve Söve A.Ş. Yalıtımın ve estetiğin buluşma noktası.</p>
           <div className="flex flex-wrap justify-center gap-6">
             <Link href="#" className="hover:text-white transition-colors">KVKK</Link>
             <Link href="#" className="hover:text-white transition-colors">Çerez Politikası</Link>
