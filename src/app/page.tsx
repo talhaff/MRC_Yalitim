@@ -61,32 +61,44 @@ export default function HomePage() {
               Sektörün Öncü Üretim Gücü
             </div>
             
-            <h1 className="text-6xl lg:text-8xl font-bold leading-[1.05] font-display">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold leading-[1.1] md:leading-[1.05] font-display">
               Geleceği <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-white to-brand-gold bg-[length:200%_auto] animate-gradient">Yalıtıyoruz.</span>
             </h1>
             
-            <p className="text-xl text-slate-400 max-w-xl leading-relaxed font-light">
+            <p className="text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed font-light">
               Yüksek yoğunluklu EPS yalıtım çözümleri ve estetik dış cephe söve profilleriyle, yapılarınıza değer katan mühendislik harikaları üretiyoruz.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-5 pt-6">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-5 pt-6">
               <Link 
                 href="/contact" 
-                className="group relative bg-brand-gold text-brand-navy px-10 py-5 rounded-2xl font-bold transition-all flex items-center justify-center gap-3 text-lg overflow-hidden"
+                className="group relative bg-brand-gold text-brand-navy px-8 md:px-10 py-4 md:py-5 rounded-2xl font-bold transition-all flex items-center justify-center gap-3 text-base md:text-lg overflow-hidden shadow-[0_0_20px_rgba(212,175,55,0.2)]"
               >
                 <span className="relative z-10">İletişime Geçin</span>
-                <ArrowRight size={22} className="relative z-10 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </Link>
               <Link 
                 href="/MRC_2026_Katalog.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 text-white font-bold hover:text-brand-gold transition-colors px-10 border border-white/10 hover:border-brand-gold/30 rounded-2xl bg-white/5 hover:bg-white/10"
+                className="flex items-center justify-center gap-3 text-white font-bold hover:text-brand-gold transition-colors py-4 px-8 md:px-10 border border-white/10 hover:border-brand-gold/30 rounded-2xl bg-white/5 hover:bg-white/10"
               >
-                <Award size={24} strokeWidth={1.5} /> 2026 Kataloğu İndir
+                <Award size={22} strokeWidth={1.5} /> 2026 Kataloğu İndir
               </Link>
+            </div>
+
+            {/* Mobile Stats Badge */}
+            <div className="flex lg:hidden justify-between items-center bg-white/5 border border-white/10 rounded-2xl p-6 mt-8 backdrop-blur-sm">
+              <div className="text-center w-1/2 border-r border-white/10">
+                <p className="text-3xl font-black text-white">25K<span className="text-brand-gold">+</span></p>
+                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">m² Üretim/Ay</p>
+              </div>
+              <div className="text-center w-1/2">
+                <p className="text-3xl font-black text-brand-gold">20</p>
+                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Yıllık Tecrübe</p>
+              </div>
             </div>
           </motion.div>
 
@@ -132,9 +144,9 @@ export default function HomePage() {
       </section>
 
       {/* 2. PRODUCTION STRENGTH */}
-      <section className="py-32 bg-white relative">
+      <section className="py-20 lg:py-32 bg-white relative">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-16">
+          <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
             <motion.div 
               whileInView="visible"
               initial="hidden"
@@ -142,8 +154,8 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="lg:col-span-1 space-y-8"
             >
-              <h2 className="text-4xl font-bold text-brand-navy font-display leading-tight">
-                Modern Üretim, <br /> Kusursuz Mühendislik.
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-navy font-display leading-tight">
+                Modern Üretim, <br className="hidden md:block" /> Kusursuz Mühendislik.
               </h2>
               <p className="text-slate-500 text-lg leading-relaxed">
                 Tesisimizdeki tam otomasyonlu sistemler, her ürünün milimetrik hassasiyetle ve aynı kalitede çıkmasını sağlar.
@@ -179,11 +191,11 @@ export default function HomePage() {
       </section>
 
       {/* 3. SHOWCASE SECTION */}
-      <section className="py-32 bg-[#0A192F] text-white">
+      <section className="py-20 lg:py-32 bg-[#0A192F] text-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4 flex flex-col items-center">
-            <p className="text-brand-gold font-bold uppercase tracking-widest text-sm">Katalog & Ürünler</p>
-            <h2 className="text-4xl lg:text-5xl font-bold font-display">Tüm Ürün Gruplarımız</h2>
+          <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20 space-y-4 flex flex-col items-center">
+            <p className="text-brand-gold font-bold uppercase tracking-widest text-xs md:text-sm">Katalog & Ürünler</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display">Tüm Ürün Gruplarımız</h2>
             <Link 
               href="/MRC_2026_Katalog.pdf" 
               target="_blank"
@@ -229,15 +241,15 @@ export default function HomePage() {
       </section>
 
       {/* 4. CALL TO ACTION */}
-      <section className="py-20 bg-brand-gold">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-10">
-          <div className="text-brand-navy space-y-2">
+      <section className="py-16 md:py-20 bg-brand-gold">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-10 text-center lg:text-left">
+          <div className="text-brand-navy space-y-3">
             <h2 className="text-3xl lg:text-4xl font-black font-display">Projeniz İçin Teklif Alın</h2>
-            <p className="text-brand-navy/70 text-lg">Özel ölçü ve toptan alımlar için uzman ekibimiz sizi bekliyor.</p>
+            <p className="text-brand-navy/80 text-base md:text-lg">Özel ölçü ve toptan alımlar için uzman ekibimiz sizi bekliyor.</p>
           </div>
           <Link 
             href="/contact" 
-            className="bg-brand-navy text-white px-12 py-6 rounded-2xl font-bold text-xl hover:scale-105 transition-transform shadow-2xl shadow-brand-navy/20"
+            className="bg-brand-navy text-white px-10 md:px-12 py-5 md:py-6 rounded-2xl font-bold text-lg md:text-xl hover:scale-105 transition-transform shadow-2xl shadow-brand-navy/20 w-full sm:w-auto"
           >
             Hemen Teklif İste
           </Link>
