@@ -8,12 +8,13 @@ import {
   ShieldCheck, 
   Factory, 
   Truck, 
-  Award,
-  ChevronRight,
-  PlayCircle,
-  Building2,
-  Users2
+  Award, 
+  ChevronRight, 
+  PlayCircle, 
+  Building2, 
+  Users2 
 } from 'lucide-react';
+import ProductMarquee from '@/components/home/ProductMarquee';
 
 export default function HomePage() {
   const containerVariants = {
@@ -119,10 +120,11 @@ export default function HomePage() {
                 className="w-full h-full relative"
               >
                 <Image 
-                  src="/images/hero-factory.jpg" 
+                  src="/images/arkaplan3.webp" 
                   alt="MRC Yalıtım Fabrika" 
                   fill 
-                  className="object-cover"
+                  priority
+                  className="object-cover object-center"
                 />
               </motion.div>
             </div>
@@ -146,52 +148,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. PRODUCTION STRENGTH */}
-      <section className="py-16 lg:py-24 bg-white relative">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-10 lg:gap-12">
-            <motion.div 
-              whileInView="visible"
-              initial="hidden"
-              variants={containerVariants}
-              viewport={{ once: true }}
-              className="lg:col-span-1 space-y-8"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-navy font-display leading-tight">
-                Modern Üretim, <br className="hidden md:block" /> Kusursuz Mühendislik.
-              </h2>
-              <p className="text-slate-500 text-lg leading-relaxed">
-                Tesisimizdeki tam otomasyonlu sistemler, her ürünün milimetrik hassasiyetle ve aynı kalitede çıkmasını sağlar.
-              </p>
-              <Link href="/about" className="inline-flex items-center gap-2 text-brand-gold font-bold group">
-                Fabrikamızı Tanıyın <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
-
-            <div className="lg:col-span-2 grid md:grid-cols-2 gap-8">
-              {[
-                { icon: <ShieldCheck />, title: 'Sertifikalı Kalite', desc: 'Tüm ürünlerimiz TSE, CE ve ISO standartlarında, zorlu laboratuvar testlerinden geçerek üretilir.' },
-                { icon: <Factory />, title: 'Yüksek Kapasite', desc: 'Aylık 25.000 m² üretim kapasitemizle, en büyük projelerin bile zamanında tedarikçisi oluyoruz.' },
-                { icon: <Users2 />, title: 'Teknik Danışmanlık', desc: 'Sadece üretim değil, projelendirme ve uygulama aşamasında da mühendislik desteği sunuyoruz.' },
-                { icon: <Building2 />, title: 'Geniş Ürün Gamı', desc: 'Söve modellerinden yalıtım levhalarına kadar 150+ farklı modelle zengin seçenekler.' },
-              ].map((item, idx) => (
-                <motion.div 
-                  key={idx}
-                  whileHover={{ y: -15, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="p-8 rounded-[32px] bg-slate-50 border border-slate-100 hover:border-brand-gold/40 hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.2)] transition-colors group cursor-default"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-white text-brand-gold flex items-center justify-center mb-6 shadow-sm group-hover:bg-brand-gold group-hover:text-white transition-colors">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-brand-navy mb-3">{item.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 2. PRODUCT SLIDING MARQUEE SECTION */}
+      <ProductMarquee />
 
       {/* 3. SHOWCASE SECTION */}
       <section className="py-16 lg:py-24 bg-[#0A192F] text-white">
@@ -239,6 +197,53 @@ export default function HomePage() {
                 </Link>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. PRODUCTION STRENGTH */}
+      <section className="py-16 lg:py-24 bg-white relative">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-3 gap-10 lg:gap-12">
+            <motion.div 
+              whileInView="visible"
+              initial="hidden"
+              variants={containerVariants}
+              viewport={{ once: true }}
+              className="lg:col-span-1 space-y-8"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-navy font-display leading-tight">
+                Modern Üretim, <br className="hidden md:block" /> Kusursuz Mühendislik.
+              </h2>
+              <p className="text-slate-500 text-lg leading-relaxed">
+                Tesisimizdeki tam otomasyonlu sistemler, her ürünün milimetrik hassasiyetle ve aynı kalitede çıkmasını sağlar.
+              </p>
+              <Link href="/about" className="inline-flex items-center gap-2 text-brand-gold font-bold group">
+                Fabrikamızı Tanıyın <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+
+            <div className="lg:col-span-2 grid md:grid-cols-2 gap-8">
+              {[
+                { icon: <ShieldCheck />, title: 'Sertifikalı Kalite', desc: 'Tüm ürünlerimiz TSE, CE ve ISO standartlarında, zorlu laboratuvar testlerinden geçerek üretilir.' },
+                { icon: <Factory />, title: 'Yüksek Kapasite', desc: 'Aylık 25.000 m² üretim kapasitemizle, en büyük projelerin bile zamanında tedarikçisi oluyoruz.' },
+                { icon: <Users2 />, title: 'Teknik Danışmanlık', desc: 'Sadece üretim değil, projelendirme ve uygulama aşamasında da mühendislik desteği sunuyoruz.' },
+                { icon: <Building2 />, title: 'Geniş Ürün Gamı', desc: 'Söve modellerinden yalıtım levhalarına kadar 150+ farklı modelle zengin seçenekler.' },
+              ].map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  whileHover={{ y: -15, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="p-8 rounded-[32px] bg-slate-50 border border-slate-100 hover:border-brand-gold/40 hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.2)] transition-colors group cursor-default"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-white text-brand-gold flex items-center justify-center mb-6 shadow-sm group-hover:bg-brand-gold group-hover:text-white transition-colors">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-navy mb-3">{item.title}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

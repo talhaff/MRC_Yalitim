@@ -34,3 +34,45 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-slate-400;
 }
+
+/* Infinite Marquee Animations */
+@keyframes marquee-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-left 85s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-right 90s linear infinite;
+}
+
+.marquee-paused {
+  animation-play-state: paused !important;
+}
+
+.marquee-running {
+  animation-play-state: running;
+}
+
