@@ -317,9 +317,9 @@ const allProducts: ProductItem[] = [
 const categories = [
   { name: 'Tüm Modeller (27)', slug: 'all' },
   { name: 'Söve Profilleri (8)', slug: 'sove' },
+  { name: 'Dış Cephe & Paneller (4)', slug: 'cephe' },
   { name: 'Dekoratif Taç & Motif (4)', slug: 'tac' },
   { name: 'Köşe Elemanları & Taşlar (5)', slug: 'kose' },
-  { name: 'Dış Cephe & Paneller (4)', slug: 'cephe' },
   { name: 'Sütun & Silmeler (6)', slug: 'sutun' }
 ];
 
