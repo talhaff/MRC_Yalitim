@@ -336,8 +336,8 @@ export default function ProductMarquee() {
     ? allProducts 
     : allProducts.filter(p => p.categorySlug === activeCategory);
 
-  // Duplicate for smooth infinite loop
-  const displayList = [...filteredProducts, ...filteredProducts, ...filteredProducts];
+  // Duplicate for smooth infinite loop (optimized 2x)
+  const displayList = [...filteredProducts, ...filteredProducts];
 
   // Manual step scroll handlers
   const handleScrollManual = (direction: 'left' | 'right') => {
@@ -548,6 +548,8 @@ function ProductCard({ product, onSelect }: { product: ProductItem; onSelect: ()
             alt={`Malatya ${product.name} (${product.category}) - MRC Söve Yalıtım`}
             width={280}
             height={160}
+            loading="lazy"
+            sizes="(max-width: 640px) 230px, (max-width: 768px) 280px, 320px"
             className="max-h-full w-auto object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-500"
           />
         </div>
@@ -613,6 +615,8 @@ function ProductModal({ product, onClose }: { product: ProductItem; onClose: () 
               alt={`Malatya ${product.name} - ${product.category} İmalatı MRC Söve`}
               width={350}
               height={350}
+              loading="lazy"
+              sizes="(max-width: 640px) 280px, 350px"
               className="max-h-full w-auto object-contain drop-shadow-md"
             />
             <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-brand-gold text-brand-navy font-black text-[9px] sm:text-[10px] tracking-wider uppercase shadow">

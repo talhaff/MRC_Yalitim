@@ -80,6 +80,7 @@ export function Navbar() {
               alt="MRC Yalıtım Logo" 
               width={140} 
               height={30} 
+              sizes="140px"
               className="object-contain scale-[1.3] sm:scale-[1.5] md:scale-[1.7] origin-left ml-0" 
               priority 
             />

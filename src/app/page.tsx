@@ -185,6 +185,7 @@ export default function HomePage() {
                   alt="Malatya Söve ve EPS Yalıtım Fabrikası Üretim Tesisi" 
                   fill 
                   priority
+                  sizes="(max-width: 1024px) 100vw, 600px"
                   className="object-cover object-center"
                 />
               </motion.div>
@@ -253,6 +254,8 @@ export default function HomePage() {
                     src={cat.img} 
                     alt={`Malatya ${cat.name} - MRC Yalıtım ve Söve Üretimi`} 
                     fill 
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
