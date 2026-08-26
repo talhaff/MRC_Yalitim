@@ -1,16 +1,31 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Kurumsal & Fabrika Üretim Gücü | MRC Söve & Yalıtım',
-  description: 'Malatya 1. OSB modern tesislerimizde yıllık 300.000 m² EPS yalıtım levhası ve söve üretim kapasitesi. MRC Söve & Yalıtım kurumsal kimliği, vizyon ve misyonu.',
+  title: 'Kurumsal & Malatya Fabrika Üretim Gücü',
+  description: 'Malatya 1. OSB modern tesislerimizde yıllık 300.000 m² EPS yalıtım levhası ve söve üretim kapasitesi. MRC Söve & Yalıtım kurumsal kimliği, vizyon, misyon ve kalite sertifikaları.',
+  keywords: [
+    'Malatya yalıtım fabrikası',
+    'MRC Yalıtım kurumsal',
+    'Malatya EPS üreticisi',
+    'söve fabrikası Malatya',
+    '1. OSB yalıtım tesisi',
+    'Yeşilyurt söve imalatı'
+  ],
   alternates: {
     canonical: 'https://mrcyalitim.com/about',
   },
   openGraph: {
-    title: 'Kurumsal | MRC Söve & Yalıtım',
-    description: 'Malatya 1. OSB modern tesislerimizde EPS yalıtım levhası ve söve üretim kapasitesi.',
+    title: 'Kurumsal & Malatya Fabrika Üretim Gücü | MRC Yalıtım',
+    description: 'Malatya 1. OSB modern tesislerimizde tam otomasyonlu EPS yalıtım levhası ve dış cephe söve üretimi.',
     url: 'https://mrcyalitim.com/about',
-    images: ['/images/about-factory.jpg'],
+    images: [
+      {
+        url: '/images/about-factory.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'MRC Yalıtım Fabrika Üretim Hattı Malatya',
+      }
+    ],
   },
 };
 

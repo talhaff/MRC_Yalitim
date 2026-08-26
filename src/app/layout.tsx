@@ -2,11 +2,11 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Navbar, Footer, FloatingAction } from "@/components/shared/LayoutComponents";
-import { PageTransition, OrganizationSchema } from "@/components/shared/SEOAndTransitions";
+import { PageTransition, OrganizationSchema, FAQSchema, ProductCatalogSchema } from "@/components/shared/SEOAndTransitions";
 import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: "swap" });
 
 export const viewport: Viewport = {
   themeColor: "#050B15",
@@ -18,27 +18,50 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://mrcyalitim.com"),
   title: {
-    default: "MRC Yalıtım ve Söve | Yalıtımın ve Estetiğin Buluşma Noktası",
-    template: "%s | MRC Yalıtım",
+    default: "Malatya Söve & EPS Yalıtım Fabrikası | MRC Yalıtım ve Mantolama",
+    template: "%s | MRC Yalıtım Malatya",
   },
-  description: "Malatya 1. OSB'de yüksek dansite EPS ısı yalıtım levhası ve estetik dış cephe söve profilleri üreticisi. Malatya yalıtım, mantolama ve söve çözümleri.",
+  description: "Malatya 1. OSB'de yüksek dansite EPS ısı yalıtım levhası, dış cephe mantolama ve dekoratif pencere söve profilleri üreticisi. Fabrikadan doğrudan satış ve toptan fiyat teklifi alın.",
   keywords: [
-    "Malatya yalıtım",
+    // 1. Ana Hedef Aramalar (SERP #1)
     "Malatya söve",
+    "Malatya yalıtım",
     "Malatya mantolama",
+    "EPS ısı yalıtım levhası",
+    "dış cephe kaplama",
+    "Malatya söve imalatı",
+    "Malatya strafor söve",
+    "Malatya mantolama fiyatları",
     "Malatya EPS üreticisi",
-    "dış cephe mantolama Malatya",
-    "ısı yalıtım levhası Malatya",
-    "söve modelleri Malatya",
-    "1. OSB yalıtım fabrikası",
-    "Yeşilyurt yalıtım firmaları",
+    
+    // 2. Ürün Bazlı Aramalar
+    "pencere söveleri",
+    "dış cephe söve modelleri",
+    "fugalı dış cephe kaplama",
+    "kat silmesi modelleri",
+    "saray tacı modelleri",
+    "bina köşe taşı",
+    "taşyünü söve profili",
+    "karbonlu EPS levha",
+    "beyaz EPS yalıtım straforu",
+    "yüksek dansite EPS",
+    "dekoratif payanda ve motif",
+    
+    // 3. Bölgesel & Fabrika Aramaları
+    "1. OSB Malatya yalıtım fabrikası",
+    "Yeşilyurt söve firmaları",
+    "Elazığ söve mantolama",
+    "Adıyaman yalıtım fabrikası",
+    "Kahramanmaraş söve imalatçıları",
+    "Doğu Anadolu EPS mantolama üreticisi",
     "MRC Yalıtım",
-    "MRC Söve",
-    "Doğu Anadolu yalıtım fabrikası"
+    "MRC Söve Malatya"
   ],
   authors: [{ name: "MRC Yalıtım ve Söve", url: "https://mrcyalitim.com" }],
   creator: "MRC Yalıtım ve Söve",
   publisher: "MRC Yalıtım ve Söve",
+  applicationName: "MRC Yalıtım",
+  category: "İnşaat ve Dış Cephe Yalıtım Sistemleri",
   formatDetection: {
     email: true,
     address: true,
@@ -46,27 +69,30 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://mrcyalitim.com",
+    languages: {
+      "tr-TR": "https://mrcyalitim.com",
+    },
   },
   openGraph: {
     type: "website",
     locale: "tr_TR",
     url: "https://mrcyalitim.com",
     siteName: "MRC Yalıtım ve Söve",
-    title: "MRC Yalıtım ve Söve | Yalıtımın ve Estetiğin Buluşma Noktası",
-    description: "Malatya'da yüksek teknolojili EPS ısı yalıtım levhaları ve dış cephe söve profilleri üretimi. Sektörün öncü üretim gücü.",
+    title: "Malatya Söve & EPS Yalıtım Fabrikası | MRC Yalıtım",
+    description: "Malatya 1. OSB'de yüksek dansite EPS ısı yalıtım levhası, dış cephe söve ve mantolama profilleri üreticisi. Fabrikadan doğrudan en uygun fiyatlar.",
     images: [
       {
         url: "/images/hero-factory.jpg",
         width: 1200,
         height: 630,
-        alt: "MRC Yalıtım Fabrikası ve Üretim Tesisi Malatya",
+        alt: "MRC Yalıtım ve Söve Üretim Tesisi Malatya",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MRC Yalıtım ve Söve | Yalıtımın ve Estetiğin Buluşma Noktası",
-    description: "Malatya 1. OSB modern üretim tesislerinde EPS yalıtım levhası ve söve imalatı.",
+    title: "Malatya Söve & EPS Yalıtım Fabrikası | MRC Yalıtım",
+    description: "Malatya 1. Organize Sanayi Bölgesi'nde yüksek dansite EPS yalıtım levhası ve dış cephe söve profilleri üretimi.",
     images: ["/images/hero-factory.jpg"],
   },
   robots: {
@@ -83,6 +109,12 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  other: {
+    "geo.region": "TR-44",
+    "geo.placename": "Malatya, Yeşilyurt",
+    "geo.position": "38.3582;38.2255",
+    "ICBM": "38.3582, 38.2255",
+  },
 };
 
 export default function RootLayout({
@@ -94,6 +126,8 @@ export default function RootLayout({
     <html lang="tr" className={`${inter.variable} ${outfit.variable}`}>
       <head>
         <OrganizationSchema />
+        <FAQSchema />
+        <ProductCatalogSchema />
       </head>
       <body className="antialiased bg-white text-slate-900 font-sans">
         <Navbar />

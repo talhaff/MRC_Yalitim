@@ -108,9 +108,9 @@ export default function ContactPage() {
                 { 
                   icon: <MapPin size={22} />, 
                   title: 'Merkez Fabrika', 
-                  content: '1.OSB Mah. 5.Cd. No: 13/2 Yeşilyurt / Malatya',
+                  content: '1.OSB Mah, 5. Cd. No: 13/2, 44900 Yeşilyurt / Malatya',
                   action: 'Yol Tarifi Al',
-                  link: 'https://maps.google.com/?q=1.OSB+Mahallesi+5.Cd.+No:+13/2+Ye%C5%9Filyurt+Malatya'
+                  link: 'https://maps.google.com/?q=MRC+S%C3%96VE+YALITIM+1.OSB+Mah.+5.+Cd.+No:+13/2+Ye%C5%9Filyurt+Malatya'
                 },
                 { 
                   icon: <Phone size={22} />, 
@@ -270,8 +270,8 @@ export default function ContactPage() {
       {/* 3. ELEGANT MAP SECTION */}
       <section className="relative h-[380px] md:h-[520px] w-full overflow-hidden border-t border-b border-slate-200">
         <iframe 
-          title="MRC Yalıtım Fabrika Konumu"
-          src="https://maps.google.com/maps?q=1.+Organize+Sanayi+B%C3%B6lgesi+5.+Cadde+No:+13%2F2+Ye%C5%9Filyurt+Malatya&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+          title="MRC SÖVE YALITIM Google Harita Konumu"
+          src="https://maps.google.com/maps?q=MRC+S%C3%96VE+YALITIM+1.OSB+Mah.+5.+Cd.+No:+13/2+Ye%C5%9Filyurt+Malatya&t=&z=16&ie=UTF8&iwloc=&output=embed" 
           className="w-full h-full border-0 absolute inset-0 z-10" 
           allowFullScreen 
           loading="lazy" 
@@ -282,19 +282,29 @@ export default function ContactPage() {
       {/* 4. CALL TO ACTION - FAST CONTACT */}
       <section className="py-16 md:py-24 bg-white border-t border-slate-100">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 text-center md:text-left">
-            <div className="space-y-4">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 text-center lg:text-left">
+            <div className="space-y-3">
               <h2 className="text-2xl md:text-3xl font-bold text-brand-navy font-display">Daha hızlı bir yanıt mı arıyorsunuz?</h2>
-              <p className="text-slate-500">Müşteri temsilcilerimizle WhatsApp üzerinden anında yazışmaya başlayın.</p>
+              <p className="text-slate-500">Müşteri temsilcilerimizle WhatsApp üzerinden yazışabilir veya doğrudan telefonla arayabilirsiniz.</p>
             </div>
-            <a 
-              href="https://wa.me/905322585244" 
-              target="_blank" 
-              className="flex items-center justify-center gap-3 md:gap-4 bg-[#25D366] text-white px-6 md:px-10 py-4 md:py-6 rounded-[24px] font-bold text-base md:text-xl hover:shadow-[0_20px_40px_-10px_rgba(37,211,102,0.4)] transition-all hover:scale-[1.02] w-full md:w-auto"
-            >
-              <MessageCircle size={24} className="md:w-8 md:h-8" />
-              WhatsApp Destek Hattı
-            </a>
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+              <a 
+                href="tel:+905322585244"
+                className="flex items-center justify-center gap-3 bg-brand-navy text-white px-6 md:px-8 py-4 md:py-5 rounded-2xl font-bold text-base md:text-lg hover:bg-brand-gold hover:text-brand-navy transition-all shadow-lg active:scale-95 w-full sm:w-auto"
+              >
+                <Phone size={22} className="text-brand-gold shrink-0" />
+                <span>+90 532 258 52 44</span>
+              </a>
+              <a 
+                href="https://wa.me/905322585244" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 md:px-8 py-4 md:py-5 rounded-2xl font-bold text-base md:text-lg hover:shadow-[0_15px_30px_-5px_rgba(37,211,102,0.4)] transition-all hover:scale-[1.02] active:scale-95 w-full sm:w-auto"
+              >
+                <MessageCircle size={22} />
+                <span>WhatsApp Hattı</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

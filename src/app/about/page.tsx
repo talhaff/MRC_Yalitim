@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { History, Target, Eye, ShieldCheck, Factory, Award, Building2, Globe2, ChevronRight } from 'lucide-react';
+import { History, Target, Eye, ShieldCheck, Factory, Award, Building2, Globe2, ChevronRight, Phone } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function AboutPage() {
@@ -179,7 +179,7 @@ export default function AboutPage() {
             <div className="w-20 h-1 bg-brand-gold mx-auto" />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 md:gap-12">
             {[
               { icon: <ShieldCheck />, title: 'Sertifikalı Kalite', sub: 'TSE & CE Belgeli' },
               { icon: <Factory />, title: 'Modern Üretim', sub: 'Tam Otomasyon' },
@@ -194,13 +194,33 @@ export default function AboutPage() {
                 transition={{ delay: i * 0.1 }}
                 className="text-center group"
               >
-                <div className="w-24 h-24 rounded-[32px] bg-slate-50 text-brand-navy flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-navy group-hover:text-brand-gold transition-all duration-500 shadow-sm">
-                  {React.cloneElement(item.icon as React.ReactElement, { size: 40 })}
+                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-2xl sm:rounded-[28px] md:rounded-[32px] bg-slate-50 text-brand-navy flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:bg-brand-navy group-hover:text-brand-gold transition-all duration-500 shadow-sm">
+                  {React.cloneElement(item.icon as React.ReactElement, { size: 30, className: "md:w-10 md:h-10" })}
                 </div>
-                <h4 className="text-lg font-bold text-brand-navy mb-1">{item.title}</h4>
-                <p className="text-xs font-bold text-brand-gold uppercase tracking-widest">{item.sub}</p>
+                <h4 className="text-sm sm:text-base md:text-lg font-bold text-brand-navy mb-1">{item.title}</h4>
+                <p className="text-[10px] sm:text-xs font-bold text-brand-gold uppercase tracking-widest">{item.sub}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CONTACT & FACTORY DIRECT CTA */}
+      <section className="py-12 md:py-16 bg-[#050B15] border-t border-white/10 relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+          <div className="space-y-2">
+            <p className="text-brand-gold font-bold text-xs uppercase tracking-[0.2em]">Doğrudan İletişim</p>
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white font-display">Fabrikamızla Görüşün, Projenizi Başlatın</h3>
+            <p className="text-slate-400 text-sm md:text-base">Teknik danışmanlık ve toptan tedarik için telefonla arayabilirsiniz.</p>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
+            <a 
+              href="tel:+905322585244"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-brand-gold text-brand-navy font-bold text-base md:text-lg hover:bg-white transition-colors shadow-lg active:scale-95 w-full sm:w-auto"
+            >
+              <Phone size={20} />
+              <span>+90 532 258 52 44</span>
+            </a>
           </div>
         </div>
       </section>

@@ -315,12 +315,12 @@ const allProducts: ProductItem[] = [
 ];
 
 const categories = [
-  { name: 'Tüm Modeller (27)', slug: 'all' },
-  { name: 'Söve Profilleri (8)', slug: 'sove' },
-  { name: 'Dış Cephe & Paneller (4)', slug: 'cephe' },
-  { name: 'Dekoratif Taç & Motif (4)', slug: 'tac' },
-  { name: 'Köşe Elemanları & Taşlar (5)', slug: 'kose' },
-  { name: 'Sütun & Silmeler (6)', slug: 'sutun' }
+  { name: 'Tümü', count: 27, slug: 'all' },
+  { name: 'Söveler', count: 8, slug: 'sove' },
+  { name: 'Dış Cephe', count: 4, slug: 'cephe' },
+  { name: 'Taç & Motif', count: 4, slug: 'tac' },
+  { name: 'Köşe Taşları', count: 5, slug: 'kose' },
+  { name: 'Sütun & Silme', count: 6, slug: 'sutun' }
 ];
 
 export default function ProductMarquee() {
@@ -329,6 +329,7 @@ export default function ProductMarquee() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
   const trackRef = useRef<HTMLDivElement>(null);
+  const tabsContainerRef = useRef<HTMLDivElement>(null);
 
   // Filtered products for active tab
   const filteredProducts = activeCategory === 'all' 
@@ -344,6 +345,15 @@ export default function ProductMarquee() {
     if (trackRef.current) {
       trackRef.current.scrollBy({ left: offset, behavior: 'smooth' });
     }
+  };
+
+  const handleCategorySelect = (slug: string, event: React.MouseEvent<HTMLButtonElement>) => {
+    setActiveCategory(slug);
+    event.currentTarget.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest'
+    });
   };
 
   return (
@@ -389,21 +399,34 @@ export default function ProductMarquee() {
 
         {/* Category Tabs & Interactive Control Toolbar */}
         <div className="mt-8 flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-4 border-t border-white/10">
-          {/* Categories */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 no-scrollbar">
-            {categories.map((cat) => (
-              <button
-                key={cat.slug}
-                onClick={() => setActiveCategory(cat.slug)}
-                className={`whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer ${
-                  activeCategory === cat.slug
-                    ? 'bg-brand-gold text-brand-navy shadow-lg shadow-brand-gold/20'
-                    : 'bg-white/[0.04] text-slate-300 hover:text-white hover:bg-white/[0.08] border border-white/10'
-                }`}
-              >
-                {cat.name}
-              </button>
-            ))}
+          
+          {/* Categories with Horizontal Scroll & Indicator */}
+          <div className="relative w-full lg:max-w-3xl overflow-hidden py-1">
+            <div 
+              ref={tabsContainerRef}
+              className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar scroll-smooth px-1"
+            >
+              {categories.map((cat) => (
+                <button
+                  key={cat.slug}
+                  onClick={(e) => handleCategorySelect(cat.slug, e)}
+                  className={`whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer flex items-center gap-2 shrink-0 active:scale-95 ${
+                    activeCategory === cat.slug
+                      ? 'bg-brand-gold text-brand-navy shadow-lg shadow-brand-gold/25 font-black scale-[1.02]'
+                      : 'bg-white/[0.05] text-slate-300 hover:text-white hover:bg-white/[0.1] border border-white/10'
+                  }`}
+                >
+                  <span>{cat.name}</span>
+                  <span className={`text-[10px] px-1.5 py-0.5 rounded-md font-mono ${
+                    activeCategory === cat.slug
+                      ? 'bg-brand-navy/20 text-brand-navy font-black'
+                      : 'bg-white/10 text-brand-gold'
+                  }`}>
+                    {cat.count}
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Interactive Player Controls: Play/Pause, Prev, Next */}
@@ -505,24 +528,24 @@ function ProductCard({ product, onSelect }: { product: ProductItem; onSelect: ()
   return (
     <div 
       onClick={onSelect}
-      className="group relative w-[240px] sm:w-[280px] md:w-[320px] shrink-0 bg-gradient-to-b from-white/[0.08] to-white/[0.02] hover:from-white/[0.14] hover:to-white/[0.04] border border-white/10 hover:border-brand-gold/60 rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 transition-all duration-300 cursor-pointer backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.15)] hover:-translate-y-1 sm:hover:-translate-y-1.5 active:scale-[0.98] flex flex-col justify-between"
+      className="group relative w-[230px] sm:w-[280px] md:w-[320px] shrink-0 bg-gradient-to-b from-white/[0.09] via-white/[0.05] to-white/[0.02] hover:from-white/[0.15] hover:to-white/[0.05] border border-white/10 hover:border-brand-gold/60 rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 transition-all duration-300 cursor-pointer backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.2)] hover:-translate-y-1 sm:hover:-translate-y-1.5 active:scale-[0.98] flex flex-col justify-between"
     >
       {/* Top Header inside Card */}
       <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3">
-        <span className="text-[9px] sm:text-[10px] font-extrabold tracking-wider uppercase px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-brand-gold/15 text-brand-gold border border-brand-gold/30 truncate max-w-[150px]">
+        <span className="text-[10px] sm:text-[11px] font-bold tracking-wider uppercase px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-brand-gold/20 text-brand-gold border border-brand-gold/40 truncate max-w-[140px] sm:max-w-none">
           {product.category}
         </span>
-        <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 shrink-0">
+        <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-slate-300 shrink-0">
           {product.code}
         </span>
       </div>
 
       {/* Image Stage Container - Pure White Canvas */}
-      <div className="relative w-full h-36 sm:h-40 md:h-44 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center p-2.5 sm:p-3 overflow-hidden shadow-inner border border-white/10 group-hover:border-brand-gold/50 transition-colors">
+      <div className="relative w-full h-36 sm:h-44 md:h-48 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center p-3 sm:p-4 overflow-hidden shadow-inner border border-white/10 group-hover:border-brand-gold/50 transition-colors">
         <div className="relative w-full h-full flex items-center justify-center">
           <Image
             src={product.image}
-            alt={product.name}
+            alt={`Malatya ${product.name} (${product.category}) - MRC Söve Yalıtım`}
             width={280}
             height={160}
             className="max-h-full w-auto object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-500"
@@ -530,24 +553,26 @@ function ProductCard({ product, onSelect }: { product: ProductItem; onSelect: ()
         </div>
 
         {/* Quick View Icon */}
-        <div className="absolute bottom-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-navy/90 text-brand-gold border border-brand-gold/30 flex items-center justify-center opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md">
-          <Maximize2 size={13} className="sm:hidden" />
-          <Maximize2 size={15} className="hidden sm:block" />
+        <div className="absolute bottom-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-navy/90 text-brand-gold border border-brand-gold/40 flex items-center justify-center opacity-90 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md">
+          <Maximize2 size={14} className="sm:hidden" />
+          <Maximize2 size={16} className="hidden sm:block" />
         </div>
       </div>
 
       {/* Info */}
-      <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-white/5">
-        <h3 className="text-xs sm:text-base font-bold text-white group-hover:text-brand-gold transition-colors line-clamp-1">
-          {product.name}
-        </h3>
-        <p className="text-[11px] sm:text-xs text-slate-400 line-clamp-1 mt-0.5 sm:mt-1 font-light">
-          {product.description}
-        </p>
+      <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-white/10 flex flex-col justify-between flex-grow">
+        <div>
+          <h3 className="text-sm sm:text-base font-black text-white group-hover:text-brand-gold transition-colors line-clamp-2 leading-snug min-h-[2.4rem] sm:min-h-[2.8rem]">
+            {product.name}
+          </h3>
+          <p className="text-[11px] sm:text-xs text-slate-300 line-clamp-1 mt-1 font-light">
+            {product.description}
+          </p>
+        </div>
 
-        <div className="mt-2.5 sm:mt-3 flex items-center justify-between text-[11px] sm:text-xs text-brand-gold font-medium">
-          <span>Detay & Özellikler</span>
-          <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+        <div className="mt-3 pt-2 border-t border-white/5 flex items-center justify-between text-xs text-brand-gold font-bold">
+          <span>İncele & Teklif Al</span>
+          <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
         </div>
       </div>
     </div>
@@ -585,7 +610,7 @@ function ProductModal({ product, onClose }: { product: ProductItem; onClose: () 
           <div className="relative w-full aspect-[4/3] sm:aspect-square rounded-xl sm:rounded-2xl bg-white flex items-center justify-center p-4 sm:p-6 shadow-inner border border-white/20">
             <Image
               src={product.image}
-              alt={product.name}
+              alt={`Malatya ${product.name} - ${product.category} İmalatı MRC Söve`}
               width={350}
               height={350}
               className="max-h-full w-auto object-contain drop-shadow-md"
@@ -621,13 +646,15 @@ function ProductModal({ product, onClose }: { product: ProductItem; onClose: () 
             </div>
 
             <div className="pt-2 sm:pt-3 flex flex-col sm:flex-row gap-2.5 sm:gap-3">
-              <Link
-                href="/contact"
+              <a
+                href={`https://wa.me/905322585244?text=${encodeURIComponent(`Merhaba, "${product.name}" (${product.category}) ürünü için fiyat ve teklif almak istiyorum.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex-1 bg-gradient-to-r from-brand-gold to-[#dfb94d] text-brand-navy font-bold py-2.5 sm:py-3 px-4 sm:px-5 rounded-xl text-center text-xs sm:text-sm hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-gold/20 active:scale-[0.98]"
               >
                 <PhoneCall size={15} />
                 Fiyat & Teklif İste
-              </Link>
+              </a>
               <Link
                 href="/MRC_2026_Katalog.pdf"
                 target="_blank"

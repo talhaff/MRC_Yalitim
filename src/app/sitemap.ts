@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/about`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/contact`,
@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/MRC_2026_Katalog.pdf`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.75,
     },
   ];
 }

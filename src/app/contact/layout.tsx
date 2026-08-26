@@ -1,16 +1,30 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'İletişim, Adres & Hızlı Teklif',
-  description: 'MRC Yalıtım ve Söve Malatya Merkez Fabrika iletişim bilgileri, adres: 1.OSB Mahallesi 5.Cd. No: 13/2 Yeşilyurt/Malatya. Tel: +90 532 258 52 44, e-posta: mrcyalitim@gmail.com.',
+  title: 'İletişim & Malatya Fabrika Adresi | Hızlı Teklif Al',
+  description: 'MRC Yalıtım ve Söve Malatya Merkez Fabrika: 1.OSB Mah. 5. Cd. No: 13/2 Yeşilyurt/Malatya. Tel: +90 532 258 52 44. Doğrudan WhatsApp veya telefonla anında toptan/perakende fiyat teklifi alın.',
+  keywords: [
+    'Malatya söve iletişim',
+    'Malatya yalıtım fabrikası telefon',
+    'MRC Yalıtım adres',
+    '1. OSB Malatya söve teklif',
+    'mantolama fiyat teklifi al Malatya'
+  ],
   alternates: {
     canonical: 'https://mrcyalitim.com/contact',
   },
   openGraph: {
-    title: 'İletişim & Teklif Formu | MRC Yalıtım Malatya',
-    description: 'MRC Yalıtım fabrika adresi, telefon ve doğrudan WhatsApp / E-Posta teklif formu.',
+    title: 'İletişim, Adres & Hızlı Teklif | MRC Yalıtım Malatya',
+    description: 'MRC Yalıtım Malatya 1. OSB fabrika adresi, telefon ve doğrudan WhatsApp / E-Posta teklif formu.',
     url: 'https://mrcyalitim.com/contact',
-    images: ['/images/hero-factory.jpg'],
+    images: [
+      {
+        url: '/images/hero-factory.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'MRC Yalıtım Fabrika İletişim ve Konum',
+      }
+    ],
   },
 };
 
