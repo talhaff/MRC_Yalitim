@@ -31,7 +31,7 @@ export default function AdminDashboard() {
       <div className="flex justify-between items-end">
         <div>
           <h1 className="text-3xl font-bold text-slate-900">Fabrika Yönetim Paneli</h1>
-          <p className="text-slate-500">MRC Yalıtım ve Söve Operasyonel Özeti</p>
+          <p className="text-slate-500">MRC Söve Yalıtım Operasyonel Özeti</p>
         </div>
         <div className="bg-white px-4 py-2 rounded-lg border border-slate-200 text-sm font-medium text-slate-600 flex items-center gap-2">
           <Clock size={16} /> {new Date().toLocaleDateString('tr-TR')}

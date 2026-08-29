@@ -25,19 +25,20 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import ProductMarquee from '@/components/home/ProductMarquee';
+import HeroImageSlider from '@/components/home/HeroImageSlider';
 
 const faqItems = [
   {
     question: "Malatya'da EPS ısı yalıtım levhası ve söve imalatı nerede yapılır?",
-    answer: "MRC Yalıtım ve Söve, Malatya 1. Organize Sanayi Bölgesi (1. OSB Mah. 5. Cd. No: 13/2 Yeşilyurt / Malatya) tesislerinde son teknoloji tam otomasyonlu CNC makineleriyle yüksek dansite EPS ısı yalıtım levhaları, dış cephe pencere söveleri, kat silmeleri ve dekoratif taç profilleri üretmektedir."
+    answer: "MRC Söve Yalıtım, Malatya 1. Organize Sanayi Bölgesi (1. OSB Mah. 5. Cd. No: 13/2 Yeşilyurt / Malatya) tesislerinde son teknoloji tam otomasyonlu CNC makineleriyle yüksek dansite EPS ısı yalıtım levhaları, dış cephe pencere söveleri, kat silmeleri ve dekoratif taç profilleri üretmektedir."
   },
   {
     question: "Dış cephe mantolamada hangi EPS yoğunluğu (dansite) tercih edilmelidir?",
-    answer: "Binalarda maksimum ısı yalıtım performansı ve enerji tasarrufu için 16-30 kg/m³ aralığındaki yüksek yoğunluklu (dansiteli) karbonlu veya beyaz EPS yalıtım levhaları tercih edilmelidir. MRC Yalıtım ürünleri, yüksek yoğunluklu polimer yapısıyla %50'ye varan enerji tasarrufu sağlar."
+    answer: "Binalarda maksimum ısı yalıtım performansı ve enerji tasarrufu için 16-30 kg/m³ aralığındaki yüksek yoğunluklu (dansiteli) karbonlu veya beyaz EPS yalıtım levhaları tercih edilmelidir. MRC Söve Yalıtım ürünleri, yüksek yoğunluklu polimer yapısıyla %50'ye varan enerji tasarrufu sağlar."
   },
   {
     question: "Söve profilleri dış hava şartlarına, kara ve yağmura dayanıklı mıdır?",
-    answer: "Evet. MRC Söve ürünleri, elastik akrilik polimer ve mikronize kalsit harcıyla kaplanarak zırhlandırılır. Güneşin UV ışınlarına, dona, yağmura ve mekanik darbelere karşı çatlama yapmadan binalarınızın ömrü boyunca estetik ve yalıtım koruması sağlar."
+    answer: "Evet. MRC Söve Yalıtım ürünleri, elastik akrilik polimer ve mikronize kalsit harcıyla kaplanarak zırhlandırılır. Güneşin UV ışınlarına, dona, yağmura ve mekanik darbelere karşı çatlama yapmadan binalarınızın ömrü boyunca estetik ve yalıtım koruması sağlar."
   },
   {
     question: "Özel mimari projeler için özel ölçü ve CNC söve üretimi yapıyor musunuz?",
@@ -174,28 +175,14 @@ export default function HomePage() {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative hidden lg:block"
           >
-            <div className="relative z-10 w-full aspect-[4/5] rounded-[60px] overflow-hidden border-[16px] border-white/5 shadow-2xl">
-              <motion.div
-                animate={{ scale: [1, 1.1] }}
-                transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
-                className="w-full h-full relative"
-              >
-                <Image 
-                  src="/images/arkaplan3.webp" 
-                  alt="Malatya Söve ve EPS Yalıtım Fabrikası Üretim Tesisi" 
-                  fill 
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 600px"
-                  className="object-cover object-center"
-                />
-              </motion.div>
-            </div>
+            {/* Premium Sliding AI Hero Images */}
+            <HeroImageSlider />
             {/* Stats Badge */}
             <motion.div 
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="absolute -bottom-10 -left-10 bg-white p-10 rounded-[40px] shadow-2xl z-20 flex gap-10 border border-slate-100"
+              className="absolute -bottom-10 -left-10 bg-white p-10 rounded-[40px] shadow-2xl z-40 flex gap-10 border border-slate-100"
             >
               <div className="text-center border-r border-slate-100 pr-10">
                 <p className="text-5xl font-black text-brand-navy">25K<span className="text-brand-gold text-2xl">+</span></p>
@@ -252,7 +239,7 @@ export default function HomePage() {
                 >
                   <Image 
                     src={cat.img} 
-                    alt={`Malatya ${cat.name} - MRC Yalıtım ve Söve Üretimi`} 
+                    alt={`Malatya ${cat.name} - MRC Söve Yalıtım Üretimi`} 
                     fill 
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

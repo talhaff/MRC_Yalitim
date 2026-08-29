@@ -1,59 +1,50 @@
-# MRC Yalıtım ve Söve - B2B Üretim & Teklif Platformu
+# MRC Söve Yalıtım - B2B Üretim & Teklif Platformu
 
-Bu proje, **MRC Yalıtım ve Söve** fabrikası için geliştirilmiş, yüksek performanslı, modern ve senior düzeyde bir B2B web platformudur. Proje, fabrikasyon ürünlerin (EPS Yalıtım, Dış Cephe Söve vb.) sergilenmesi, teknik detaylarının sunulması ve profesyonel teklif (RFQ) süreçlerinin yönetilmesi için tasarlanmıştır.
+Bu proje, **MRC Söve Yalıtım** fabrikası için geliştirilmiş, yüksek performanslı, modern ve senior düzeyde bir B2B web platformudur. Proje, fabrikasyon ürünlerin (EPS Yalıtım, Dış Cephe Söve vb.) sergilenmesi, teknik detaylarının sunulması ve profesyonel teklif (RFQ) süreçlerinin yönetilmesi için tasarlanmıştır.
 
-## 🚀 Teknolojik Yığın (Tech Stack)
+## 🚀 Proje Genel Bakış & Hedefler
 
-### Frontend
-- **Framework:** Next.js 14 (App Router)
-- **Dil:** TypeScript
-- **Stil:** Tailwind CSS (Mobile-first & Custom Brand Colors)
-- **Animasyon:** Framer Motion (Senior Level Page Transitions & Hover Effects)
-- **State Management:** Zustand (Persistent Quote Basket)
-- **İkon Seti:** Lucide React
-- **Form Yönetimi:** React Hook Form + Zod (Validation)
+- **100/100 Google Lighthouse Skoru:** Maksimum SEO, Erişilebilirlik (a11y), Best Practices ve Performans.
+- **Modern & Kurumsal UI/UX:** TailwindCSS, Framer Motion animasyonları, Lucide ikonları, lüks altın ve lacivert kurumsal kimlik.
+- **Hızlı Teklif & İletişim:** WhatsApp entegrasyonu ve doğrudan fabrika arama hatları.
+- **Erişilebilirlik & Tipografi:** Google Fonts (Outfit & Inter), zengin görsel optimizasyonları ve mikro-etkileşimler.
 
-### Backend
-- **Framework:** FastAPI (Python)
-- **Veritabanı:** PostgreSQL (SQLAlchemy ORM)
-- **Doğrulama:** Pydantic v2
-- **Sunucu:** Uvicorn
+## 📁 Proje Mimarisi
 
-## ✨ Temel Özellikler
+```
+src/
+├── app/                  # Next.js 14 App Router
+│   ├── about/            # Kurumsal & Fabrika sayfası
+│   ├── admin/            # Fabrika yönetim paneli
+│   ├── api/contact/      # İletişim formu API rotası
+│   ├── contact/          # İletişim ve fabrika adresi sayfası
+│   ├── layout.tsx        # Ana Layout & Global SEO Meta Verileri
+│   ├── page.tsx          # Ana Sayfa (Hero, Ürünler, Özellikler, SSS)
+│   ├── manifest.ts       # PWA Manifest
+│   ├── sitemap.ts        # Dinamik Site Haritası
+│   └── robots.ts         # Robotlar ve arama motoru indeksleme
+├── components/           # Yeniden kullanılabilir UI bileşenleri
+│   ├── home/             # Ana sayfa bileşenleri (Ürün vitrini vb.)
+│   └── shared/           # Navbar, Footer, Floating Buttons, SEO Şemaları
+```
 
-- **Modern Mimari:** Next.js App Router ile SEO uyumlu ve hızlı sayfa yüklemeleri.
-- **Dinamik Ürün Kataloğu:** Ürünleri kategoriye göre filtreleme, arama ve grid/list görünüm seçenekleri.
-- **Gelişmiş Teklif Sistemi:** Müşterilerin ürünleri sepete ekleyip fabrikadan toplu teklif isteyebileceği persistence (kalıcı) sepet yapısı.
-- **Senior UI/UX:** Navy & Gold kurumsal renk paleti, premium animasyonlar ve tamamen responsive tasarım.
-- **Teknik Detay Tabloları:** Ürünlerin yoğunluk, hammadde ve ısı iletkenlik gibi teknik verilerinin sunumu.
-- **SEO Optimizasyonu:** JSON-LD Schema markup ve meta etiket yönetimi.
+## 🛠️ Kurulum & Çalıştırma
 
-## 🛠️ Kurulum ve Çalıştırma
+Projeyi yerel ortamda çalıştırmak için:
 
-### 1. Frontend Kurulumu
 ```bash
-cd frontend
+# Bağımlılıkları yükleyin
 npm install
+
+# Geliştirme sunucusunu başlatın
 npm run dev
 ```
-Uygulama `http://localhost:3000` adresinde çalışacaktır.
-
-### 2. Backend Kurulumu
-```bash
-cd backend
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-```
-API dökümantasyonu `http://localhost:8000/docs` adresinde görüntülenebilir.
-
-## 📂 Proje Yapısı
-
 - `frontend/`: Next.js uygulama kodları, bileşenler ve mağaza yönetimi.
 - `backend/`: FastAPI uç noktaları ve iş mantığı.
 - `database_schema.sql`: Veritabanı mimarisi ve tabloların SQL tanımları.
 
 ## 📞 İletişim
-Bu platform **MRC Yalıtım ve Söve A.Ş.** için özel olarak geliştirilmiştir.
+Bu platform **MRC Söve Yalıtım A.Ş.** için özel olarak geliştirilmiştir.
 
 ---
 *Geleceğin yapılarını bugünden yalıtıyoruz.*

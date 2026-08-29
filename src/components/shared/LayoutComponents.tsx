@@ -74,14 +74,14 @@ export function Navbar() {
       <header className={`fixed top-0 left-0 right-0 z-[70] transition-colors duration-200 ${headerBg}`}>
         <div className="container mx-auto px-4 flex justify-between items-center">
           {/* Left: Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center -ml-4 sm:-ml-8 md:-ml-12 lg:-ml-14">
             <Image 
               src="/logo_transparent.png" 
-              alt="MRC Yalıtım Logo" 
+              alt="MRC Söve Yalıtım Logo" 
               width={140} 
               height={30} 
               sizes="140px"
-              className="object-contain scale-[1.3] sm:scale-[1.5] md:scale-[1.7] origin-left ml-0" 
+              className="object-contain object-left scale-y-[1.25] scale-x-[1.5] sm:scale-y-[1.45] sm:scale-x-[1.8] md:scale-y-[1.65] md:scale-x-[2.15] origin-left" 
               priority 
             />
           </Link>
@@ -91,7 +91,7 @@ export function Navbar() {
             {/* Phone Badge Near Menu / Center Area */}
             <a 
               href="tel:+905322585244"
-              className={`inline-flex items-center gap-3.5 px-4 py-2 xl:px-5 xl:py-2.5 rounded-2xl border transition-all duration-300 shadow-md group active:scale-95 mr-2 xl:mr-4 ${
+              className={`inline-flex items-center gap-3.5 px-4 py-2 xl:px-5 xl:py-2.5 rounded-2xl border transition-all duration-300 shadow-md group active:scale-95 mr-6 xl:mr-10 ${
                 scrolled && !isOpen
                   ? 'bg-brand-navy border-brand-gold/50 text-white hover:bg-brand-gold hover:text-brand-navy hover:border-brand-navy shadow-[0_4px_15px_rgba(5,11,21,0.2)]'
                   : 'bg-white/[0.1] hover:bg-white/[0.18] border-brand-gold/50 text-white backdrop-blur-md shadow-[0_4px_20px_rgba(212,175,55,0.2)]'
@@ -293,7 +293,7 @@ export function Footer() {
               <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
                 <Image 
                   src="/logo_transparent.png" 
-                  alt="MRC Yalıtım Logo" 
+                  alt="MRC Söve Yalıtım Logo" 
                   width={220} 
                   height={60} 
                   className="object-contain" 
@@ -397,7 +397,7 @@ export function Footer() {
         </div>
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left text-xs text-slate-500">
-          <p>© 2026 MRC Yalıtım ve Söve A.Ş. Yalıtımın ve estetiğin buluşma noktası.</p>
+          <p>© 2026 MRC Söve Yalıtım A.Ş. Yalıtımın ve estetiğin buluşma noktası.</p>
           <div className="flex flex-wrap justify-center gap-6">
             <Link href="#" className="hover:text-white transition-colors">KVKK</Link>
             <Link href="#" className="hover:text-white transition-colors">Çerez Politikası</Link>
