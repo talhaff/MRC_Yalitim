@@ -16,7 +16,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mrcyalitim.com"),
+  metadataBase: new URL("https://mrcsoveyalitim.com"),
   title: {
     default: "Malatya Söve & EPS Yalıtım Fabrikası | MRC Söve Yalıtım",
     template: "%s | MRC Söve Yalıtım Malatya",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     "MRC Söve Yalıtım",
     "MRC Söve Malatya"
   ],
-  authors: [{ name: "MRC Söve Yalıtım", url: "https://mrcyalitim.com" }],
+  authors: [{ name: "MRC Söve Yalıtım", url: "https://mrcsoveyalitim.com" }],
   creator: "MRC Söve Yalıtım",
   publisher: "MRC Söve Yalıtım",
   applicationName: "MRC Söve Yalıtım",
@@ -68,21 +68,21 @@ export const metadata: Metadata = {
     telephone: true,
   },
   alternates: {
-    canonical: "https://mrcyalitim.com",
+    canonical: "https://mrcsoveyalitim.com",
     languages: {
-      "tr-TR": "https://mrcyalitim.com",
+      "tr-TR": "https://mrcsoveyalitim.com",
     },
   },
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://mrcyalitim.com",
+    url: "https://mrcsoveyalitim.com",
     siteName: "MRC Söve Yalıtım",
     title: "Malatya Söve & EPS Yalıtım Fabrikası | MRC Söve Yalıtım",
     description: "Malatya 1. OSB'de yüksek dansite EPS ısı yalıtım levhası, dış cephe söve ve mantolama profilleri üreticisi. Fabrikadan doğrudan en uygun fiyatlar.",
     images: [
       {
-        url: "/images/hero-factory.jpg",
+        url: "https://mrcsoveyalitim.com/images/hero-factory.jpg",
         width: 1200,
         height: 630,
         alt: "MRC Söve Yalıtım Üretim Tesisi Malatya",
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Malatya Söve & EPS Yalıtım Fabrikası | MRC Söve Yalıtım",
     description: "Malatya 1. Organize Sanayi Bölgesi'nde yüksek dansite EPS yalıtım levhası ve dış cephe söve profilleri üretimi.",
-    images: ["/images/hero-factory.jpg"],
+    images: ["https://mrcsoveyalitim.com/images/hero-factory.jpg"],
   },
   robots: {
     index: true,
@@ -108,12 +108,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+    apple: "/logo_transparent.png",
   },
   other: {
     "geo.region": "TR-44",
     "geo.placename": "Malatya, Yeşilyurt",
-    "geo.position": "38.3582;38.2255",
-    "ICBM": "38.3582, 38.2255",
+    "geo.position": "38.334732;38.193420",
+    "ICBM": "38.334732, 38.193420",
   },
 };
 

@@ -6,6 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: 'MRC Söve Yalıtım',
     description: 'Malatya 1. OSB yüksek dansite EPS ısı yalıtım levhası ve dış cephe söve profilleri üreticisi.',
     start_url: '/',
+    lang: 'tr',
     display: 'standalone',
     background_color: '#050B15',
     theme_color: '#050B15',
@@ -15,6 +16,12 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: 'any',
         type: 'image/x-icon',
       },
+      {
+        src: '/logo_transparent.png',
+        sizes: '512x512',
+        type: 'image/png',
+        purpose: 'maskable'
+      }
     ],
   };
 }

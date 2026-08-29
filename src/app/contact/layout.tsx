@@ -11,15 +11,15 @@ export const metadata: Metadata = {
     'mantolama fiyat teklifi al Malatya'
   ],
   alternates: {
-    canonical: 'https://mrcyalitim.com/contact',
+    canonical: 'https://mrcsoveyalitim.com/contact',
   },
   openGraph: {
     title: 'İletişim, Adres & Hızlı Teklif | MRC Söve Yalıtım Malatya',
     description: 'MRC Söve Yalıtım Malatya 1. OSB fabrika adresi, telefon ve doğrudan WhatsApp / E-Posta teklif formu.',
-    url: 'https://mrcyalitim.com/contact',
+    url: 'https://mrcsoveyalitim.com/contact',
     images: [
       {
-        url: '/images/hero-factory.jpg',
+        url: 'https://mrcsoveyalitim.com/images/hero-factory.jpg',
         width: 1200,
         height: 630,
         alt: 'MRC Söve Yalıtım Fabrika İletişim ve Konum',

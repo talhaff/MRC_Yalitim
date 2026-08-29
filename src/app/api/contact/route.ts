@@ -69,7 +69,7 @@ export async function POST(request: Request) {
             </div>
 
             <div style="background-color: #f1f5f9; padding: 12px; text-align: center; font-size: 11px; color: #94a3b8;">
-              Bu e-posta mrcyalitim.com üzerinden otomatik olarak oluşturulmuştur.
+              Bu e-posta mrcsoveyalitim.com üzerinden otomatik olarak oluşturulmuştur.
             </div>
           </div>
         `,

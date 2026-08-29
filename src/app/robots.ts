@@ -1,14 +1,14 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://mrcyalitim.com';
+  const baseUrl = 'https://mrcsoveyalitim.com';
 
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/admin/', '/api/', '/_next/'],
+        disallow: ['/admin/', '/api/'],
       },
       {
         userAgent: 'Googlebot',
@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: 'Googlebot-Image',
-        allow: ['/images/', '/kayanresimler/', '/*.png', '/*.jpg', '/*.webp'],
+        allow: '/',
       },
       {
         userAgent: 'Bingbot',

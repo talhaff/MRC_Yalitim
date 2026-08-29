@@ -12,15 +12,15 @@ export const metadata: Metadata = {
     'Yeşilyurt söve imalatı'
   ],
   alternates: {
-    canonical: 'https://mrcyalitim.com/about',
+    canonical: 'https://mrcsoveyalitim.com/about',
   },
   openGraph: {
     title: 'Kurumsal & Malatya Fabrika Üretim Gücü | MRC Söve Yalıtım',
     description: 'Malatya 1. OSB modern tesislerimizde tam otomasyonlu EPS yalıtım levhası ve dış cephe söve üretimi.',
-    url: 'https://mrcyalitim.com/about',
+    url: 'https://mrcsoveyalitim.com/about',
     images: [
       {
-        url: '/images/about-factory.jpg',
+        url: 'https://mrcsoveyalitim.com/images/about-factory.jpg',
         width: 1200,
         height: 630,
         alt: 'MRC Söve Yalıtım Fabrika Üretim Hattı Malatya',
