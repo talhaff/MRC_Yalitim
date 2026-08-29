@@ -110,7 +110,7 @@ export default function ContactPage() {
                   title: 'Merkez Fabrika', 
                   content: '1.OSB Mah, 5. Cd. No: 13/2, 44900 Yeşilyurt / Malatya',
                   action: 'Yol Tarifi Al',
-                  link: 'https://maps.google.com/?q=MRC+S%C3%96VE+YALITIM+1.OSB+Mah.+5.+Cd.+No:+13/2+Ye%C5%9Filyurt+Malatya'
+                  link: 'https://maps.google.com/?q=38.334732,38.193420'
                 },
                 { 
                   icon: <Phone size={22} />, 
@@ -271,7 +271,7 @@ export default function ContactPage() {
       <section className="relative h-[380px] md:h-[520px] w-full overflow-hidden border-t border-b border-slate-200">
         <iframe 
           title="MRC SÖVE YALITIM Google Harita Konumu"
-          src="https://maps.google.com/maps?q=MRC+S%C3%96VE+YALITIM+1.OSB+Mah.+5.+Cd.+No:+13/2+Ye%C5%9Filyurt+Malatya&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+          src="https://maps.google.com/maps?q=38.334732,38.193420&t=&z=16&ie=UTF8&iwloc=&output=embed" 
           className="w-full h-full border-0 absolute inset-0 z-10" 
           allowFullScreen 
           loading="lazy" 

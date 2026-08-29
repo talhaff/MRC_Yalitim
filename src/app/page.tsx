@@ -497,7 +497,7 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row gap-3.5 pt-2">
                 <a 
-                  href="https://maps.google.com/?q=MRC+S%C3%96VE+YALITIM+1.OSB+Mah.+5.+Cd.+No:+13/2+Ye%C5%9Filyurt+Malatya"
+                  href="https://maps.google.com/?q=38.334732,38.193420"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-brand-gold text-brand-navy font-bold text-sm hover:bg-white transition-all shadow-lg active:scale-95 text-center"
@@ -519,7 +519,7 @@ export default function HomePage() {
             <div className="lg:col-span-7 h-[290px] sm:h-[360px] md:h-[420px] rounded-2xl sm:rounded-[32px] overflow-hidden border border-white/15 shadow-2xl relative bg-slate-900">
               <iframe 
                 title="MRC SÖVE YALITIM Malatya Fabrika Harita Konumu"
-                src="https://maps.google.com/maps?q=MRC+S%C3%96VE+YALITIM+1.OSB+Mah.+5.+Cd.+No:+13/2+Ye%C5%9Filyurt+Malatya&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                src="https://maps.google.com/maps?q=38.334732,38.193420&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                 className="w-full h-full border-0 absolute inset-0" 
                 allowFullScreen 
                 loading="lazy" 

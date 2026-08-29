@@ -53,10 +53,10 @@ export function OrganizationSchema() {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 38.3582,
-      "longitude": 38.2255
+      "latitude": 38.334732,
+      "longitude": 38.193420
     },
-    "hasMap": "https://maps.google.com/?q=MRC+S%C3%96VE+YALITIM+1.OSB+Mah.+5.+Cd.+No:+13/2+Ye%C5%9Filyurt+Malatya",
+    "hasMap": "https://maps.google.com/?q=38.334732,38.193420",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",

@@ -347,7 +347,7 @@ export function Footer() {
                   <MapPin size={18} className="text-brand-gold" />
                 </div>
                 <a 
-                  href="https://maps.google.com/?q=MRC+S%C3%96VE+YALITIM+1.OSB+Mah.+5.+Cd.+No:+13/2+Ye%C5%9Filyurt+Malatya" 
+                  href="https://maps.google.com/?q=38.334732,38.193420" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-sm leading-relaxed hover:text-brand-gold transition-colors"
