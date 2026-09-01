@@ -20,6 +20,10 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
       {
+        userAgent: 'Googlebot-Favicon',
+        allow: '/',
+      },
+      {
         userAgent: 'Bingbot',
         allow: '/',
         disallow: ['/admin/', '/api/'],
