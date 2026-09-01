@@ -1,6 +1,6 @@
-# MRC Söve Yalıtım - B2B Üretim & Teklif Platformu
+# MRC Yalıtım Söve - B2B Üretim & Teklif Platformu
 
-Bu proje, **MRC Söve Yalıtım** fabrikası için geliştirilmiş, yüksek performanslı, modern ve senior düzeyde bir B2B web platformudur. Proje, fabrikasyon ürünlerin (EPS Yalıtım, Dış Cephe Söve vb.) sergilenmesi, teknik detaylarının sunulması ve profesyonel teklif (RFQ) süreçlerinin yönetilmesi için tasarlanmıştır.
+Bu proje, **MRC Yalıtım Söve** fabrikası için geliştirilmiş, yüksek performanslı, modern ve senior düzeyde bir B2B web platformudur. Proje, fabrikasyon ürünlerin (EPS Yalıtım, Dış Cephe Söve vb.) sergilenmesi, teknik detaylarının sunulması ve profesyonel teklif (RFQ) süreçlerinin yönetilmesi için tasarlanmıştır.
 
 ## 🚀 Proje Genel Bakış & Hedefler
 
@@ -44,7 +44,7 @@ npm run dev
 - `database_schema.sql`: Veritabanı mimarisi ve tabloların SQL tanımları.
 
 ## 📞 İletişim
-Bu platform **MRC Söve Yalıtım A.Ş.** için özel olarak geliştirilmiştir.
+Bu platform **MRC Yalıtım Söve A.Ş.** için özel olarak geliştirilmiştir.
 
 ---
 *Geleceğin yapılarını bugünden yalıtıyoruz.*

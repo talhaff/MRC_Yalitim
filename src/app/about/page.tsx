@@ -90,7 +90,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6 text-slate-500 text-lg leading-relaxed">
                 <p>
-                  MRC Söve Yalıtım olarak, 20 yılı aşkın süredir inşaat sektörüne dış cephe estetiği ve ısı yalıtım çözümleri sunuyoruz. Malatya'daki modern üretim tesisimizde, tam otomasyonlu sistemlerle her yıl milyonlarca metrekarelik yalıtım gücü üretiyoruz.
+                  MRC Yalıtım Söve olarak, 20 yılı aşkın süredir inşaat sektörüne dış cephe estetiği ve ısı yalıtım çözümleri sunuyoruz. Malatya'daki modern üretim tesisimizde, tam otomasyonlu sistemlerle her yıl milyonlarca metrekarelik yalıtım gücü üretiyoruz.
                 </p>
                 <p>
                   Sadece ürün değil, mühendislik çözümleri sunan bir yapıdayız. Her bir söve profilinde ve yalıtım levhasında, "Kusursuz Üretim" ilkemizi temsil eden hassas bir işçilik bulunmaktadır.
@@ -120,7 +120,7 @@ export default function AboutPage() {
               <div className="relative z-10 w-full aspect-[3/4] rounded-[32px] lg:rounded-[48px] overflow-hidden shadow-2xl border-[6px] lg:border-[10px] border-slate-100/80 bg-slate-900">
                 <Image 
                   src="/images/about-factory.jpg" 
-                  alt="MRC Söve Yalıtım Üretim Tesisi" 
+                  alt="MRC Yalıtım Söve Üretim Tesisi" 
                   fill
                   loading="lazy"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -177,7 +177,7 @@ export default function AboutPage() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy font-display mb-4">Neden MRC Söve Yalıtım?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy font-display mb-4">Neden MRC Yalıtım Söve?</h2>
             <div className="w-20 h-1 bg-brand-gold mx-auto" />
           </div>
 

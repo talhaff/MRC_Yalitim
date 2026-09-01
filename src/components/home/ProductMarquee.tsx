@@ -545,7 +545,7 @@ function ProductCard({ product, onSelect }: { product: ProductItem; onSelect: ()
         <div className="relative w-full h-full flex items-center justify-center">
           <Image
             src={product.image}
-            alt={`Malatya ${product.name} (${product.category}) - MRC Söve Yalıtım`}
+            alt={`Malatya ${product.name} (${product.category}) - MRC Yalıtım Söve`}
             width={280}
             height={160}
             loading="lazy"
@@ -612,7 +612,7 @@ function ProductModal({ product, onClose }: { product: ProductItem; onClose: () 
           <div className="relative w-full aspect-[4/3] sm:aspect-square rounded-xl sm:rounded-2xl bg-white flex items-center justify-center p-4 sm:p-6 shadow-inner border border-white/20">
             <Image
               src={product.image}
-              alt={`Malatya ${product.name} - ${product.category} İmalatı MRC Söve`}
+              alt={`Malatya ${product.name} - ${product.category} İmalatı MRC Yalıtım Söve`}
               width={350}
               height={350}
               loading="lazy"

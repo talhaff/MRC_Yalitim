@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'MRC Söve Yalıtım | Malatya Yalıtım & Söve İmalatçısı',
-    short_name: 'MRC Söve Yalıtım',
+    name: 'MRC Yalıtım Söve | Malatya Yalıtım & Söve İmalatçısı',
+    short_name: 'MRC Yalıtım Söve',
     description: 'Malatya 1. OSB yüksek dansite EPS ısı yalıtım levhası ve dış cephe söve profilleri üreticisi.',
     start_url: '/',
     lang: 'tr',

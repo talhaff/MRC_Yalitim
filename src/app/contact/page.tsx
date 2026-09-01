@@ -270,7 +270,7 @@ export default function ContactPage() {
       {/* 3. ELEGANT MAP SECTION */}
       <section className="relative h-[380px] md:h-[520px] w-full overflow-hidden border-t border-b border-slate-200">
         <iframe 
-          title="MRC SÖVE YALITIM Google Harita Konumu"
+          title="MRC YALITIM SÖVE Google Harita Konumu"
           src="https://maps.google.com/maps?q=38.334732,38.193420&t=&z=16&ie=UTF8&iwloc=&output=embed" 
           className="w-full h-full border-0 absolute inset-0 z-10" 
           allowFullScreen 

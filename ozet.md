@@ -1,6 +1,6 @@
-# MRC Söve Yalıtım B2B Platformu - Proje Özeti
+# MRC Yalıtım Söve B2B Platformu - Proje Özeti
 
-Bu proje, **MRC Söve Yalıtım** firması için geliştirilen modern ve şık bir kurumsal web platformudur.
+Bu proje, **MRC Yalıtım Söve** firması için geliştirilen modern ve şık bir kurumsal web platformudur.
 
 ## Proje Yapısı
 

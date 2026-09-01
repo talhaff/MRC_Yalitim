@@ -77,7 +77,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center -ml-4 sm:-ml-8 md:-ml-12 lg:-ml-14">
             <Image 
               src="/logo_transparent.png" 
-              alt="MRC Söve Yalıtım Logo" 
+              alt="MRC Yalıtım Söve Logo" 
               width={140} 
               height={30} 
               sizes="140px"
@@ -293,7 +293,7 @@ export function Footer() {
               <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
                 <Image 
                   src="/logo_transparent.png" 
-                  alt="MRC Söve Yalıtım Logo" 
+                  alt="MRC Yalıtım Söve Logo" 
                   width={220} 
                   height={60} 
                   className="object-contain" 
@@ -397,7 +397,7 @@ export function Footer() {
         </div>
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left text-xs text-slate-500">
-          <p>© 2026 MRC Söve Yalıtım A.Ş. Yalıtımın ve estetiğin buluşma noktası.</p>
+          <p>© 2026 MRC Yalıtım Söve A.Ş. Yalıtımın ve estetiğin buluşma noktası.</p>
           <div className="flex flex-wrap justify-center gap-6">
             <Link href="#" className="hover:text-white transition-colors">KVKK</Link>
             <Link href="#" className="hover:text-white transition-colors">Çerez Politikası</Link>

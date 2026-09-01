@@ -34,7 +34,7 @@ export async function POST(request: Request) {
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background-color: #ffffff;">
             <div style="background-color: #050B15; padding: 24px; text-align: center; border-bottom: 3px solid #D4AF37;">
-              <h2 style="color: #D4AF37; margin: 0; font-size: 22px; text-transform: uppercase; letter-spacing: 1px;">MRC Söve Yalıtım</h2>
+              <h2 style="color: #D4AF37; margin: 0; font-size: 22px; text-transform: uppercase; letter-spacing: 1px;">MRC Yalıtım Söve</h2>
               <p style="color: #94a3b8; margin: 4px 0 0 0; font-size: 13px;">Web Sitesi Yeni İletişim Mesajı</p>
             </div>
             

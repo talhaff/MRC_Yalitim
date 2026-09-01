@@ -30,15 +30,15 @@ import HeroImageSlider from '@/components/home/HeroImageSlider';
 const faqItems = [
   {
     question: "Malatya'da EPS ısı yalıtım levhası ve söve imalatı nerede yapılır?",
-    answer: "MRC Söve Yalıtım, Malatya 1. Organize Sanayi Bölgesi (1. OSB Mah. 5. Cd. No: 13/2 Yeşilyurt / Malatya) tesislerinde son teknoloji tam otomasyonlu CNC makineleriyle yüksek dansite EPS ısı yalıtım levhaları, dış cephe pencere söveleri, kat silmeleri ve dekoratif taç profilleri üretmektedir."
+    answer: "MRC Yalıtım Söve, Malatya 1. Organize Sanayi Bölgesi (1. OSB Mah. 5. Cd. No: 13/2 Yeşilyurt / Malatya) tesislerinde son teknoloji tam otomasyonlu CNC makineleriyle yüksek dansite EPS ısı yalıtım levhaları, dış cephe pencere söveleri, kat silmeleri ve dekoratif taç profilleri üretmektedir."
   },
   {
     question: "Dış cephe mantolamada hangi EPS yoğunluğu (dansite) tercih edilmelidir?",
-    answer: "Binalarda maksimum ısı yalıtım performansı ve enerji tasarrufu için 16-30 kg/m³ aralığındaki yüksek yoğunluklu (dansiteli) karbonlu veya beyaz EPS yalıtım levhaları tercih edilmelidir. MRC Söve Yalıtım ürünleri, yüksek yoğunluklu polimer yapısıyla %50'ye varan enerji tasarrufu sağlar."
+    answer: "Binalarda maksimum ısı yalıtım performansı ve enerji tasarrufu için 16-30 kg/m³ aralığındaki yüksek yoğunluklu (dansiteli) karbonlu veya beyaz EPS yalıtım levhaları tercih edilmelidir. MRC Yalıtım Söve ürünleri, yüksek yoğunluklu polimer yapısıyla %50'ye varan enerji tasarrufu sağlar."
   },
   {
     question: "Söve profilleri dış hava şartlarına, kara ve yağmura dayanıklı mıdır?",
-    answer: "Evet. MRC Söve Yalıtım ürünleri, elastik akrilik polimer ve mikronize kalsit harcıyla kaplanarak zırhlandırılır. Güneşin UV ışınlarına, dona, yağmura ve mekanik darbelere karşı çatlama yapmadan binalarınızın ömrü boyunca estetik ve yalıtım koruması sağlar."
+    answer: "Evet. MRC Yalıtım Söve ürünleri, elastik akrilik polimer ve mikronize kalsit harcıyla kaplanarak zırhlandırılır. Güneşin UV ışınlarına, dona, yağmura ve mekanik darbelere karşı çatlama yapmadan binalarınızın ömrü boyunca estetik ve yalıtım koruması sağlar."
   },
   {
     question: "Özel mimari projeler için özel ölçü ve CNC söve üretimi yapıyor musunuz?",
@@ -239,7 +239,7 @@ export default function HomePage() {
                 >
                   <Image 
                     src={cat.img} 
-                    alt={`Malatya ${cat.name} - MRC Söve Yalıtım Üretimi`} 
+                    alt={`Malatya ${cat.name} - MRC Yalıtım Söve Üretimi`} 
                     fill 
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -469,7 +469,7 @@ export default function HomePage() {
               </div>
               
               <h2 className="text-3xl md:text-4xl font-bold font-display text-white">
-                MRC SÖVE YALITIM <br />
+                MRC YALITIM SÖVE <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-amber-200">
                   Üretim Tesisimiz
                 </span>
@@ -518,7 +518,7 @@ export default function HomePage() {
             {/* Right: Embedded Interactive Map */}
             <div className="lg:col-span-7 h-[290px] sm:h-[360px] md:h-[420px] rounded-2xl sm:rounded-[32px] overflow-hidden border border-white/15 shadow-2xl relative bg-slate-900">
               <iframe 
-                title="MRC SÖVE YALITIM Malatya Fabrika Harita Konumu"
+                title="MRC YALITIM SÖVE Malatya Fabrika Harita Konumu"
                 src="https://maps.google.com/maps?q=38.334732,38.193420&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                 className="w-full h-full border-0 absolute inset-0" 
                 allowFullScreen 
