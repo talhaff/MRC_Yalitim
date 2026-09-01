@@ -3,6 +3,8 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Navbar, Footer, FloatingAction } from "@/components/shared/LayoutComponents";
 import { PageTransition, OrganizationSchema, FAQSchema, ProductCatalogSchema } from "@/components/shared/SEOAndTransitions";
+import { CookieConsent } from "@/components/shared/CookieConsent";
+import { GoogleAnalytics } from "@/components/shared/GoogleAnalytics";
 import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -16,7 +18,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mrcsoveyalitim.com"),
+  metadataBase: new URL("https://mrcyalitimsove.com"),
   title: {
     default: "Malatya Söve & EPS Yalıtım Fabrikası | MRC Yalıtım Söve",
     template: "%s | MRC Yalıtım Söve Malatya",
@@ -59,7 +61,7 @@ export const metadata: Metadata = {
   ],
   authors: [
     { name: "Talha Özcan", url: "https://talhaozcan.dev" },
-    { name: "MRC Yalıtım Söve", url: "https://mrcsoveyalitim.com" }
+    { name: "MRC Yalıtım Söve", url: "https://mrcyalitimsove.com" }
   ],
   creator: "Talha Özcan",
   publisher: "MRC Yalıtım Söve",
@@ -71,21 +73,21 @@ export const metadata: Metadata = {
     telephone: true,
   },
   alternates: {
-    canonical: "https://mrcsoveyalitim.com",
+    canonical: "https://mrcyalitimsove.com",
     languages: {
-      "tr-TR": "https://mrcsoveyalitim.com",
+      "tr-TR": "https://mrcyalitimsove.com",
     },
   },
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://mrcsoveyalitim.com",
+    url: "https://mrcyalitimsove.com",
     siteName: "MRC Yalıtım Söve",
     title: "Malatya Söve & EPS Yalıtım Fabrikası | MRC Yalıtım Söve",
     description: "Malatya 1. OSB'de yüksek dansite EPS ısı yalıtım levhası, dış cephe söve ve mantolama profilleri üreticisi. Fabrikadan doğrudan en uygun fiyatlar.",
     images: [
       {
-        url: "https://mrcsoveyalitim.com/images/hero-factory.jpg",
+        url: "https://mrcyalitimsove.com/images/hero-factory.jpg",
         width: 1200,
         height: 630,
         alt: "MRC Yalıtım Söve Üretim Tesisi Malatya",
@@ -96,7 +98,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Malatya Söve & EPS Yalıtım Fabrikası | MRC Yalıtım Söve",
     description: "Malatya 1. Organize Sanayi Bölgesi'nde yüksek dansite EPS yalıtım levhası ve dış cephe söve profilleri üretimi.",
-    images: ["https://mrcsoveyalitim.com/images/hero-factory.jpg"],
+    images: ["https://mrcyalitimsove.com/images/hero-factory.jpg"],
   },
   robots: {
     index: true,
@@ -110,8 +112,14 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/logo_transparent.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logo_transparent.png", sizes: "192x192", type: "image/png" }
+    ],
+    apple: [
+      { url: "/logo_transparent.png", sizes: "180x180", type: "image/png" }
+    ],
+    shortcut: "/favicon.ico",
   },
   other: {
     "geo.region": "TR-44",
@@ -129,11 +137,14 @@ export default function RootLayout({
   return (
     <html lang="tr" className={`${inter.variable} ${outfit.variable}`}>
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/logo_transparent.png" />
         <OrganizationSchema />
         <FAQSchema />
         <ProductCatalogSchema />
       </head>
       <body className="antialiased bg-white text-slate-900 font-sans">
+        <GoogleAnalytics />
         <Navbar />
         <PageTransition>
           <div className="min-h-screen">
@@ -142,8 +153,10 @@ export default function RootLayout({
         </PageTransition>
         <FloatingAction />
         <Footer />
+        <CookieConsent />
         <Toaster position="top-center" richColors />
       </body>
     </html>
   );
 }
+

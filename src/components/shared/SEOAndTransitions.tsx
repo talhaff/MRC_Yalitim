@@ -15,7 +15,7 @@ export function OrganizationSchema() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ManufacturingBusiness", "HomeAndConstructionBusiness"],
-    "@id": "https://mrcsoveyalitim.com/#organization",
+    "@id": "https://mrcyalitimsove.com/#organization",
     "name": "MRC Yalıtım Söve",
     "alternateName": [
       "MRC Yalıtım Söve", 
@@ -25,7 +25,7 @@ export function OrganizationSchema() {
       "Malatya Yalıtım Söve İmalatçısı MRC"
     ],
     "description": "Malatya 1. Organize Sanayi Bölgesi'nde yüksek dansite EPS ısı yalıtım levhaları, dekoratif dış cephe söve profilleri, kat silmeleri, payanda, taç ve taşyünü yalıtım elemanları üreticisi.",
-    "url": "https://mrcsoveyalitim.com",
+    "url": "https://mrcyalitimsove.com",
     "telephone": "+905322585244",
     "email": "mrcyalitim@gmail.com",
     "priceRange": "$$",
@@ -33,15 +33,15 @@ export function OrganizationSchema() {
     "paymentAccepted": "Nakit, Kredi Kartı, Banka Havalesi",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://mrcsoveyalitim.com/logo_transparent.png",
+      "url": "https://mrcyalitimsove.com/logo_transparent.png",
       "width": "500",
       "height": "200",
       "caption": "MRC Yalıtım Söve Logosu"
     },
     "image": [
-      "https://mrcsoveyalitim.com/images/hero-factory.jpg",
-      "https://mrcsoveyalitim.com/images/about-factory.jpg",
-      "https://mrcsoveyalitim.com/images/arkaplan3.webp"
+      "https://mrcyalitimsove.com/images/hero-factory.jpg",
+      "https://mrcyalitimsove.com/images/about-factory.jpg",
+      "https://mrcyalitimsove.com/images/arkaplan3.webp"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -119,12 +119,12 @@ export function OrganizationSchema() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://mrcsoveyalitim.com/#website",
-    "url": "https://mrcsoveyalitim.com",
+    "@id": "https://mrcyalitimsove.com/#website",
+    "url": "https://mrcyalitimsove.com",
     "name": "MRC Yalıtım Söve",
     "description": "Malatya'da yüksek dansite EPS yalıtım levhası ve estetik dış cephe söve modelleri üreticisi.",
     "publisher": {
-      "@id": "https://mrcsoveyalitim.com/#organization"
+      "@id": "https://mrcyalitimsove.com/#organization"
     },
     "inLanguage": "tr-TR"
   };
@@ -223,7 +223,7 @@ export function ProductCatalogSchema() {
         "item": {
           "@type": "Product",
           "name": "EPS Isı Yalıtım Levhaları (Beyaz & Karbonlu)",
-          "image": "https://mrcsoveyalitim.com/kayanresimler/cephe1.png",
+          "image": "https://mrcyalitimsove.com/kayanresimler/cephe1.png",
           "description": "Yüksek dansite 26-30 kg/m³ EPS ısı yalıtım levhası. %50 enerji tasarrufu ve maksimum ısı yalıtım performansı.",
           "brand": { "@type": "Brand", "name": "MRC Yalıtım Söve" },
           "offers": {
@@ -242,7 +242,7 @@ export function ProductCatalogSchema() {
         "item": {
           "@type": "Product",
           "name": "Dış Cephe Pencere Söve Profilleri",
-          "image": "https://mrcsoveyalitim.com/kayanresimler/sove1.png",
+          "image": "https://mrcyalitimsove.com/kayanresimler/sove1.png",
           "description": "Akrilik zırh kaplamalı, su itici ve çatlamayan modern pencere ve kapı söve profilleri.",
           "brand": { "@type": "Brand", "name": "MRC Yalıtım Söve" },
           "offers": {
@@ -261,7 +261,7 @@ export function ProductCatalogSchema() {
         "item": {
           "@type": "Product",
           "name": "Fugalı Dış Cephe Mantolama Panelleri",
-          "image": "https://mrcsoveyalitim.com/kayanresimler/cephe1.png",
+          "image": "https://mrcyalitimsove.com/kayanresimler/cephe1.png",
           "description": "Kendinden kanallı, montaj kolaylığı sağlayan dekoratif ve ısı yalıtımlı fugalı dış cephe plakaları.",
           "brand": { "@type": "Brand", "name": "MRC Yalıtım Söve" },
           "offers": {
@@ -280,7 +280,7 @@ export function ProductCatalogSchema() {
         "item": {
           "@type": "Product",
           "name": "Dekoratif Saray Tacı & Motifler",
-          "image": "https://mrcsoveyalitim.com/kayanresimler/dekoratif.png",
+          "image": "https://mrcyalitimsove.com/kayanresimler/dekoratif.png",
           "description": "Pencere üstü ve bina girişlerine prestij kazandıran CNC işlemeli dekoratif taç ve rölyef motifleri.",
           "brand": { "@type": "Brand", "name": "MRC Yalıtım Söve" },
           "offers": {
@@ -299,7 +299,7 @@ export function ProductCatalogSchema() {
         "item": {
           "@type": "Product",
           "name": "Bina Köşe Taşları ve L-Köşe Elemanları",
-          "image": "https://mrcsoveyalitim.com/kayanresimler/kosetasi.png",
+          "image": "https://mrcyalitimsove.com/kayanresimler/kosetasi.png",
           "description": "Bina köşelerinde darbe koruması ve rustik taş mimarisi sağlayan yalıtımlı köşe elemanları.",
           "brand": { "@type": "Brand", "name": "MRC Yalıtım Söve" },
           "offers": {
@@ -318,7 +318,7 @@ export function ProductCatalogSchema() {
         "item": {
           "@type": "Product",
           "name": "A1 Sınıfı Yanmaz Taşyünü Söve ve Yalıtım",
-          "image": "https://mrcsoveyalitim.com/kayanresimler/tasyunusove.png",
+          "image": "https://mrcyalitimsove.com/kayanresimler/tasyunusove.png",
           "description": "150 kg/m³ yoğunlukta A1 sınıfı tam yanmaz taşyünü çekirdekli güvenlik odaklı mimari söve profili.",
           "brand": { "@type": "Brand", "name": "MRC Yalıtım Söve" },
           "offers": {

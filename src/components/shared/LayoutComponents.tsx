@@ -423,8 +423,8 @@ export function Footer() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-slate-500">
-            <Link href="#" className="hover:text-white transition-colors">KVKK</Link>
-            <Link href="#" className="hover:text-white transition-colors">Çerez Politikası</Link>
+            <Link href="/kvkk" className="hover:text-brand-gold transition-colors">KVKK & Gizlilik Politikası</Link>
+            <Link href="/kvkk#cerez-politikasi" className="hover:text-brand-gold transition-colors">Çerez Politikası</Link>
           </div>
         </div>
       </div>

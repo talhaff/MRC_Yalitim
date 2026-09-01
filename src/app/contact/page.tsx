@@ -22,7 +22,7 @@ export default function ContactPage() {
   const onSubmit = async (data: any) => {
     try {
       // 1. Format & Open WhatsApp directly
-      const waText = `*Yeni Web İletişim Mesajı (mrcsoveyalitim.com)*\n\n👤 *Ad Soyad:* ${data.name}\n📧 *E-Posta:* ${data.email}\n🏷️ *Konu:* ${data.subject}\n\n📝 *Mesaj:*\n${data.message}`;
+      const waText = `*Yeni Web İletişim Mesajı (mrcyalitimsove.com)*\n\n👤 *Ad Soyad:* ${data.name}\n📧 *E-Posta:* ${data.email}\n🏷️ *Konu:* ${data.subject}\n\n📝 *Mesaj:*\n${data.message}`;
       const waUrl = `https://wa.me/905322585244?text=${encodeURIComponent(waText)}`;
       
       toast.success('Mesajınız iletildi! WhatsApp hattımıza yönlendiriliyorsunuz...');
