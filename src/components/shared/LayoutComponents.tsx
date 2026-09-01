@@ -15,7 +15,8 @@ import {
   Building2,
   BookOpen,
   PhoneCall,
-  Sparkles
+  Sparkles,
+  ExternalLink
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -396,9 +397,32 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left text-xs text-slate-500">
-          <p>© 2026 MRC Yalıtım Söve A.Ş. Yalıtımın ve estetiğin buluşma noktası.</p>
-          <div className="flex flex-wrap justify-center gap-6">
+        <div className="pt-10 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-6 text-xs text-slate-400">
+          <p className="text-center lg:text-left">
+            © 2026 MRC Yalıtım Söve A.Ş. Yalıtımın ve estetiğin buluşma noktası.
+          </p>
+
+          {/* Web Tasarım & Geliştirme İmzası */}
+          <div className="flex items-center justify-center">
+            <a 
+              href="https://talhaozcan.dev" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-brand-gold/50 text-slate-400 hover:text-white transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] backdrop-blur-sm"
+              title="Talha Özcan - Web Tasarım & Yazılım"
+            >
+              <span className="w-2 h-2 rounded-full bg-brand-gold/60 group-hover:bg-brand-gold group-hover:scale-125 transition-all shadow-[0_0_8px_rgba(212,175,55,0.5)]" />
+              <span className="text-[11px] text-slate-400 group-hover:text-slate-300 font-medium tracking-wide">
+                Tasarım & Geliştirme:
+              </span>
+              <span className="font-bold text-white group-hover:text-brand-gold transition-colors tracking-tight flex items-center gap-1.5">
+                Talha Özcan
+                <ExternalLink size={12} className="text-brand-gold/70 group-hover:text-brand-gold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              </span>
+            </a>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-6 text-slate-500">
             <Link href="#" className="hover:text-white transition-colors">KVKK</Link>
             <Link href="#" className="hover:text-white transition-colors">Çerez Politikası</Link>
           </div>

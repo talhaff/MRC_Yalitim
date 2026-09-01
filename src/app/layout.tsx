@@ -57,8 +57,11 @@ export const metadata: Metadata = {
     "MRC Yalıtım Söve",
     "MRC Yalıtım Söve Malatya"
   ],
-  authors: [{ name: "MRC Yalıtım Söve", url: "https://mrcsoveyalitim.com" }],
-  creator: "MRC Yalıtım Söve",
+  authors: [
+    { name: "Talha Özcan", url: "https://talhaozcan.dev" },
+    { name: "MRC Yalıtım Söve", url: "https://mrcsoveyalitim.com" }
+  ],
+  creator: "Talha Özcan",
   publisher: "MRC Yalıtım Söve",
   applicationName: "MRC Yalıtım Söve",
   category: "İnşaat ve Dış Cephe Yalıtım Sistemleri",
