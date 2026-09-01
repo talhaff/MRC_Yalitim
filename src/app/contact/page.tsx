@@ -21,14 +21,7 @@ export default function ContactPage() {
 
   const onSubmit = async (data: any) => {
     try {
-      // 1. Send to Email API (mrcyalitim@gmail.com)
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      // 2. Format & Open WhatsApp
+      // 1. Format & Open WhatsApp directly
       const waText = `*Yeni Web İletişim Mesajı (mrcsoveyalitim.com)*\n\n👤 *Ad Soyad:* ${data.name}\n📧 *E-Posta:* ${data.email}\n🏷️ *Konu:* ${data.subject}\n\n📝 *Mesaj:*\n${data.message}`;
       const waUrl = `https://wa.me/905322585244?text=${encodeURIComponent(waText)}`;
       
