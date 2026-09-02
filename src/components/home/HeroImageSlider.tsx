@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Sparkles, Factory, Layers, Building2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles, Factory, Layers, Building2, ShieldCheck, Home, CheckCircle2 } from 'lucide-react';
 
 export interface SlideItem {
   id: string;
@@ -16,6 +16,51 @@ export interface SlideItem {
 }
 
 const slides: SlideItem[] = [
+  {
+    id: 'facade-completed',
+    src: '/images/hero/hero_facade_completed.jpg',
+    alt: 'Dış Cephe Yalıtımı ve Söve Uygulaması Tamamlanmış Modern Bina',
+    title: 'Kusursuz Cephe Çözümleri',
+    subtitle: 'Yüksek dansite mantolama ve estetik mimari söve detayları',
+    tag: 'Eksiksiz Yalıtım',
+    icon: Home,
+  },
+  {
+    id: 'mantolama-compare',
+    src: '/images/hero/hero_mantolama_compare.jpg',
+    alt: 'Dış Cephe Isı Yalıtım Mantolama Öncesi ve Sonrası Dönüşüm',
+    title: 'Öncesi & Sonrası Mantolama',
+    subtitle: 'Yıpranmış yapılardan %50 enerji tasarruflu modern binalara',
+    tag: 'Bina Dönüşümü & Tasarruf',
+    icon: ShieldCheck,
+  },
+  {
+    id: 'modern-villa',
+    src: '/images/hero/hero_modern_villa.jpg',
+    alt: 'Modern Konutlarda Premium Dış Cephe Isı Yalıtımı ve Mimari Kaplama',
+    title: 'Premium Dış Cephe Yalıtımı',
+    subtitle: 'Dört mevsim termal konfor ve mimari prestij katan çözümler',
+    tag: 'Estetik & Konfor',
+    icon: Sparkles,
+  },
+  {
+    id: 'sove-architecture',
+    src: '/images/hero/hero_sove_architecture.jpg',
+    alt: 'Kusursuz Mimari Cephe Uygulaması ve Söve Montajı',
+    title: 'Dekoratif Cephe Söveleri',
+    subtitle: 'Her mimari projeye özel ölçü ve milimetrik işçilik',
+    tag: 'Mimari Uygulama',
+    icon: CheckCircle2,
+  },
+  {
+    id: 'eps-insulation',
+    src: '/images/hero/hero_eps_insulation.jpg',
+    alt: 'Yüksek Yoğunluklu Karbonlu ve Beyaz EPS Isı Yalıtım Levhaları',
+    title: 'Yüksek Dansite EPS Yalıtım',
+    subtitle: 'Binalarda %50 enerji tasarrufu sağlayan bloklar',
+    tag: 'Maksimum Isı Yalıtımı',
+    icon: Building2,
+  },
   {
     id: 'cnc-sove',
     src: '/images/hero/hero_cnc_facility.jpg',
@@ -33,24 +78,6 @@ const slides: SlideItem[] = [
     subtitle: 'Estetik, hafif ve darbelere karşı zırhlı yüzey',
     tag: 'Dış Cephe Estetiği',
     icon: Layers,
-  },
-  {
-    id: 'eps-insulation',
-    src: '/images/hero/hero_eps_insulation.jpg',
-    alt: 'Yüksek Yoğunluklu Karbonlu ve Beyaz EPS Isı Yalıtım Levhaları',
-    title: 'Yüksek Dansite EPS Yalıtım',
-    subtitle: 'Binalarda %50 enerji tasarrufu sağlayan bloklar',
-    tag: 'Maksimum Isı Yalıtımı',
-    icon: Building2,
-  },
-  {
-    id: 'sove-architecture',
-    src: '/images/hero/hero_sove_architecture.jpg',
-    alt: 'Kusursuz Mimari Cephe Uygulaması ve Söve Montajı',
-    title: 'Kusursuz Cephe Çözümleri',
-    subtitle: 'Her mimari projeye özel ölçü ve milimetrik işçilik',
-    tag: 'Mimari Uygulama',
-    icon: Sparkles,
   },
 ];
 
