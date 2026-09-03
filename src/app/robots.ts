@@ -4,32 +4,12 @@ export default function robots(): MetadataRoute.Robots {
   const baseUrl = 'https://mrcyalitimsove.com';
 
   return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
-      {
-        userAgent: 'Googlebot-Image',
-        allow: '/',
-      },
-      {
-        userAgent: 'Googlebot-Favicon',
-        allow: '/',
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
-    ],
+    rules: {
+      userAgent: '*',
+      allow: '/',
+      disallow: ['/admin/'],
+    },
     sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
   };
 }
+

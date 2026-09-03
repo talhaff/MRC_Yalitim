@@ -99,18 +99,18 @@ export default function HomePage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-80"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
               </span>
-              Malatya Yalıtım & Söve Fabrikası
+              MRC Yalıtım Söve Malatya
             </div>
             
             <h1 className="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight font-display">
-              Yalıtımın ve <br />
+              MRC Yalıtım Söve <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-200 to-brand-gold bg-[length:200%_auto] animate-gradient">
-                Estetiğin Buluşma Noktası.
+                Malatya Söve & EPS Fabrikası
               </span>
             </h1>
             
             <p className="text-sm sm:text-base md:text-xl text-slate-300 max-w-xl leading-relaxed font-light">
-              Malatya&apos;da yüksek yoğunluklu EPS ısı yalıtım levhaları, dış cephe mantolama çözümleri ve estetik söve profilleriyle yapılarınıza değer katan mühendislik harikaları üretiyoruz.
+              Malatya 1. OSB tesislerimizde yüksek yoğunluklu EPS ısı yalıtım levhaları, dış cephe mantolama sistemleri ve estetik pencere söve profilleriyle yapılarınıza değer katan çözümler üretiyoruz.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3.5 md:gap-5 pt-2 md:pt-4">
