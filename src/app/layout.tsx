@@ -7,8 +7,22 @@ import { CookieConsent } from "@/components/shared/CookieConsent";
 import { GoogleAnalytics } from "@/components/shared/GoogleAnalytics";
 import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: "swap" });
+const inter = Inter({ 
+  subsets: ["latin"], 
+  variable: "--font-inter", 
+  display: "swap",
+  preload: true,
+  fallback: ['system-ui', '-apple-system', 'sans-serif'],
+  adjustFontFallback: true
+});
+const outfit = Outfit({ 
+  subsets: ["latin"], 
+  variable: "--font-outfit", 
+  display: "swap",
+  preload: true,
+  fallback: ['system-ui', '-apple-system', 'sans-serif'],
+  adjustFontFallback: true
+});
 
 export const viewport: Viewport = {
   themeColor: "#050B15",

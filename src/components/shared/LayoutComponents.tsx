@@ -77,7 +77,7 @@ export function Navbar() {
           {/* Left: Logo */}
           <Link href="/" className="flex items-center -ml-4 sm:-ml-8 md:-ml-12 lg:-ml-14">
             <Image 
-              src="/logo_transparent.png" 
+              src="/logo_transparent.webp" 
               alt="MRC Yalıtım Söve Logo" 
               width={140} 
               height={30} 
@@ -266,11 +266,14 @@ export function Navbar() {
                 </div>
                 <span>+90 532 258 52 44</span>
               </a>
-              <a href="mailto:mrcyalitim@gmail.com" className="flex items-center gap-3 text-slate-300 text-xs active:text-brand-gold">
+              <a 
+                href="mailto:mrcyalitim&#64;gmail.com"
+                className="flex items-center gap-3 text-slate-300 text-xs active:text-brand-gold"
+              >
                 <div className="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center text-brand-gold shrink-0">
                   <Mail size={15} />
                 </div>
-                <span>{/*email_off*/}mrcyalitim@gmail.com{/*!email_off*/}</span>
+                <span>mrcyalitim&#64;gmail.com</span>
               </a>
             </div>
           </motion.div>
@@ -372,10 +375,10 @@ export function Footer() {
                   <Mail size={18} className="text-brand-gold" />
                 </div>
                 <a 
-                  href="mailto:mrcyalitim@gmail.com" 
+                  href="mailto:mrcyalitim&#64;gmail.com" 
                   className="text-sm hover:text-brand-gold transition-colors"
                 >
-                  {/*email_off*/}mrcyalitim@gmail.com{/*!email_off*/}
+                  mrcyalitim&#64;gmail.com
                 </a>
               </li>
             </ul>
