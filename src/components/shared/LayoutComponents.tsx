@@ -270,7 +270,7 @@ export function Navbar() {
                 <div className="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center text-brand-gold shrink-0">
                   <Mail size={15} />
                 </div>
-                <span>mrcyalitim@gmail.com</span>
+                <span>{/*email_off*/}mrcyalitim@gmail.com{/*!email_off*/}</span>
               </a>
             </div>
           </motion.div>
@@ -375,7 +375,7 @@ export function Footer() {
                   href="mailto:mrcyalitim@gmail.com" 
                   className="text-sm hover:text-brand-gold transition-colors"
                 >
-                  mrcyalitim@gmail.com
+                  {/*email_off*/}mrcyalitim@gmail.com{/*!email_off*/}
                 </a>
               </li>
             </ul>

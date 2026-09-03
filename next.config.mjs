@@ -5,6 +5,16 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  reactStrictMode: true,
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  experimental: {
+    optimizeCss: false,
+    scrollRestoration: true,
+  },
 };
 
 export default nextConfig;
+

@@ -40,7 +40,7 @@ const allProducts: ProductItem[] = [
     category: 'Söve Profilleri',
     categorySlug: 'sove',
     code: 'MRC-SV101',
-    image: '/kayanresimler/sove1.png',
+    image: '/kayanresimler/sove1.webp',
     description: 'Pencere ve kapı kenarlarında modern ve kademeli mimari hatlar sunan yalıtımlı söve profili.',
     specs: ['26-30 kg/m³ EPS', 'Akrilik Polimer Kaplama', 'UV & Dış Hava Dayanımı']
   },
@@ -50,7 +50,7 @@ const allProducts: ProductItem[] = [
     category: 'Söve Profilleri',
     categorySlug: 'sove',
     code: 'MRC-SV102',
-    image: '/kayanresimler/sove2.png',
+    image: '/kayanresimler/sove2.webp',
     description: 'Yumuşak kavis geçişleriyle klasik ve neoklasik binalara zarafet katan dış cephe profili.',
     specs: ['Estetik Kavis Formu', 'B1 Alev Yürütmez', 'Pürüzsüz Yüzey']
   },
@@ -60,7 +60,7 @@ const allProducts: ProductItem[] = [
     category: 'Söve Profilleri',
     categorySlug: 'sove',
     code: 'MRC-SV103',
-    image: '/kayanresimler/sove3.png',
+    image: '/kayanresimler/sove3.webp',
     description: 'Minimalist ve çağdaş cephe tasarımları için net keskin kenarlı düz söve profili.',
     specs: ['Minimalist Çizgi', 'Net Geometrik Hatlar', 'Esnek Montaj']
   },
@@ -70,7 +70,7 @@ const allProducts: ProductItem[] = [
     category: 'Söve Profilleri',
     categorySlug: 'sove',
     code: 'MRC-SV104',
-    image: '/kayanresimler/sove4.png',
+    image: '/kayanresimler/sove4.webp',
     description: 'Derinlik hissi veren iki kademeli kabartma yüzeyiyle dikkat çeken söve modeli.',
     specs: ['3 Boyutlu Derinlik', 'Akrilik Elyaflı Kaplama', 'Çatlama Yapmaz']
   },
@@ -80,7 +80,7 @@ const allProducts: ProductItem[] = [
     category: 'Söve Profilleri',
     categorySlug: 'sove',
     code: 'MRC-SV105',
-    image: '/kayanresimler/sove5.png',
+    image: '/kayanresimler/sove5.webp',
     description: 'Geniş cepheli pencerelerde güçlü çerçeveleme etkisi yaratan kalın gövdeli söve.',
     specs: ['Geniş Profil Ebatı', 'Yüksek Mukavemet', 'Güneş Işınlarına Dayanıklı']
   },
@@ -90,7 +90,7 @@ const allProducts: ProductItem[] = [
     category: 'Söve Profilleri',
     categorySlug: 'sove',
     code: 'MRC-SV106',
-    image: '/kayanresimler/sove6.png',
+    image: '/kayanresimler/sove6.webp',
     description: 'Dar pencereler ve minimal cephe çizgileri için ideal ince kesitli söve modeli.',
     specs: ['Dar Alan Uyumu', 'Hafif Ağırlık', 'Kusursuz Köşe Birleşimi']
   },
@@ -100,7 +100,7 @@ const allProducts: ProductItem[] = [
     category: 'Söve Profilleri',
     categorySlug: 'sove',
     code: 'MRC-SV107',
-    image: '/kayanresimler/sove7.png',
+    image: '/kayanresimler/sove7.webp',
     description: 'Geniş açıklıklı cephe camlarında tok ve zengin bir çerçeve görüntüsü sunar.',
     specs: ['Tok & Sağlam Yapı', 'Su İtici Harç Kaplaması', 'Isı Yalıtımına Destek']
   },
@@ -110,7 +110,7 @@ const allProducts: ProductItem[] = [
     category: 'Söve Profilleri',
     categorySlug: 'sove',
     code: 'MRC-SV108',
-    image: '/kayanresimler/sove8.png',
+    image: '/kayanresimler/sove8.webp',
     description: 'Özel villa, konut ve otel projelerinde kullanılan üst segment söve profili.',
     specs: ['Özel Proje Serisi', 'Ekstra Yüksek Yoğunluk', 'Kusursuz Detay']
   },
@@ -122,7 +122,7 @@ const allProducts: ProductItem[] = [
     category: 'Dekoratif Taç & Motif',
     categorySlug: 'tac',
     code: 'MRC-TC201',
-    image: '/kayanresimler/dekoratif.png',
+    image: '/kayanresimler/dekoratif.webp',
     description: 'Pencere üstü ve kapı girişlerinde estetik saray mimarisi sunan el işçiliği motifli taç.',
     specs: ['Yüksek Kabartma Rölyef', 'Elastik Akrilik Astar', 'Hafif & Kolay Montaj']
   },
@@ -132,7 +132,7 @@ const allProducts: ProductItem[] = [
     category: 'Dekoratif Taç & Motif',
     categorySlug: 'tac',
     code: 'MRC-TC202',
-    image: '/kayanresimler/tasdesen.png',
+    image: '/kayanresimler/tasdesen.webp',
     description: 'Geleneksel motiflerin modern CNC teknolojisiyle buluştuğu dekoratif cephe tacı.',
     specs: ['Geleneksel Çiçek Motifi', 'CNC Hassas Kesim', 'Her Renge Boyanabilir']
   },
@@ -142,7 +142,7 @@ const allProducts: ProductItem[] = [
     category: 'Dekoratif Taç & Motif',
     categorySlug: 'tac',
     code: 'MRC-TC203',
-    image: '/kayanresimler/tasdesen2.png',
+    image: '/kayanresimler/tasdesen2.webp',
     description: 'Barok dönem mimarisinden esinlenilmiş, zengin detaylı pencere üstü taç süslemesi.',
     specs: ['İnce Heykelimsi Detay', 'Hava Koşullarına Dirençli', 'Hızlı Vidalama/Yapıştırma']
   },
@@ -152,7 +152,7 @@ const allProducts: ProductItem[] = [
     category: 'Dekoratif Taç & Motif',
     categorySlug: 'tac',
     code: 'MRC-TC204',
-    image: '/kayanresimler/tasdesen3.png',
+    image: '/kayanresimler/tasdesen3.webp',
     description: 'Bina ana girişleri ve ana pencerelerde prestij katan saray tipi taç modeli.',
     specs: ['Görkemli Merkez Deseni', 'Akrilik Zırh Kaplama', 'Solmaz Yüzey']
   },
@@ -162,7 +162,7 @@ const allProducts: ProductItem[] = [
     category: 'Özel Yüzeyler',
     categorySlug: 'cephe',
     code: 'MRC-AH301',
-    image: '/kayanresimler/ahsapsove.png',
+    image: '/kayanresimler/ahsapsove.webp',
     description: 'Doğal ahşap dokusu ve damar efektli, boyanabilir dış cephe yalıtım profili.',
     specs: ['Doğal Ağaç Damar Dokusu', 'Bakım Gerektirmez', 'Su ve Neme Tam Dayanım']
   },
@@ -174,7 +174,7 @@ const allProducts: ProductItem[] = [
     category: 'Köşe Profilleri',
     categorySlug: 'kose',
     code: 'MRC-KS401',
-    image: '/kayanresimler/koseelemanı.png',
+    image: '/kayanresimler/koseelemanı.webp',
     description: 'Bina köşelerinde ısı köprüsü oluşumunu engelleyen ve simetrik görünüm sağlayan eleman.',
     specs: ['90° Milimetrik Açı', 'Isı Köprüsü Önleyici', 'Darbe Dayanımlı']
   },
@@ -184,7 +184,7 @@ const allProducts: ProductItem[] = [
     category: 'Köşe Profilleri',
     categorySlug: 'kose',
     code: 'MRC-KS402',
-    image: '/kayanresimler/koseelemanı2.png',
+    image: '/kayanresimler/koseelemanı2.webp',
     description: 'Çift kademeli kanal detayı ile modern binaların köşe birleşimlerine şıklık katar.',
     specs: ['Çift Kanal Deseni', 'Köşe Çarpma Koruması', 'Pratik Geçme Kanallı']
   },
@@ -194,7 +194,7 @@ const allProducts: ProductItem[] = [
     category: 'Köşe Profilleri',
     categorySlug: 'kose',
     code: 'MRC-KS403',
-    image: '/kayanresimler/koseelemanı3.png',
+    image: '/kayanresimler/koseelemanı3.webp',
     description: 'Üç kademeli köşe profiliyle binalara anıtsal ve güçlü bir siluet kazandırır.',
     specs: ['3 Kademeli Geometri', 'Milimetrik CNC Üretim', 'Tam Açı Oturumu']
   },
@@ -204,7 +204,7 @@ const allProducts: ProductItem[] = [
     category: 'Köşe Taşları',
     categorySlug: 'kose',
     code: 'MRC-KT601',
-    image: '/kayanresimler/kosetasi.png',
+    image: '/kayanresimler/kosetasi.webp',
     description: 'Bina köşe hatlarında masif taş görünümü ve ekstra darbe direnci sağlayan dekoratif taş.',
     specs: ['Pahlı Kenar Detayı', 'Taş Doku Görünümü', 'Kolay Harçlı Montaj']
   },
@@ -214,7 +214,7 @@ const allProducts: ProductItem[] = [
     category: 'Köşe Taşları',
     categorySlug: 'kose',
     code: 'MRC-KT602',
-    image: '/kayanresimler/kosetasi2.png',
+    image: '/kayanresimler/kosetasi2.webp',
     description: 'Tarihi ve rustik konseptli binalar için eskitme taş görünümlü dekoratif köşe elemanı.',
     specs: ['Rustik Yontma Efekti', 'Yüksek Darbe Direnci', 'Kolay Boyanabilirlik']
   },
@@ -226,7 +226,7 @@ const allProducts: ProductItem[] = [
     category: 'Dış Cephe Panelleri',
     categorySlug: 'cephe',
     code: 'MRC-CP501',
-    image: '/kayanresimler/cephe1.png',
+    image: '/kayanresimler/cephe1.webp',
     description: 'Modern çizgili fugalı yüzeyiyle binalara modern ve dinamik mimari katan mantolama paneli.',
     specs: ['Entegre Fugalı Sistem', 'Yüksek Isı Yalıtımı (0.038 W/mK)', 'Hızlı Uygulama']
   },
@@ -236,7 +236,7 @@ const allProducts: ProductItem[] = [
     category: 'Dış Cephe Panelleri',
     categorySlug: 'cephe',
     code: 'MRC-CP502',
-    image: '/kayanresimler/cephe2.png',
+    image: '/kayanresimler/cephe2.webp',
     description: 'Doğal taş görünümlü, hem ısı hem de ses yalıtımı sağlayan hazır dış cephe plakası.',
     specs: ['3D Doğal Taş Dokusu', 'Isı & Ses İzolasyonu', 'Boya Tutuculuk']
   },
@@ -246,7 +246,7 @@ const allProducts: ProductItem[] = [
     category: 'Dış Cephe Panelleri',
     categorySlug: 'cephe',
     code: 'MRC-CP503',
-    image: '/kayanresimler/cephe3.png',
+    image: '/kayanresimler/cephe3.webp',
     description: 'Doğal ahşap sıcaklığını EPS yalıtım avantajıyla buluşturan mantolama paneli.',
     specs: ['Ahşap Lamba Zıvana Efekti', 'Çürümez ve Kurtlanmaz', 'A1/B1 Yangın Uyumu']
   },
@@ -256,7 +256,7 @@ const allProducts: ProductItem[] = [
     category: 'A1 Yanmaz Yalıtım',
     categorySlug: 'cephe',
     code: 'MRC-TY901',
-    image: '/kayanresimler/tasyunusove.png',
+    image: '/kayanresimler/tasyunusove.webp',
     description: 'A1 sınıfı yanmaz taşyünü çekirdekli, yüksek güvenlikli dış cephe mimari söve profili.',
     specs: ['A1 Yanmaz Sınıfı', '150 kg/m³ Taşyünü', 'Maksimum Yangın Güvenliği']
   },
@@ -268,7 +268,7 @@ const allProducts: ProductItem[] = [
     category: 'Sütun & Başlık',
     categorySlug: 'sutun',
     code: 'MRC-ST701',
-    image: '/kayanresimler/sutun.png',
+    image: '/kayanresimler/sutun.webp',
     description: 'Giriş portalleri, balkon ve teras desteklerinde görkemli sütun kaplama sistemi.',
     specs: ['Silindirik / Yivli Gövde', 'Yüksek Taşıma Görünümü', 'Hafif EPS Çekirdek']
   },
@@ -278,7 +278,7 @@ const allProducts: ProductItem[] = [
     category: 'Sütun & Başlık',
     categorySlug: 'sutun',
     code: 'MRC-ST702',
-    image: '/kayanresimler/sutun2.png',
+    image: '/kayanresimler/sutun2.webp',
     description: 'Geleneksel yaprak ve motif oymalı Korint tarzı sütun başlığı mimari elemanı.',
     specs: ['Oymalı Başlık Deseni', 'Geniş Yük Dağılımı Efekti', 'Akrilik Koruyucu Katman']
   },
@@ -288,7 +288,7 @@ const allProducts: ProductItem[] = [
     category: 'Kat Silmeleri',
     categorySlug: 'sutun',
     code: 'MRC-SL801',
-    image: '/kayanresimler/dekoratif2.png',
+    image: '/kayanresimler/dekoratif2.webp',
     description: 'Kat aralarında su tahliyesini yönlendiren ve cepheyi estetik olarak bölen silme profili.',
     specs: ['Damlalıklı Alt Kenar', 'Yağmur Suyu Yönlendirme', 'Hafif Yapı']
   },
@@ -298,7 +298,7 @@ const allProducts: ProductItem[] = [
     category: 'Bordürler & Çıtalar',
     categorySlug: 'sutun',
     code: 'MRC-BD802',
-    image: '/kayanresimler/dekoratif3.png',
+    image: '/kayanresimler/dekoratif3.webp',
     description: 'İç ve dış cephelerde duvar panelleri, ayna ve çerçeveleme için ince zarif bordür.',
     specs: ['Hassas İnce Kesit', 'Kolay Büküm/Açı', 'Pürüzsüz Zemin']
   },
@@ -308,7 +308,7 @@ const allProducts: ProductItem[] = [
     category: 'Denizlik & Silme',
     categorySlug: 'sutun',
     code: 'MRC-DN803',
-    image: '/kayanresimler/dekoratif4.png',
+    image: '/kayanresimler/dekoratif4.webp',
     description: 'Pencere altlarında su tahliyesi sağlayan ve cepheye derinlik katan denizlik profili.',
     specs: ['Entegre Damlalık Kanalı', 'Su İtici Harç', 'Uzun Ömürlü']
   }

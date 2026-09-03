@@ -12,8 +12,8 @@ export function CookieConsent() {
     try {
       const consent = localStorage.getItem('mrc_cookie_consent');
       if (!consent) {
-        // Delay slightly for smooth page load transition
-        const timer = setTimeout(() => setShowBanner(true), 800);
+        // Delay slightly for smooth page load transition and optimal LCP score
+        const timer = setTimeout(() => setShowBanner(true), 2500);
         return () => clearTimeout(timer);
       }
     } catch {

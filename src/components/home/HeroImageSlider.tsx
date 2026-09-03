@@ -18,7 +18,7 @@ export interface SlideItem {
 const slides: SlideItem[] = [
   {
     id: 'facade-completed',
-    src: '/images/hero/hero_facade_completed.jpg',
+    src: '/images/hero/hero_facade_completed.webp',
     alt: 'Dış Cephe Yalıtımı ve Söve Uygulaması Tamamlanmış Modern Bina',
     title: 'Kusursuz Cephe Çözümleri',
     subtitle: 'Yüksek dansite mantolama ve estetik mimari söve detayları',
@@ -27,7 +27,7 @@ const slides: SlideItem[] = [
   },
   {
     id: 'mantolama-compare',
-    src: '/images/hero/hero_mantolama_compare.jpg',
+    src: '/images/hero/hero_mantolama_compare.webp',
     alt: 'Dış Cephe Isı Yalıtım Mantolama Öncesi ve Sonrası Dönüşüm',
     title: 'Öncesi & Sonrası Mantolama',
     subtitle: 'Yıpranmış yapılardan %50 enerji tasarruflu modern binalara',
@@ -36,7 +36,7 @@ const slides: SlideItem[] = [
   },
   {
     id: 'modern-villa',
-    src: '/images/hero/hero_modern_villa.jpg',
+    src: '/images/hero/hero_modern_villa.webp',
     alt: 'Modern Konutlarda Premium Dış Cephe Isı Yalıtımı ve Mimari Kaplama',
     title: 'Premium Dış Cephe Yalıtımı',
     subtitle: 'Dört mevsim termal konfor ve mimari prestij katan çözümler',
@@ -45,7 +45,7 @@ const slides: SlideItem[] = [
   },
   {
     id: 'sove-architecture',
-    src: '/images/hero/hero_sove_architecture.jpg',
+    src: '/images/hero/hero_sove_architecture.webp',
     alt: 'Kusursuz Mimari Cephe Uygulaması ve Söve Montajı',
     title: 'Dekoratif Cephe Söveleri',
     subtitle: 'Her mimari projeye özel ölçü ve milimetrik işçilik',
@@ -54,7 +54,7 @@ const slides: SlideItem[] = [
   },
   {
     id: 'eps-insulation',
-    src: '/images/hero/hero_eps_insulation.jpg',
+    src: '/images/hero/hero_eps_insulation.webp',
     alt: 'Yüksek Yoğunluklu Karbonlu ve Beyaz EPS Isı Yalıtım Levhaları',
     title: 'Yüksek Dansite EPS Yalıtım',
     subtitle: 'Binalarda %50 enerji tasarrufu sağlayan bloklar',
@@ -63,7 +63,7 @@ const slides: SlideItem[] = [
   },
   {
     id: 'cnc-sove',
-    src: '/images/hero/hero_cnc_facility.jpg',
+    src: '/images/hero/hero_cnc_facility.webp',
     alt: 'CNC Otomasyonlu Söve ve Dış Cephe Profil Üretim Tesisi',
     title: 'CNC Milimetrik Söve Üretimi',
     subtitle: 'Son teknoloji tel kesim ve mikronize kaplama',
@@ -72,7 +72,7 @@ const slides: SlideItem[] = [
   },
   {
     id: 'sove-mouldings',
-    src: '/images/hero/hero_sove_production.jpg',
+    src: '/images/hero/hero_sove_production.webp',
     alt: 'Mimari Dış Cephe Söve Profilleri ve Kat Silmeleri Deposu',
     title: 'Mimari Söve & Taç Profilleri',
     subtitle: 'Estetik, hafif ve darbelere karşı zırhlı yüzey',
@@ -190,7 +190,9 @@ export default function HeroImageSlider() {
                 alt={activeSlide.alt}
                 fill
                 priority={currentIndex === 0}
-                sizes="(max-width: 1024px) 100vw, 650px"
+                fetchPriority={currentIndex === 0 ? "high" : "auto"}
+                loading={currentIndex === 0 ? "eager" : "lazy"}
+                sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover object-center"
               />
             </motion.div>

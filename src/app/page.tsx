@@ -1,9 +1,5 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, 
   ShieldCheck, 
@@ -18,14 +14,12 @@ import {
   MapPin,
   Navigation,
   HelpCircle,
-  ChevronDown,
-  Sparkles,
   Layers,
   Flame,
-  CheckCircle2
 } from 'lucide-react';
 import ProductMarquee from '@/components/home/ProductMarquee';
 import HeroImageSlider from '@/components/home/HeroImageSlider';
+import FaqAccordion from '@/components/home/FaqAccordion';
 
 const faqItems = [
   {
@@ -55,29 +49,10 @@ const faqItems = [
 ];
 
 export default function HomePage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 }
-    }
-  };
-
-  const { scrollY } = useScroll();
-  const yHeroText = useTransform(scrollY, [0, 1000], [0, 300]);
-  const yHeroImg = useTransform(scrollY, [0, 1000], [0, -100]);
-  const opacityHero = useTransform(scrollY, [0, 500], [1, 0]);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
-
   return (
     <main className="flex flex-col w-full overflow-x-hidden">
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-screen flex items-center bg-[#050B15] overflow-hidden pt-36 pb-20 md:pt-44 md:pb-28 lg:py-0">
+      <section className="relative min-h-[90vh] lg:min-h-screen flex items-center bg-[#050B15] overflow-hidden pt-36 pb-20 md:pt-44 md:pb-28 lg:py-0">
         {/* Background Overlay / Decoration */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-[10%] left-[5%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-brand-gold/15 rounded-full blur-[130px]" />
@@ -86,13 +61,7 @@ export default function HomePage() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <motion.div 
-            style={{ y: yHeroText, opacity: opacityHero }}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-white space-y-6 md:space-y-8"
-          >
+          <div className="text-white space-y-6 md:space-y-8">
             {/* Luxury Badge */}
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-brand-gold/20 via-brand-gold/10 to-transparent border border-brand-gold/30 text-brand-gold font-bold text-[11px] md:text-xs uppercase tracking-[0.2em] backdrop-blur-md shadow-[0_2px_15px_rgba(212,175,55,0.15)]">
               <span className="relative flex h-2 w-2">
@@ -166,24 +135,13 @@ export default function HomePage() {
                 <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Yıllık Tecrübe</p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            style={{ y: yHeroImg }}
-            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative hidden lg:block"
-          >
+          <div className="relative hidden lg:block">
             {/* Premium Sliding AI Hero Images */}
             <HeroImageSlider />
             {/* Stats Badge */}
-            <motion.div 
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="absolute -bottom-10 -left-10 bg-white p-10 rounded-[40px] shadow-2xl z-40 flex gap-10 border border-slate-100"
-            >
+            <div className="absolute -bottom-10 -left-10 bg-white p-10 rounded-[40px] shadow-2xl z-40 flex gap-10 border border-slate-100">
               <div className="text-center border-r border-slate-100 pr-10">
                 <p className="text-5xl font-black text-brand-navy">25K<span className="text-brand-gold text-2xl">+</span></p>
                 <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mt-2">m² Üretim/Ay</p>
@@ -192,8 +150,8 @@ export default function HomePage() {
                 <p className="text-5xl font-black text-brand-gold">20</p>
                 <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mt-2">Yıllık Tecrübe</p>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -222,20 +180,19 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
-              { name: 'Dış Cephe Söveleri', desc: 'Dekoratif, akrilik zırh kaplamalı ve ısı yalıtımlı pencere söve profilleri.', img: '/images/cat-sove.jpg' },
-              { name: 'EPS Yalıtım Levhaları', desc: 'Yüksek yoğunluklu beyaz ve karbonlu EPS ile maksimum enerji tasarrufu.', img: '/images/cat-eps.jpg' },
-              { name: 'Dekoratif Kaplamalar', desc: 'Fugalı mantolama panelleri, ahşap ve doğal taş görünümlü cephe sistemleri.', img: '/images/cat-deco.jpg' },
+              { name: 'Dış Cephe Söveleri', desc: 'Dekoratif, akrilik zırh kaplamalı ve ısı yalıtımlı pencere söve profilleri.', img: '/images/cat-sove.webp' },
+              { name: 'EPS Yalıtım Levhaları', desc: 'Yüksek yoğunluklu beyaz ve karbonlu EPS ile maksimum enerji tasarrufu.', img: '/images/cat-eps.webp' },
+              { name: 'Dekoratif Kaplamalar', desc: 'Fugalı mantolama panelleri, ahşap ve doğal taş görünümlü cephe sistemleri.', img: '/images/cat-deco.webp' },
             ].map((cat, idx) => (
-              <motion.div 
+              <div 
                 key={idx}
-                whileHover={{ y: -10 }}
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                className="transform transition-transform duration-300 hover:-translate-y-2"
               >
                 <a 
                   href={`https://wa.me/905322585244?text=${encodeURIComponent(`Merhaba, ${cat.name} hakkında detaylı bilgi ve fabrika fiyat teklifi almak istiyorum.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative aspect-[4/5] rounded-[48px] overflow-hidden block"
+                  className="group relative aspect-[4/5] rounded-[48px] overflow-hidden block shadow-2xl"
                 >
                   <Image 
                     src={cat.img} 
@@ -243,18 +200,18 @@ export default function HomePage() {
                     fill 
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out"
+                    className="object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 p-12 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                    <h3 className="text-3xl font-bold mb-2 group-hover:text-brand-gold transition-colors duration-500">{cat.name}</h3>
-                    <p className="text-slate-400 group-hover:text-white transition-colors duration-500">{cat.desc}</p>
-                    <div className="mt-6 flex items-center gap-2 text-brand-gold font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                      Fiyat Teklifi Al <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-500" />
+                  <div className="absolute bottom-0 left-0 p-8 sm:p-12 w-full translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out">
+                    <h3 className="text-2xl sm:text-3xl font-bold mb-2 group-hover:text-brand-gold transition-colors duration-300">{cat.name}</h3>
+                    <p className="text-slate-300 text-sm group-hover:text-white transition-colors duration-300">{cat.desc}</p>
+                    <div className="mt-4 sm:mt-6 flex items-center gap-2 text-brand-gold font-bold opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                      Fiyat Teklifi Al <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
                     </div>
                   </div>
                 </a>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -264,43 +221,35 @@ export default function HomePage() {
       <section className="py-16 lg:py-24 bg-white relative">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-10 lg:gap-12">
-            <motion.div 
-              whileInView="visible"
-              initial="hidden"
-              variants={containerVariants}
-              viewport={{ once: true }}
-              className="lg:col-span-1 space-y-8"
-            >
+            <div className="lg:col-span-1 space-y-6 sm:space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold text-brand-navy font-display leading-tight">
                 Modern Üretim, <br className="hidden md:block" /> Kusursuz Mühendislik.
               </h2>
-              <p className="text-slate-500 text-lg leading-relaxed">
+              <p className="text-slate-500 text-base sm:text-lg leading-relaxed">
                 Malatya 1. OSB&apos;deki tam otomasyonlu sistemlerimiz, her söve profili ve yalıtım levhasının milimetrik hassasiyetle ve standart yüksek kalitede çıkmasını sağlar.
               </p>
               <Link href="/about" className="inline-flex items-center gap-2 text-brand-gold font-bold group">
                 Fabrikamızı Tanıyın <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-            </motion.div>
+            </div>
 
             <div className="lg:col-span-2 grid md:grid-cols-2 gap-5 sm:gap-8">
               {[
-                { icon: <ShieldCheck />, title: 'Sertifikalı Kalite', desc: 'Tüm ürünlerimiz TSE, CE ve ISO standartlarında, zorlu laboratuvar testlerinden geçerek üretilir.' },
-                { icon: <Factory />, title: 'Yüksek Kapasite', desc: 'Aylık 25.000 m² üretim kapasitemizle, Doğu ve Güneydoğu Anadolu&apos;nun en büyük projelerinin zamanında tedarikçisiyiz.' },
-                { icon: <Users2 />, title: 'Teknik Danışmanlık', desc: 'Sadece üretim değil, projelendirme ve uygulama aşamasında da uzman mühendislik desteği sunuyoruz.' },
-                { icon: <Building2 />, title: 'Geniş Ürün Gamı', desc: 'Pencere söveleri, kat silmeleri, taç, köşe taşları ve yalıtım levhalarında 150+ farklı model seçeneği.' },
+                { icon: <ShieldCheck size={28} />, title: 'Sertifikalı Kalite', desc: 'Tüm ürünlerimiz TSE, CE ve ISO standartlarında, zorlu laboratuvar testlerinden geçerek üretilir.' },
+                { icon: <Factory size={28} />, title: 'Yüksek Kapasite', desc: 'Aylık 25.000 m² üretim kapasitemizle, Doğu ve Güneydoğu Anadolu&apos;nun en büyük projelerinin zamanında tedarikçisiyiz.' },
+                { icon: <Users2 size={28} />, title: 'Teknik Danışmanlık', desc: 'Sadece üretim değil, projelendirme ve uygulama aşamasında da uzman mühendislik desteği sunuyoruz.' },
+                { icon: <Building2 size={28} />, title: 'Geniş Ürün Gamı', desc: 'Pencere söveleri, kat silmeleri, taç, köşe taşları ve yalıtım levhalarında 150+ farklı model seçeneği.' },
               ].map((item, idx) => (
-                <motion.div 
+                <div 
                   key={idx}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="p-6 sm:p-8 rounded-2xl sm:rounded-[32px] bg-slate-50 border border-slate-100 hover:border-brand-gold/40 hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.2)] transition-colors group cursor-default"
+                  className="p-6 sm:p-8 rounded-2xl sm:rounded-[32px] bg-slate-50 border border-slate-100 hover:border-brand-gold/40 hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.2)] transition-all duration-300 group cursor-default"
                 >
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white text-brand-gold flex items-center justify-center mb-4 sm:mb-6 shadow-sm group-hover:bg-brand-gold group-hover:text-white transition-colors">
                     {item.icon}
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-brand-navy mb-2 sm:mb-3">{item.title}</h3>
                   <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -368,51 +317,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="space-y-4">
-            {faqItems.map((item, index) => {
-              const isOpen = openFaq === index;
-              return (
-                <div 
-                  key={index}
-                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-                    isOpen 
-                      ? 'bg-white/[0.08] border-brand-gold/50 shadow-lg shadow-brand-gold/10' 
-                      : 'bg-white/[0.03] border-white/10 hover:border-white/20'
-                  }`}
-                >
-                  <button
-                    onClick={() => toggleFaq(index)}
-                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
-                    aria-expanded={isOpen}
-                  >
-                    <span className="font-bold text-base sm:text-lg text-white group-hover:text-brand-gold transition-colors">
-                      {item.question}
-                    </span>
-                    <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'bg-brand-gold text-brand-navy rotate-180' : 'bg-white/5 text-brand-gold'
-                    }`}>
-                      <ChevronDown size={18} />
-                    </div>
-                  </button>
-
-                  <AnimatePresence>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      >
-                        <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed border-t border-white/5 pt-4">
-                          {item.answer}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
+          <FaqAccordion items={faqItems} />
 
           <div className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-brand-gold/15 to-transparent border border-brand-gold/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div>
