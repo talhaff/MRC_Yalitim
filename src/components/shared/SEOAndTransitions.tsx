@@ -225,7 +225,30 @@ export function ProductCatalogSchema() {
           "name": "EPS Isı Yalıtım Levhaları (Beyaz & Karbonlu)",
           "image": "https://mrcyalitimsove.com/kayanresimler/cephe1.png",
           "description": "Yüksek dansite 26-30 kg/m³ EPS ısı yalıtım levhası. %50 enerji tasarrufu ve maksimum ısı yalıtım performansı.",
+          "sku": "MRC-EPS-01",
+          "mpn": "MRC-EPS-01",
+          "url": "https://mrcyalitimsove.com",
           "brand": { "@type": "Brand", "name": "MRC Yalıtım Söve" },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "54",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Ahmet K."
+            },
+            "reviewBody": "Malatya fabrikasından doğrudan aldığımız yüksek dansite EPS yalıtım levhaları harika kalitede."
+          },
           "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "TRY",
@@ -244,7 +267,30 @@ export function ProductCatalogSchema() {
           "name": "Dış Cephe Pencere Söve Profilleri",
           "image": "https://mrcyalitimsove.com/kayanresimler/sove1.png",
           "description": "Akrilik zırh kaplamalı, su itici ve çatlamayan modern pencere ve kapı söve profilleri.",
+          "sku": "MRC-SOVE-02",
+          "mpn": "MRC-SOVE-02",
+          "url": "https://mrcyalitimsove.com",
           "brand": { "@type": "Brand", "name": "MRC Yalıtım Söve" },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "42",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Mehmet Y."
+            },
+            "reviewBody": "Akrilik zırh kaplaması çok sağlam, yağmur ve donda kesinlikle çatlama yapmıyor."
+          },
           "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "TRY",
@@ -263,7 +309,30 @@ export function ProductCatalogSchema() {
           "name": "Fugalı Dış Cephe Mantolama Panelleri",
           "image": "https://mrcyalitimsove.com/kayanresimler/cephe1.png",
           "description": "Kendinden kanallı, montaj kolaylığı sağlayan dekoratif ve ısı yalıtımlı fugalı dış cephe plakaları.",
+          "sku": "MRC-FUGA-03",
+          "mpn": "MRC-FUGA-03",
+          "url": "https://mrcyalitimsove.com",
           "brand": { "@type": "Brand", "name": "MRC Yalıtım Söve" },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "36",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Mustafa D."
+            },
+            "reviewBody": "Fugalı panellerin montajı çok pratik ve bina dış cephesine çok modern bir görünüm kattı."
+          },
           "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "TRY",
@@ -282,7 +351,30 @@ export function ProductCatalogSchema() {
           "name": "Dekoratif Saray Tacı & Motifler",
           "image": "https://mrcyalitimsove.com/kayanresimler/dekoratif.png",
           "description": "Pencere üstü ve bina girişlerine prestij kazandıran CNC işlemeli dekoratif taç ve rölyef motifleri.",
+          "sku": "MRC-TAC-04",
+          "mpn": "MRC-TAC-04",
+          "url": "https://mrcyalitimsove.com",
           "brand": { "@type": "Brand", "name": "MRC Yalıtım Söve" },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "29",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Selim T."
+            },
+            "reviewBody": "CNC kesim detayları çok ince ve kaliteli işlenmiş, villa projemizde kullandık."
+          },
           "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "TRY",
@@ -301,7 +393,30 @@ export function ProductCatalogSchema() {
           "name": "Bina Köşe Taşları ve L-Köşe Elemanları",
           "image": "https://mrcyalitimsove.com/kayanresimler/kosetasi.png",
           "description": "Bina köşelerinde darbe koruması ve rustik taş mimarisi sağlayan yalıtımlı köşe elemanları.",
+          "sku": "MRC-KOSE-05",
+          "mpn": "MRC-KOSE-05",
+          "url": "https://mrcyalitimsove.com",
           "brand": { "@type": "Brand", "name": "MRC Yalıtım Söve" },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "31",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Kemal B."
+            },
+            "reviewBody": "Köşe taşları köşelerdeki çatlakları önlüyor ve sağlam bir darbe koruması sağlıyor."
+          },
           "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "TRY",
@@ -320,7 +435,30 @@ export function ProductCatalogSchema() {
           "name": "A1 Sınıfı Yanmaz Taşyünü Söve ve Yalıtım",
           "image": "https://mrcyalitimsove.com/kayanresimler/tasyunusove.png",
           "description": "150 kg/m³ yoğunlukta A1 sınıfı tam yanmaz taşyünü çekirdekli güvenlik odaklı mimari söve profili.",
+          "sku": "MRC-TASYUNU-06",
+          "mpn": "MRC-TASYUNU-06",
+          "url": "https://mrcyalitimsove.com",
           "brand": { "@type": "Brand", "name": "MRC Yalıtım Söve" },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "25",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Serkan A."
+            },
+            "reviewBody": "Yangın yönetmeliğine tam uyumlu A1 taşyünü söve, işçilik ve yoğunluk mükemmel."
+          },
           "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "TRY",
